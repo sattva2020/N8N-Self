@@ -1,5 +1,3 @@
-name: stack
-
 services:
   traefik:
     image: traefik:latest
@@ -16,9 +14,11 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "8080:8080" # traefik dashboard
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - traefik_letsencrypt:/letsencrypt
+      - ../secrets:/run/secrets:ro
     environment:
       - TZ=${TZ}
     labels:
@@ -86,12 +86,12 @@ services:
       - proxy
       - backend
 
-  # ollama: # disabled by default — uncomment to enable Ollama LLM runtime
-  #   image: ollama/ollama:latest
-  #   volumes:
-  #     - ollama_data:/root/.ollama
-  #   networks:
-  #     - backend
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama_data:/root/.ollama
+    networks:
+      - backend
 
   pgvector:
     image: pgvector/pgvector:pg16
@@ -108,10 +108,10 @@ services:
 
 networks:
   proxy:
-    name: stack_proxy
+    name: proxy
     driver: bridge
   backend:
-    name: stack_backend
+    name: backend
     driver: bridge
 
 volumes:

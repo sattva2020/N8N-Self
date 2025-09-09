@@ -1,0 +1,36 @@
+{
+  "realm": "dashboard",
+  "enabled": true,
+  "users": [
+    {
+      "username": "admin",
+      "enabled": true,
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["admin"]
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "dashboard-client",
+      "publicClient": false,
+      "protocol": "openid-connect",
+      "redirectUris": ["https://dashboard.${DOMAIN_NAME}/oauth2/callback", "http://localhost:3000/oauth2/callback"],
+      "directAccessGrantsEnabled": true,
+      "bearerOnly": false,
+      "secret": "change_me"
+    }
+  ],
+  "roles": {
+    "realm": [
+      { "name": "admin" },
+      { "name": "operator" },
+      { "name": "viewer" }
+    ]
+  }
+}
