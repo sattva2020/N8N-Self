@@ -8,6 +8,12 @@ const docker = new Docker({ socketPath: process.env.DOCKER_SOCKET || '/var/run/d
 
 fastify.get('/api/health', async () => ({ ok: true }));
 
+fastify.get('/api/info', async () => ({
+  service: 'dashboard-backend',
+  version: process.env.npm_package_version || '0.0.0',
+  env: process.env.NODE_ENV || 'development'
+}));
+
 fastify.get('/api/services', async (request: FastifyRequest, reply: FastifyReply) => {
   try {
     const containers = await docker.listContainers({ all: true });
