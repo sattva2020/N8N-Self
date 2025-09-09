@@ -1,0 +1,15 @@
+{
+  "$schema": "https://raw.githubusercontent.com/continuedev/continue/main/config-schema.json",
+  "models": [
+    {
+      "title": "Qwen3 Coder 30B (LM Studio)",
+      "provider": "openai",
+      "model": "ВАШ_ТОЧНЫЙ_MODEL_ID_ИЗ_LM_STUDIO",
+      "apiBase": "http://172.19.16.1:11234/v1",
+      "apiKey": "lm-studio",
+      "completionOptions": { "temperature": 0.2, "maxTokens": 1024 }
+    }
+  ],
+  "defaultModel": "Qwen3 Coder 30B (LM Studio)",
+  "tabAutocompleteModel": "Qwen3 Coder 30B (LM Studio)"
+}

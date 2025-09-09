@@ -1,0 +1,122 @@
+name: stack
+
+services:
+  traefik:
+    image: traefik:latest
+    command:
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --certificatesresolvers.le.acme.email=${ACME_EMAIL}
+      - --certificatesresolvers.le.acme.storage=/letsencrypt/acme.json
+      - --certificatesresolvers.le.acme.httpchallenge=true
+      - --certificatesresolvers.le.acme.httpchallenge.entrypoint=web
+      - --api.dashboard=true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik_letsencrypt:/letsencrypt
+    environment:
+      - TZ=${TZ}
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=stack_proxy
+      - traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN_NAME}`)
+      - traefik.http.routers.traefik.entrypoints=websecure
+      - traefik.http.routers.traefik.tls.certresolver=le
+      - traefik.http.services.traefik.loadbalancer.server.port=8080
+    networks:
+      - proxy
+
+  n8n-postgres:
+    image: postgres:16-alpine
+    environment:
+      - POSTGRES_DB=n8n
+      - POSTGRES_USER=n8n
+      - POSTGRES_PASSWORD_FILE=/run/secrets/n8n_db_password
+    volumes:
+      - n8n_pgdata:/var/lib/postgresql/data
+      - ../secrets:/run/secrets:ro
+    networks:
+      - backend
+
+  redis:
+    image: redis:7-alpine
+    networks:
+      - backend
+
+  n8n:
+    image: n8nio/n8n:latest
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=n8n-postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n
+      - DB_POSTGRESDB_USER=n8n
+      - DB_POSTGRESDB_PASSWORD_FILE=/run/secrets/n8n_db_password
+      - N8N_HOST=n8n.${DOMAIN_NAME}
+      - N8N_PROTOCOL=https
+      - N8N_PORT=5678
+      - NODE_ENV=production
+      - GENERIC_TIMEZONE=${TZ}
+      - N8N_ENCRYPTION_KEY_FILE=/run/secrets/n8n_encryption_key
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ../secrets:/run/secrets:ro
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=stack_proxy
+      - traefik.http.routers.n8n.rule=Host(`n8n.${DOMAIN_NAME}`)
+      - traefik.http.routers.n8n.entrypoints=websecure
+      - traefik.http.routers.n8n.tls.certresolver=le
+      - traefik.http.services.n8n.loadbalancer.server.port=5678
+      - traefik.http.middlewares.secure-headers.headers.stsSeconds=15552000
+      - traefik.http.middlewares.secure-headers.headers.frameDeny=true
+      - traefik.http.middlewares.secure-headers.headers.contentTypeNosniff=true
+      - traefik.http.middlewares.secure-headers.headers.browserXssFilter=true
+      - traefik.http.middlewares.n8n-ratelimit.ratelimit.average=50
+      - traefik.http.middlewares.n8n-ratelimit.ratelimit.burst=100
+      - traefik.http.routers.n8n.middlewares=secure-headers,n8n-ratelimit
+    depends_on:
+      - n8n-postgres
+    networks:
+      - proxy
+      - backend
+
+  # ollama: # disabled by default — uncomment to enable Ollama LLM runtime
+  #   image: ollama/ollama:latest
+  #   volumes:
+  #     - ollama_data:/root/.ollama
+  #   networks:
+  #     - backend
+
+  pgvector:
+    image: pgvector/pgvector:pg16
+    environment:
+      - POSTGRES_DB=lightrag
+      - POSTGRES_USER=lightrag
+      - POSTGRES_PASSWORD_FILE=/run/secrets/pgvector_password
+    volumes:
+      - pgvectordata:/var/lib/postgresql/data
+      - ../pgvector_init:/docker-entrypoint-initdb.d:ro
+      - ../secrets:/run/secrets:ro
+    networks:
+      - backend
+
+networks:
+  proxy:
+    name: stack_proxy
+    driver: bridge
+  backend:
+    name: stack_backend
+    driver: bridge
+
+volumes:
+  traefik_letsencrypt:
+  n8n_pgdata:
+  n8n_data:
+  ollama_data:
+  pgvectordata:
