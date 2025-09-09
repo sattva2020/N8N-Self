@@ -1,4 +1,4 @@
-import Fastify from 'fastify';
+import Fastify, { FastifyRequest, FastifyReply } from 'fastify';
 import Docker from 'dockerode';
 import dotenv from 'dotenv';
 
@@ -8,7 +8,7 @@ const docker = new Docker({ socketPath: process.env.DOCKER_SOCKET || '/var/run/d
 
 fastify.get('/api/health', async () => ({ ok: true }));
 
-fastify.get('/api/services', async () => {
+fastify.get('/api/services', async (request: FastifyRequest, reply: FastifyReply) => {
   try {
     const containers = await docker.listContainers({ all: true });
     const services = containers.map((c: any) => ({
@@ -18,10 +18,10 @@ fastify.get('/api/services', async () => {
       status: c.Status,
       labels: c.Labels
     }));
-    return services;
+    return reply.send(services);
   } catch (err) {
     fastify.log.error(err);
-    return fastify.status(500).send({ error: 'docker-unavailable' });
+    return reply.status(500).send({ error: 'docker-unavailable' });
   }
 });
 

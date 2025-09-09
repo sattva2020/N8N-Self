@@ -20,10 +20,10 @@
       "clientId": "dashboard-client",
       "publicClient": false,
       "protocol": "openid-connect",
-      "redirectUris": ["https://dashboard.${DOMAIN_NAME}/oauth2/callback", "http://localhost:3000/oauth2/callback"],
-      "directAccessGrantsEnabled": true,
-      "bearerOnly": false,
-      "secret": "change_me"
+    "redirectUris": ["https://dashboard.sattva-ai.top/oauth2/callback", "http://localhost:3000/oauth2/callback"],
+    "directAccessGrantsEnabled": true,
+    "bearerOnly": false,
+    "secret": "G7x9vK2qH3pZs8Y"
     }
   ],
   "roles": {

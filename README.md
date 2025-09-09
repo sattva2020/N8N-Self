@@ -133,7 +133,7 @@ ssh -i /c/Users/Admin/.ssh/id_rsa_n8n -o StrictHostKeyChecking=no root@37.53.91.
 
 ## Что учтено
 
-- Фиксированные сети Docker: `stack_proxy`/`stack_backend`
+- Фиксированные сети Docker: `proxy`/`backend`
 - Секреты пишутся без перевода строки (`\n`) → нет ошибки `InvalidPassword`
 - Все YAML/ENV — UTF‑8/ASCII (без «умных» кавычек)
 - Traefik‑роуты и Basic‑Auth в override LightRAG

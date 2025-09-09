@@ -1,19 +1,20 @@
 services:
   lightrag:
     networks:
-      - stack_proxy
-      - stack_backend
+      - proxy
+      - backend
     volumes:
       - ./secrets:/run/secrets:ro
     labels:
       - traefik.enable=true
-      - traefik.docker.network=stack_proxy
-      - traefik.http.routers.rag.rule=Host(`rag.{{DOMAIN_NAME}}`)
+      - traefik.docker.network=proxy
+      - traefik.http.routers.rag.rule=Host(`rag.${DOMAIN_NAME}`)
       - traefik.http.routers.rag.entrypoints=websecure
       - traefik.http.routers.rag.tls.certresolver=le
       - traefik.http.services.rag.loadbalancer.server.port=9621
       - traefik.http.routers.rag.middlewares=rag-auth,secure-headers,rag-ratelimit
       - traefik.http.middlewares.rag-auth.basicauth.usersfile=/run/secrets/traefik_basicauth
+      # Ensure a file at ./secrets/traefik_basicauth exists with htpasswd content for basic auth
       - traefik.http.middlewares.secure-headers.headers.stsSeconds=15552000
       - traefik.http.middlewares.secure-headers.headers.frameDeny=true
       - traefik.http.middlewares.secure-headers.headers.contentTypeNosniff=true
@@ -22,9 +23,5 @@ services:
       - traefik.http.middlewares.rag-ratelimit.ratelimit.burst=100
 
 networks:
-  stack_proxy:
-    external: true
-    name: stack_proxy
-  stack_backend:
-    external: true
-    name: stack_backend
+  proxy:
+  backend:

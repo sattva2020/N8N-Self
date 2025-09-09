@@ -4,6 +4,8 @@ services:
     command:
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
+      - --log.level=DEBUG
+      - --accesslog=true
       - --entrypoints.web.address=:80
       - --entrypoints.websecure.address=:443
       - --certificatesresolvers.le.acme.email=${ACME_EMAIL}
@@ -23,7 +25,7 @@ services:
       - TZ=${TZ}
     labels:
       - traefik.enable=true
-      - traefik.docker.network=stack_proxy
+      - traefik.docker.network=proxy
       - traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN_NAME}`)
       - traefik.http.routers.traefik.entrypoints=websecure
       - traefik.http.routers.traefik.tls.certresolver=le
@@ -68,7 +70,7 @@ services:
       - ../secrets:/run/secrets:ro
     labels:
       - traefik.enable=true
-      - traefik.docker.network=stack_proxy
+      - traefik.docker.network=proxy
       - traefik.http.routers.n8n.rule=Host(`n8n.${DOMAIN_NAME}`)
       - traefik.http.routers.n8n.entrypoints=websecure
       - traefik.http.routers.n8n.tls.certresolver=le
