@@ -1,667 +1,808 @@
-commitlint	Set up job	﻿2025-09-10T11:58:07.0440272Z Current runner version: '2.328.0'
-commitlint	Set up job	2025-09-10T11:58:07.0473952Z ##[group]Runner Image Provisioner
-commitlint	Set up job	2025-09-10T11:58:07.0475049Z Hosted Compute Agent
-commitlint	Set up job	2025-09-10T11:58:07.0475985Z Version: 20250829.383
-commitlint	Set up job	2025-09-10T11:58:07.0476885Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
-commitlint	Set up job	2025-09-10T11:58:07.0477970Z Build Date: 2025-08-29T13:48:48Z
-commitlint	Set up job	2025-09-10T11:58:07.0478956Z ##[endgroup]
-commitlint	Set up job	2025-09-10T11:58:07.0479782Z ##[group]Operating System
-commitlint	Set up job	2025-09-10T11:58:07.0480835Z Ubuntu
-commitlint	Set up job	2025-09-10T11:58:07.0481498Z 24.04.3
-commitlint	Set up job	2025-09-10T11:58:07.0482335Z LTS
-commitlint	Set up job	2025-09-10T11:58:07.0483055Z ##[endgroup]
-commitlint	Set up job	2025-09-10T11:58:07.0483791Z ##[group]Runner Image
-commitlint	Set up job	2025-09-10T11:58:07.0484768Z Image: ubuntu-24.04
-commitlint	Set up job	2025-09-10T11:58:07.0485570Z Version: 20250907.24.1
-commitlint	Set up job	2025-09-10T11:58:07.0487234Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
-commitlint	Set up job	2025-09-10T11:58:07.0489619Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
-commitlint	Set up job	2025-09-10T11:58:07.0491615Z ##[endgroup]
-commitlint	Set up job	2025-09-10T11:58:07.0493724Z ##[group]GITHUB_TOKEN Permissions
-commitlint	Set up job	2025-09-10T11:58:07.0496151Z Contents: read
-commitlint	Set up job	2025-09-10T11:58:07.0497166Z Metadata: read
-commitlint	Set up job	2025-09-10T11:58:07.0497933Z Packages: read
-commitlint	Set up job	2025-09-10T11:58:07.0498719Z ##[endgroup]
-commitlint	Set up job	2025-09-10T11:58:07.0501749Z Secret source: Actions
-commitlint	Set up job	2025-09-10T11:58:07.0502832Z Prepare workflow directory
-commitlint	Set up job	2025-09-10T11:58:07.1229972Z Prepare all required actions
-commitlint	Set up job	2025-09-10T11:58:07.1387505Z Getting action download info
-commitlint	Set up job	2025-09-10T11:58:07.6266829Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
-commitlint	Set up job	2025-09-10T11:58:07.7890409Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
-commitlint	Set up job	2025-09-10T11:58:07.9639317Z Complete job name: commitlint
-commitlint	Run actions/checkout@v4	﻿2025-09-10T11:58:08.0284763Z ##[group]Run actions/checkout@v4
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0285605Z with:
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0285990Z   repository: sattva2020/N8N-Self
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0286638Z   token: ***
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0287029Z   ssh-strict: true
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0287412Z   ssh-user: git
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0287799Z   persist-credentials: true
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0288243Z   clean: true
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0288655Z   sparse-checkout-cone-mode: true
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0289124Z   fetch-depth: 1
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0289504Z   fetch-tags: false
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0289885Z   show-progress: true
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0290592Z   lfs: false
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0290948Z   submodules: false
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0291342Z   set-safe-directory: true
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.0292050Z ##[endgroup]
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1435691Z Syncing repository: sattva2020/N8N-Self
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1438549Z ##[group]Getting Git version info
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1439617Z Working directory is '/home/runner/work/N8N-Self/N8N-Self'
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1441283Z [command]/usr/bin/git version
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1551575Z git version 2.51.0
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1583458Z ##[endgroup]
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1595903Z Temporarily overriding HOME='/home/runner/work/_temp/1bbdd32c-5bc9-4549-af66-9d31899f59e3' before making global git config changes
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1601789Z Adding repository directory to the temporary git global config as a safe directory
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1605879Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1645280Z Deleting the contents of '/home/runner/work/N8N-Self/N8N-Self'
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1649915Z ##[group]Initializing the repository
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1655148Z [command]/usr/bin/git init /home/runner/work/N8N-Self/N8N-Self
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1781560Z hint: Using 'master' as the name for the initial branch. This default branch name
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1784534Z hint: is subject to change. To configure the initial branch name to use in all
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1786045Z hint: of your new repositories, which will suppress this warning, call:
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1787149Z hint:
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1787883Z hint: 	git config --global init.defaultBranch <name>
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1789083Z hint:
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1790657Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1792265Z hint: 'development'. The just-created branch can be renamed via this command:
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1793538Z hint:
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1794231Z hint: 	git branch -m <name>
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1795055Z hint:
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1796055Z hint: Disable this message with "git config set advice.defaultBranchName false"
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1798558Z Initialized empty Git repository in /home/runner/work/N8N-Self/N8N-Self/.git/
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1803185Z [command]/usr/bin/git remote add origin https://github.com/sattva2020/N8N-Self
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1847682Z ##[endgroup]
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1850851Z ##[group]Disabling automatic garbage collection
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1852595Z [command]/usr/bin/git config --local gc.auto 0
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1887301Z ##[endgroup]
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1889329Z ##[group]Setting up auth
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1892811Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.1925743Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.2311177Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.2343139Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.2574936Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.2622083Z ##[endgroup]
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.2624781Z ##[group]Fetching the repository
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:08.2632750Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a3f4adf681816595325bad1b43e8db4127b471ca:refs/remotes/pull/3/merge
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.4380254Z From https://github.com/sattva2020/N8N-Self
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.4384030Z  * [new ref]         a3f4adf681816595325bad1b43e8db4127b471ca -> pull/3/merge
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.4387749Z ##[endgroup]
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.4389457Z ##[group]Determining the checkout info
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.4391595Z ##[endgroup]
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.4392747Z [command]/usr/bin/git sparse-checkout disable
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.4396122Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.4400469Z ##[group]Checking out the ref
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.4402317Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3/merge
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8408961Z Note: switching to 'refs/remotes/pull/3/merge'.
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8411993Z 
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8412482Z You are in 'detached HEAD' state. You can look around, make experimental
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8413478Z changes and commit them, and you can discard any commits you make in this
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8414470Z state without impacting any branches by switching back to a branch.
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8415024Z 
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8415391Z If you want to create a new branch to retain commits you create, you may
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8416175Z do so (now or later) by using -c with the switch command. Example:
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8416678Z 
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8416953Z   git switch -c <new-branch-name>
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8417340Z 
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8417594Z Or undo this operation with:
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8417950Z 
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8418171Z   git switch -
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8418473Z 
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8418898Z Turn off this advice by setting config variable advice.detachedHead to false
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8419498Z 
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8420496Z HEAD is now at a3f4adf Merge 351aea8c16b759a4901f87abc214a3a2f7483d0e into 032e0c286f1161b571d7313b759da5e74c4c9fb4
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8423194Z ##[endgroup]
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8448500Z [command]/usr/bin/git log -1 --format=%H
-commitlint	Run actions/checkout@v4	2025-09-10T11:58:09.8474243Z a3f4adf681816595325bad1b43e8db4127b471ca
-commitlint	Setup Node	﻿2025-09-10T11:58:09.8723746Z ##[group]Run actions/setup-node@v4
-commitlint	Setup Node	2025-09-10T11:58:09.8724227Z with:
-commitlint	Setup Node	2025-09-10T11:58:09.8724573Z   node-version: 18.x
-commitlint	Setup Node	2025-09-10T11:58:09.8724951Z   always-auth: false
-commitlint	Setup Node	2025-09-10T11:58:09.8725309Z   check-latest: false
-commitlint	Setup Node	2025-09-10T11:58:09.8725825Z   token: ***
-commitlint	Setup Node	2025-09-10T11:58:09.8726170Z ##[endgroup]
-commitlint	Setup Node	2025-09-10T11:58:10.0555927Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
-commitlint	Setup Node	2025-09-10T11:58:10.0561388Z ##[group]Environment details
-commitlint	Setup Node	2025-09-10T11:58:12.2895747Z node: v18.20.8
-commitlint	Setup Node	2025-09-10T11:58:12.2903053Z npm: 10.8.2
-commitlint	Setup Node	2025-09-10T11:58:12.2903416Z yarn: 1.22.22
-commitlint	Setup Node	2025-09-10T11:58:12.2904459Z ##[endgroup]
-commitlint	Install commitlint	﻿2025-09-10T11:58:12.3034680Z ##[group]Run cd dashboard/frontend
-commitlint	Install commitlint	2025-09-10T11:58:12.3035078Z [36;1mcd dashboard/frontend[0m
-commitlint	Install commitlint	2025-09-10T11:58:12.3035346Z [36;1mnpm ci --prefer-offline[0m
-commitlint	Install commitlint	2025-09-10T11:58:12.3227218Z shell: /usr/bin/bash -e {0}
-commitlint	Install commitlint	2025-09-10T11:58:12.3227556Z ##[endgroup]
-commitlint	Install commitlint	2025-09-10T11:58:18.3525751Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
-commitlint	Install commitlint	2025-09-10T11:58:18.5978609Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
-commitlint	Install commitlint	2025-09-10T11:58:21.1686236Z 
-commitlint	Install commitlint	2025-09-10T11:58:21.1687672Z added 355 packages, and audited 356 packages in 9s
-commitlint	Install commitlint	2025-09-10T11:58:21.1688730Z 
-commitlint	Install commitlint	2025-09-10T11:58:21.1694954Z 98 packages are looking for funding
-commitlint	Install commitlint	2025-09-10T11:58:21.1695539Z   run `npm fund` for details
-commitlint	Install commitlint	2025-09-10T11:58:21.1838345Z 
-commitlint	Install commitlint	2025-09-10T11:58:21.1841521Z 3 moderate severity vulnerabilities
-commitlint	Install commitlint	2025-09-10T11:58:21.1842377Z 
-commitlint	Install commitlint	2025-09-10T11:58:21.1843104Z To address all issues (including breaking changes), run:
-commitlint	Install commitlint	2025-09-10T11:58:21.1844239Z   npm audit fix --force
-commitlint	Install commitlint	2025-09-10T11:58:21.1855545Z 
-commitlint	Install commitlint	2025-09-10T11:58:21.1864893Z Run `npm audit` for details.
-commitlint	Run commitlint on PR	﻿2025-09-10T11:58:21.2142490Z ##[group]Run echo "Running commitlint on pull request commits"
-commitlint	Run commitlint on PR	2025-09-10T11:58:21.2142977Z [36;1mecho "Running commitlint on pull request commits"[0m
-commitlint	Run commitlint on PR	2025-09-10T11:58:21.2143401Z [36;1mgit fetch --no-tags --prune --depth=1 origin +refs/pull/3/merge[0m
-commitlint	Run commitlint on PR	2025-09-10T11:58:21.2143928Z [36;1mgit log --pretty=format:%B origin/HEAD..FETCH_HEAD | npx --no-install commitlint --verbose || true[0m
-commitlint	Run commitlint on PR	2025-09-10T11:58:21.2175399Z shell: /usr/bin/bash -e {0}
-commitlint	Run commitlint on PR	2025-09-10T11:58:21.2175657Z ##[endgroup]
-commitlint	Run commitlint on PR	2025-09-10T11:58:21.2312085Z Running commitlint on pull request commits
-commitlint	Run commitlint on PR	2025-09-10T11:58:22.0099005Z From https://github.com/sattva2020/N8N-Self
-commitlint	Run commitlint on PR	2025-09-10T11:58:22.0100847Z  * branch            refs/pull/3/merge -> FETCH_HEAD
-commitlint	Run commitlint on PR	2025-09-10T11:58:22.0155167Z fatal: ambiguous argument 'origin/HEAD..FETCH_HEAD': unknown revision or path not in the working tree.
-commitlint	Run commitlint on PR	2025-09-10T11:58:22.0156194Z Use '--' to separate paths from revisions, like this:
-commitlint	Run commitlint on PR	2025-09-10T11:58:22.0157018Z 'git <command> [<revision>...] -- [<file>...]'
-commitlint	Run commitlint on PR	2025-09-10T11:58:23.4947499Z npm error npx canceled due to missing packages and no YES option: ["commitlint@19.8.1"]
-commitlint	Run commitlint on PR	2025-09-10T11:58:23.4964685Z npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2025-09-10T11_58_22_090Z-debug-0.log
-commitlint	Post Setup Node	﻿2025-09-10T11:58:23.5100549Z Post job cleanup.
-commitlint	Post Run actions/checkout@v4	﻿2025-09-10T11:58:23.6818576Z Post job cleanup.
-commitlint	Post Run actions/checkout@v4	2025-09-10T11:58:23.7823044Z [command]/usr/bin/git version
-commitlint	Post Run actions/checkout@v4	2025-09-10T11:58:23.7865286Z git version 2.51.0
-commitlint	Post Run actions/checkout@v4	2025-09-10T11:58:23.7924337Z Temporarily overriding HOME='/home/runner/work/_temp/d588e815-3ab4-4d8a-aca0-3e76d0bf2196' before making global git config changes
-commitlint	Post Run actions/checkout@v4	2025-09-10T11:58:23.7926245Z Adding repository directory to the temporary git global config as a safe directory
-commitlint	Post Run actions/checkout@v4	2025-09-10T11:58:23.7931501Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
-commitlint	Post Run actions/checkout@v4	2025-09-10T11:58:23.7972378Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-commitlint	Post Run actions/checkout@v4	2025-09-10T11:58:23.8011225Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-commitlint	Post Run actions/checkout@v4	2025-09-10T11:58:23.8283490Z fatal: No url found for submodule path 'LightRAG' in .gitmodules
-commitlint	Post Run actions/checkout@v4	2025-09-10T11:58:23.8340905Z ##[warning]The process '/usr/bin/git' failed with exit code 128
-commitlint	Complete job	﻿2025-09-10T11:58:23.8425707Z Cleaning up orphan processes
-build-and-test (18.x, windows-latest)	Set up job	﻿2025-09-10T11:58:06.2159146Z Current runner version: '2.328.0'
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2193965Z ##[group]Runner Image Provisioner
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2195423Z Hosted Compute Agent
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2196700Z Version: 20250829.383
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2197641Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2198840Z Build Date: 2025-08-29T13:48:48Z
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2199752Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2200616Z ##[group]Operating System
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2201452Z Ubuntu
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2202348Z 24.04.3
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2203049Z LTS
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2203743Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2204714Z ##[group]Runner Image
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2205708Z Image: ubuntu-24.04
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2206933Z Version: 20250907.24.1
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2208841Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2211303Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2213283Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2215059Z ##[group]GITHUB_TOKEN Permissions
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2218145Z Contents: read
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2218994Z Metadata: read
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2219793Z Packages: read
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2220665Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2223702Z Secret source: Actions
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2224799Z Prepare workflow directory
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2883125Z Prepare all required actions
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.2941626Z Getting action download info
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:06.8438958Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:07.0313049Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:07.1319737Z Download action repository 'actions/cache@v4' (SHA:0400d5f644dc74513175e3cd8d07132dd4860809)
-build-and-test (18.x, windows-latest)	Set up job	2025-09-10T11:58:07.3355135Z Complete job name: build-and-test (18.x, windows-latest)
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	﻿2025-09-10T11:58:07.3961130Z ##[group]Run actions/checkout@v4
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3961995Z with:
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3962395Z   repository: sattva2020/N8N-Self
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3963059Z   token: ***
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3963435Z   ssh-strict: true
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3963819Z   ssh-user: git
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3964207Z   persist-credentials: true
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3964644Z   clean: true
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3965032Z   sparse-checkout-cone-mode: true
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3965497Z   fetch-depth: 1
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3965866Z   fetch-tags: false
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3966428Z   show-progress: true
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3966827Z   lfs: false
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3967184Z   submodules: false
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3967582Z   set-safe-directory: true
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.3968266Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5148226Z Syncing repository: sattva2020/N8N-Self
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5150667Z ##[group]Getting Git version info
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5151667Z Working directory is '/home/runner/work/N8N-Self/N8N-Self'
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5154320Z [command]/usr/bin/git version
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5260935Z git version 2.51.0
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5291294Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5307915Z Temporarily overriding HOME='/home/runner/work/_temp/9629c8ec-d8d2-4854-bf74-a454c4cfcbd2' before making global git config changes
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5311689Z Adding repository directory to the temporary git global config as a safe directory
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5315581Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5359695Z Deleting the contents of '/home/runner/work/N8N-Self/N8N-Self'
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5364988Z ##[group]Initializing the repository
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5370058Z [command]/usr/bin/git init /home/runner/work/N8N-Self/N8N-Self
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5476996Z hint: Using 'master' as the name for the initial branch. This default branch name
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5480338Z hint: is subject to change. To configure the initial branch name to use in all
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5481835Z hint: of your new repositories, which will suppress this warning, call:
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5483232Z hint:
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5484746Z hint: 	git config --global init.defaultBranch <name>
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5485815Z hint:
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5487093Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5488697Z hint: 'development'. The just-created branch can be renamed via this command:
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5489965Z hint:
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5490693Z hint: 	git branch -m <name>
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5491432Z hint:
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5492392Z hint: Disable this message with "git config set advice.defaultBranchName false"
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5494128Z Initialized empty Git repository in /home/runner/work/N8N-Self/N8N-Self/.git/
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5500436Z [command]/usr/bin/git remote add origin https://github.com/sattva2020/N8N-Self
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5545509Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5548936Z ##[group]Disabling automatic garbage collection
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5551749Z [command]/usr/bin/git config --local gc.auto 0
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5582994Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5585496Z ##[group]Setting up auth
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5590490Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5624565Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.5978709Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.6012469Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.6246136Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.6295020Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.6297395Z ##[group]Fetching the repository
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:07.6305516Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a3f4adf681816595325bad1b43e8db4127b471ca:refs/remotes/pull/3/merge
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.8124553Z From https://github.com/sattva2020/N8N-Self
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.8130453Z  * [new ref]         a3f4adf681816595325bad1b43e8db4127b471ca -> pull/3/merge
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.8167052Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.8168242Z ##[group]Determining the checkout info
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.8169637Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.8172120Z [command]/usr/bin/git sparse-checkout disable
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.8218395Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.8250464Z ##[group]Checking out the ref
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.8252244Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3/merge
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1735913Z Note: switching to 'refs/remotes/pull/3/merge'.
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1746637Z 
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1747469Z You are in 'detached HEAD' state. You can look around, make experimental
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1749526Z changes and commit them, and you can discard any commits you make in this
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1751521Z state without impacting any branches by switching back to a branch.
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1752676Z 
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1753489Z If you want to create a new branch to retain commits you create, you may
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1755447Z do so (now or later) by using -c with the switch command. Example:
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1756750Z 
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1757181Z   git switch -c <new-branch-name>
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1758006Z 
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1758474Z Or undo this operation with:
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1759293Z 
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1759727Z   git switch -
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1760354Z 
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1761322Z Turn off this advice by setting config variable advice.detachedHead to false
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1762705Z 
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1764332Z HEAD is now at a3f4adf Merge 351aea8c16b759a4901f87abc214a3a2f7483d0e into 032e0c286f1161b571d7313b759da5e74c4c9fb4
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1771478Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1808989Z [command]/usr/bin/git log -1 --format=%H
-build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.1831191Z a3f4adf681816595325bad1b43e8db4127b471ca
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	﻿2025-09-10T11:58:09.2153580Z ##[group]Run actions/setup-node@v4
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:09.2155276Z with:
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:09.2156572Z   node-version: 18.x
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:09.2157921Z   always-auth: false
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:09.2159018Z   check-latest: false
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:09.2160597Z   token: ***
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:09.2161533Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:09.4448568Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:09.4455410Z ##[group]Environment details
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:11.4787673Z node: v18.20.8
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:11.4789124Z npm: 10.8.2
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:11.4807024Z yarn: 1.22.22
-build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T11:58:11.4808675Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Cache node modules	﻿2025-09-10T11:58:11.9315725Z ##[group]Run actions/cache@v4
-build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T11:58:11.9316024Z with:
-build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T11:58:11.9380677Z   path: **/node_modules
+build-and-test (18.x, windows-latest)	Set up job	﻿2025-09-10T12:13:31.8963684Z Current runner version: '2.328.0'
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.8998944Z ##[group]Runner Image Provisioner
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9000138Z Hosted Compute Agent
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9001069Z Version: 20250829.383
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9002086Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9003458Z Build Date: 2025-08-29T13:48:48Z
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9004330Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9005351Z ##[group]Operating System
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9006246Z Ubuntu
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9007072Z 24.04.3
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9007770Z LTS
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9008681Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9009556Z ##[group]Runner Image
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9010452Z Image: ubuntu-24.04
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9011269Z Version: 20250907.24.1
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9013393Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9015881Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9017850Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9019702Z ##[group]GITHUB_TOKEN Permissions
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9022905Z Contents: read
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9023750Z Metadata: read
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9024537Z Packages: read
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9025351Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9028197Z Secret source: Actions
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9029285Z Prepare workflow directory
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9489509Z Prepare all required actions
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:31.9544450Z Getting action download info
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:32.3024322Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:32.4908972Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:32.5857052Z Download action repository 'actions/cache@v4' (SHA:0400d5f644dc74513175e3cd8d07132dd4860809)
+build-and-test (18.x, windows-latest)	Set up job	2025-09-10T12:13:32.7903285Z Complete job name: build-and-test (18.x, windows-latest)
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	﻿2025-09-10T12:13:32.8506849Z ##[group]Run actions/checkout@v4
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8507765Z with:
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8508191Z   repository: sattva2020/N8N-Self
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8508877Z   token: ***
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8509291Z   ssh-strict: true
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8509722Z   ssh-user: git
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8510142Z   persist-credentials: true
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8510613Z   clean: true
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8511053Z   sparse-checkout-cone-mode: true
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8511549Z   fetch-depth: 1
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8511959Z   fetch-tags: false
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8512373Z   show-progress: true
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8513177Z   lfs: false
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8513579Z   submodules: false
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8514011Z   set-safe-directory: true
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:32.8514782Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0654418Z Syncing repository: sattva2020/N8N-Self
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0657101Z ##[group]Getting Git version info
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0658287Z Working directory is '/home/runner/work/N8N-Self/N8N-Self'
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0659914Z [command]/usr/bin/git version
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0660824Z git version 2.51.0
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0663687Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0669951Z Temporarily overriding HOME='/home/runner/work/_temp/de0d7d40-6c24-4b5c-b03f-0c5f231edc45' before making global git config changes
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0672289Z Adding repository directory to the temporary git global config as a safe directory
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0674494Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0677290Z Deleting the contents of '/home/runner/work/N8N-Self/N8N-Self'
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0679053Z ##[group]Initializing the repository
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0680166Z [command]/usr/bin/git init /home/runner/work/N8N-Self/N8N-Self
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0681644Z hint: Using 'master' as the name for the initial branch. This default branch name
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0683502Z hint: is subject to change. To configure the initial branch name to use in all
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0685054Z hint: of your new repositories, which will suppress this warning, call:
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0686604Z hint:
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0687440Z hint: 	git config --global init.defaultBranch <name>
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0688455Z hint:
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0689415Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0691098Z hint: 'development'. The just-created branch can be renamed via this command:
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0692376Z hint:
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0693371Z hint: 	git branch -m <name>
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0694159Z hint:
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0695188Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0696887Z Initialized empty Git repository in /home/runner/work/N8N-Self/N8N-Self/.git/
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0699543Z [command]/usr/bin/git remote add origin https://github.com/sattva2020/N8N-Self
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0701384Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0702105Z ##[group]Disabling automatic garbage collection
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0703381Z [command]/usr/bin/git config --local gc.auto 0
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0705736Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0706834Z ##[group]Setting up auth
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0708010Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0711316Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0761690Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.0773816Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.1018876Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.1056105Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.1059929Z ##[group]Fetching the repository
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:33.1067712Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5139dae041375db64c7fb63f4210dfc0e2406df8:refs/remotes/pull/3/merge
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7031224Z From https://github.com/sattva2020/N8N-Self
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7037090Z  * [new ref]         5139dae041375db64c7fb63f4210dfc0e2406df8 -> pull/3/merge
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7073443Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7075227Z ##[group]Determining the checkout info
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7077875Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7078813Z [command]/usr/bin/git sparse-checkout disable
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7123676Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7155308Z ##[group]Checking out the ref
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7158773Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3/merge
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7161937Z Note: switching to 'refs/remotes/pull/3/merge'.
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7163689Z 
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7164279Z You are in 'detached HEAD' state. You can look around, make experimental
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7165306Z changes and commit them, and you can discard any commits you make in this
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7167547Z state without impacting any branches by switching back to a branch.
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7168267Z 
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7168802Z If you want to create a new branch to retain commits you create, you may
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7169681Z do so (now or later) by using -c with the switch command. Example:
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7170280Z 
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7170558Z   git switch -c <new-branch-name>
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7170930Z 
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7171219Z Or undo this operation with:
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7171575Z 
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7171802Z   git switch -
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7172326Z 
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7173055Z Turn off this advice by setting config variable advice.detachedHead to false
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7173792Z 
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7174500Z HEAD is now at 5139dae Merge 1111d982e48811dc9e3514eea3dff61dba8c7602 into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7206244Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7248658Z [command]/usr/bin/git log -1 --format=%H
+build-and-test (18.x, windows-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.7276598Z 5139dae041375db64c7fb63f4210dfc0e2406df8
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	﻿2025-09-10T12:13:36.7524985Z ##[group]Run actions/setup-node@v4
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:36.7525311Z with:
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:36.7525517Z   node-version: 18.x
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:36.7525744Z   always-auth: false
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:36.7525949Z   check-latest: false
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:36.7526279Z   token: ***
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:36.7526473Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:36.9395292Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:36.9402029Z ##[group]Environment details
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:39.6697574Z node: v18.20.8
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:39.6703085Z npm: 10.8.2
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:39.6704850Z yarn: 1.22.22
+build-and-test (18.x, windows-latest)	Use Node.js 18.x	2025-09-10T12:13:39.6706105Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Cache node modules	﻿2025-09-10T12:13:40.6866166Z ##[group]Run actions/cache@v4
+build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T12:13:40.6866437Z with:
+build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T12:13:40.6866629Z   path: **/node_modules
 build-and-test (18.x, windows-latest)	Cache node modules	~/.npm
 build-and-test (18.x, windows-latest)	Cache node modules	
-build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T11:58:11.9381433Z   key: Linux-node-18.x-7f7cd62d60be09abac6ab73e6e5b84b5d4d321dbe6490448c1a7ce122acd4a73
-build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T11:58:11.9382292Z   restore-keys: Linux-node-18.x-
+build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T12:13:40.6867060Z   key: Linux-node-18.x-9c4515ee7adb94e86eaefcee7a417f196dc4582eff054bf1d1b2cc0e45105eb1
+build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T12:13:40.6867505Z   restore-keys: Linux-node-18.x-
 build-and-test (18.x, windows-latest)	Cache node modules	
-build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T11:58:11.9382795Z   enableCrossOsArchive: false
-build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T11:58:11.9383273Z   fail-on-cache-miss: false
-build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T11:58:11.9383671Z   lookup-only: false
-build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T11:58:11.9384048Z   save-always: false
-build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T11:58:11.9384363Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T11:58:12.3084001Z Cache not found for input keys: Linux-node-18.x-7f7cd62d60be09abac6ab73e6e5b84b5d4d321dbe6490448c1a7ce122acd4a73, Linux-node-18.x-
-build-and-test (18.x, windows-latest)	Install & Build & Test	﻿2025-09-10T11:58:12.3158090Z ##[group]Run cd dashboard/frontend
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:12.3158457Z [36;1mcd dashboard/frontend[0m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:12.3158707Z [36;1mnpm ci --prefer-offline[0m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:12.3158966Z [36;1mnpm run build --if-present[0m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:12.3159223Z [36;1mnpm test --if-present[0m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:12.3297282Z shell: /usr/bin/bash -e {0}
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:12.3297575Z ##[endgroup]
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:18.6347572Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:18.9428680Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5431021Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5434267Z added 355 packages, and audited 356 packages in 9s
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5439449Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5439883Z 98 packages are looking for funding
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5440427Z   run `npm fund` for details
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5545785Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5547357Z 3 moderate severity vulnerabilities
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5548533Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5550593Z To address all issues (including breaking changes), run:
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5551589Z   npm audit fix --force
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5554214Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.5554564Z Run `npm audit` for details.
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.7146697Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.7148269Z > dashboard-frontend@0.1.0 build
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.7153942Z > vite build
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:21.7154167Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:22.1218662Z [36mvite v4.5.14 [32mbuilding for production...[36m[39m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:22.1503582Z transforming...
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.0261618Z [32m✓[39m 86 modules transformed.
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.2044530Z rendering chunks...
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.2099729Z computing gzip size...
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.2202812Z [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.39 kB[22m[1m[22m[2m │ gzip:  0.26 kB[22m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.2205343Z [2mdist/[22m[2massets/[22m[35mindex-d7e3efe0.css  [39m[1m[2m  8.69 kB[22m[1m[22m[2m │ gzip:  2.24 kB[22m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.2207141Z [2mdist/[22m[2massets/[22m[36mindex-fae3c9fc.js   [39m[1m[2m183.57 kB[22m[1m[22m[2m │ gzip: 61.46 kB[22m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.2209135Z [32m✓ built in 2.10s[39m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.3806903Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.3810471Z > dashboard-frontend@0.1.0 test
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.3811350Z > vitest
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.3812372Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.7638157Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.7640735Z [7m[1m[36m RUN [39m[22m[27m [36mv0.34.6[39m [90m/home/runner/work/N8N-Self/N8N-Self/dashboard/frontend[39m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:24.7642613Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1237868Z  [32m✓[39m src/components/TopBar.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 49[2mms[22m[39m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1348645Z [90mstderr[2m | unknown test[22m[39m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1349430Z Error: Error: connect ECONNREFUSED ::1:3000
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1350566Z     at Object.dispatchError (/home/runner/work/N8N-Self/N8N-Self/dashboard/frontend/node_modules/jsdom/lib/jsdom/living/xhr/xhr-utils.js:63:19)
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1352402Z     at Request.<anonymous> (/home/runner/work/N8N-Self/N8N-Self/dashboard/frontend/node_modules/jsdom/lib/jsdom/living/xhr/XMLHttpRequest-impl.js:655:18)
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1353609Z     at Request.emit (node:events:529:35)
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1354858Z     at ClientRequest.<anonymous> (/home/runner/work/N8N-Self/N8N-Self/dashboard/frontend/node_modules/jsdom/lib/jsdom/living/helpers/http-request.js:127:14)
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1356068Z     at ClientRequest.emit (node:events:517:28)
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1357063Z     at Socket.socketErrorListener (node:_http_client:501:9)
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1357699Z     at Socket.emit (node:events:517:28)
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1358268Z     at emitErrorNT (node:internal/streams/destroy:151:8)
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1358990Z     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1360182Z     at processTicksAndRejections (node:internal/process/task_queues:82:21) [90mundefined[39m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:26.1360817Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:27.0331952Z  [32m✓[39m src/components/ServicesTable.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 34[2mms[22m[39m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:27.0491069Z 
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:27.0493219Z [2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:27.0494373Z [2m      Tests [22m [1m[32m2 passed[39m[22m[90m (2)[39m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:27.0677611Z [2m   Start at [22m 11:58:24
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:27.0678906Z [2m   Duration [22m 2.28s[2m (transform 77ms, setup 140ms, collect 369ms, tests 83ms, environment 891ms, prepare 298ms)[22m
-build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T11:58:27.0679968Z 
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	﻿2025-09-10T11:58:27.0935242Z ##[group]Run cd dashboard/frontend
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:27.0935589Z [36;1mcd dashboard/frontend[0m
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:27.0935847Z [36;1mnpm ci --prefer-offline[0m
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:27.0936091Z [36;1mnpm run typecheck --if-present[0m
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:27.0937084Z [36;1mnpm test --if-present[0m
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:27.0967839Z shell: /usr/bin/bash -e {0}
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:27.0968077Z ##[endgroup]
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:29.3396767Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:29.4630312Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.6987316Z 
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.6994659Z added 355 packages, and audited 356 packages in 6s
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.6996539Z 
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.6997898Z 98 packages are looking for funding
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.6999502Z   run `npm fund` for details
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.7111387Z 
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.7112946Z 3 moderate severity vulnerabilities
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.7114528Z 
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.7116108Z To address all issues (including breaking changes), run:
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.7117766Z   npm audit fix --force
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.7118141Z 
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.7118356Z Run `npm audit` for details.
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.8666733Z 
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.8667405Z > dashboard-frontend@0.1.0 typecheck
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.8667962Z > tsc --noEmit
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.8668170Z 
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.2595597Z ##[error]src/components/ServicesTable.test.tsx(4,1): error TS2593: Cannot find name 'test'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.2638543Z ##[error]src/components/ServicesTable.test.tsx(7,3): error TS2304: Cannot find name 'expect'.
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.2642562Z ##[error]src/components/TopBar.test.tsx(5,1): error TS2593: Cannot find name 'test'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.2645671Z ##[error]src/components/TopBar.test.tsx(7,3): error TS2304: Cannot find name 'expect'.
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.2647878Z ##[error]src/components/TopBar.test.tsx(8,3): error TS2304: Cannot find name 'expect'.
-build-and-test (18.x, windows-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.3022385Z ##[error]Process completed with exit code 2.
-build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	﻿2025-09-10T11:58:35.3097833Z Post job cleanup.
-build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.4081418Z [command]/usr/bin/git version
-build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.4123233Z git version 2.51.0
-build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.4181505Z Temporarily overriding HOME='/home/runner/work/_temp/b34c50da-f096-45a1-802e-60823d2366cc' before making global git config changes
-build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.4185062Z Adding repository directory to the temporary git global config as a safe directory
-build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.4189068Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
-build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.4227410Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.4265332Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.4515223Z fatal: No url found for submodule path 'LightRAG' in .gitmodules
-build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.4558669Z ##[warning]The process '/usr/bin/git' failed with exit code 128
-build-and-test (18.x, windows-latest)	Complete job	﻿2025-09-10T11:58:35.4651630Z Cleaning up orphan processes
-build-and-test (18.x, ubuntu-latest)	Set up job	﻿2025-09-10T11:58:07.3527134Z Current runner version: '2.328.0'
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3566901Z ##[group]Runner Image Provisioner
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3568499Z Hosted Compute Agent
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3569678Z Version: 20250829.383
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3570727Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3571899Z Build Date: 2025-08-29T13:48:48Z
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3573150Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3574116Z ##[group]Operating System
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3575190Z Ubuntu
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3576174Z 24.04.3
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3577050Z LTS
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3577826Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3579304Z ##[group]Runner Image
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3580312Z Image: ubuntu-24.04
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3581262Z Version: 20250907.24.1
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3583204Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3585728Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3587888Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3590318Z ##[group]GITHUB_TOKEN Permissions
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3593330Z Contents: read
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3594330Z Metadata: read
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3595135Z Packages: read
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3596023Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3599136Z Secret source: Actions
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3600533Z Prepare workflow directory
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.3974688Z Prepare all required actions
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.4022166Z Getting action download info
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.7835306Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:07.9946535Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:08.1222354Z Download action repository 'actions/cache@v4' (SHA:0400d5f644dc74513175e3cd8d07132dd4860809)
-build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T11:58:08.3574963Z Complete job name: build-and-test (18.x, ubuntu-latest)
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	﻿2025-09-10T11:58:08.4193175Z ##[group]Run actions/checkout@v4
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4194121Z with:
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4194553Z   repository: sattva2020/N8N-Self
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4195291Z   token: ***
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4195670Z   ssh-strict: true
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4196061Z   ssh-user: git
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4196457Z   persist-credentials: true
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4196910Z   clean: true
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4197309Z   sparse-checkout-cone-mode: true
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4197794Z   fetch-depth: 1
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4198525Z   fetch-tags: false
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4198960Z   show-progress: true
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4199364Z   lfs: false
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4199739Z   submodules: false
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4200149Z   set-safe-directory: true
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.4200914Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5385388Z Syncing repository: sattva2020/N8N-Self
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5388354Z ##[group]Getting Git version info
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5389594Z Working directory is '/home/runner/work/N8N-Self/N8N-Self'
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5392235Z [command]/usr/bin/git version
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5456538Z git version 2.51.0
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5486715Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5504849Z Temporarily overriding HOME='/home/runner/work/_temp/552947d0-c2a5-4949-9947-7b152d6e353a' before making global git config changes
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5509223Z Adding repository directory to the temporary git global config as a safe directory
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5512803Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5550938Z Deleting the contents of '/home/runner/work/N8N-Self/N8N-Self'
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5555117Z ##[group]Initializing the repository
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5560315Z [command]/usr/bin/git init /home/runner/work/N8N-Self/N8N-Self
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5675589Z hint: Using 'master' as the name for the initial branch. This default branch name
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5679708Z hint: is subject to change. To configure the initial branch name to use in all
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5683141Z hint: of your new repositories, which will suppress this warning, call:
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5684713Z hint:
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5685601Z hint: 	git config --global init.defaultBranch <name>
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5686873Z hint:
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5687892Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5690010Z hint: 'development'. The just-created branch can be renamed via this command:
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5691319Z hint:
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5691993Z hint: 	git branch -m <name>
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5692742Z hint:
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5693715Z hint: Disable this message with "git config set advice.defaultBranchName false"
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5695322Z Initialized empty Git repository in /home/runner/work/N8N-Self/N8N-Self/.git/
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5698632Z [command]/usr/bin/git remote add origin https://github.com/sattva2020/N8N-Self
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5740386Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5743351Z ##[group]Disabling automatic garbage collection
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5744935Z [command]/usr/bin/git config --local gc.auto 0
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5778573Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5781222Z ##[group]Setting up auth
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5785608Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.5819440Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.6203356Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.6235138Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.6470041Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.6521152Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.6523760Z ##[group]Fetching the repository
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:08.6532254Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a3f4adf681816595325bad1b43e8db4127b471ca:refs/remotes/pull/3/merge
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.8131631Z From https://github.com/sattva2020/N8N-Self
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.8134793Z  * [new ref]         a3f4adf681816595325bad1b43e8db4127b471ca -> pull/3/merge
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.8145580Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.8147090Z ##[group]Determining the checkout info
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.8149068Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.8152123Z [command]/usr/bin/git sparse-checkout disable
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.8196346Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.8229677Z ##[group]Checking out the ref
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:09.8232831Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3/merge
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2334623Z Note: switching to 'refs/remotes/pull/3/merge'.
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2337753Z 
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2338877Z You are in 'detached HEAD' state. You can look around, make experimental
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2340771Z changes and commit them, and you can discard any commits you make in this
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2342542Z state without impacting any branches by switching back to a branch.
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2343537Z 
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2344263Z If you want to create a new branch to retain commits you create, you may
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2345944Z do so (now or later) by using -c with the switch command. Example:
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2346914Z 
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2347457Z   git switch -c <new-branch-name>
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2348564Z 
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2349127Z Or undo this operation with:
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2350025Z 
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2350590Z   git switch -
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2351291Z 
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2352262Z Turn off this advice by setting config variable advice.detachedHead to false
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2353452Z 
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2354789Z HEAD is now at a3f4adf Merge 351aea8c16b759a4901f87abc214a3a2f7483d0e into 032e0c286f1161b571d7313b759da5e74c4c9fb4
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2365039Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2407200Z [command]/usr/bin/git log -1 --format=%H
-build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T11:58:10.2432714Z a3f4adf681816595325bad1b43e8db4127b471ca
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	﻿2025-09-10T11:58:10.2716380Z ##[group]Run actions/setup-node@v4
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:10.2717315Z with:
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:10.2718309Z   node-version: 18.x
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:10.2719156Z   always-auth: false
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:10.2719901Z   check-latest: false
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:10.2720825Z   token: ***
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:10.2721531Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:10.4909813Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:10.4912947Z ##[group]Environment details
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:12.6895571Z node: v18.20.8
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:12.6905185Z npm: 10.8.2
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:12.6905523Z yarn: 1.22.22
-build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T11:58:12.6906399Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Cache node modules	﻿2025-09-10T11:58:13.1763552Z ##[group]Run actions/cache@v4
-build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T11:58:13.1763846Z with:
-build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T11:58:13.1764045Z   path: **/node_modules
+build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T12:13:40.6867760Z   enableCrossOsArchive: false
+build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T12:13:40.6867997Z   fail-on-cache-miss: false
+build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T12:13:40.6868211Z   lookup-only: false
+build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T12:13:40.6868407Z   save-always: false
+build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T12:13:40.6868594Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Cache node modules	2025-09-10T12:13:40.9140300Z Cache not found for input keys: Linux-node-18.x-9c4515ee7adb94e86eaefcee7a417f196dc4582eff054bf1d1b2cc0e45105eb1, Linux-node-18.x-
+build-and-test (18.x, windows-latest)	Install & Build & Test	﻿2025-09-10T12:13:40.9222015Z ##[group]Run cd dashboard/frontend
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:40.9222381Z [36;1mcd dashboard/frontend[0m
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:40.9222956Z [36;1mnpm ci --prefer-offline[0m
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:40.9223373Z [36;1mnpm run build --if-present[0m
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:40.9223716Z [36;1mnpm test --if-present[0m
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:40.9364753Z shell: /usr/bin/bash -e {0}
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:40.9365065Z ##[endgroup]
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0226134Z npm error code EUSAGE
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0237643Z npm error
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0239804Z npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0241420Z npm error
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0242948Z npm error Missing: @commitlint/config-conventional@17.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0244129Z npm error Missing: commitlint@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0245414Z npm error Missing: conventional-changelog-conventionalcommits@6.1.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0246823Z npm error Missing: @commitlint/cli@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0247919Z npm error Missing: @commitlint/types@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0258990Z npm error Missing: @commitlint/format@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0259780Z npm error Missing: @commitlint/lint@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0260487Z npm error Missing: @commitlint/load@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0261201Z npm error Missing: @commitlint/read@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0261878Z npm error Missing: tinyexec@1.0.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0262694Z npm error Missing: yargs@17.7.2 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0263370Z npm error Missing: chalk@5.6.2 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0264140Z npm error Missing: @commitlint/is-ignored@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0264949Z npm error Missing: @commitlint/parse@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0265743Z npm error Missing: @commitlint/rules@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0266466Z npm error Missing: semver@7.7.2 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0267264Z npm error Missing: @commitlint/config-validator@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0268195Z npm error Missing: @commitlint/execute-rule@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0269114Z npm error Missing: @commitlint/resolve-extends@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0269899Z npm error Missing: chalk@5.6.2 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0270974Z npm error Missing: cosmiconfig@9.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0271894Z npm error Missing: cosmiconfig-typescript-loader@6.1.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0277276Z npm error Missing: lodash.isplainobject@4.0.6 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0277975Z npm error Missing: lodash.merge@4.6.2 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0278609Z npm error Missing: lodash.uniq@4.5.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0279265Z npm error Missing: ajv@8.17.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0279972Z npm error Missing: conventional-changelog-angular@7.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0280827Z npm error Missing: conventional-commits-parser@5.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0281570Z npm error Missing: @commitlint/top-level@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0282246Z npm error Missing: git-raw-commits@4.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0283152Z npm error Missing: global-directory@4.0.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0283855Z npm error Missing: import-meta-resolve@4.2.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0284509Z npm error Missing: lodash.mergewith@4.6.2 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0285159Z npm error Missing: resolve-from@5.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0285927Z npm error Missing: @commitlint/ensure@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0286740Z npm error Missing: @commitlint/message@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0287554Z npm error Missing: @commitlint/to-lines@19.8.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0288331Z npm error Missing: lodash.camelcase@4.3.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0289525Z npm error Missing: lodash.kebabcase@4.1.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0290312Z npm error Missing: lodash.snakecase@4.1.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0291083Z npm error Missing: lodash.startcase@4.4.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0291879Z npm error Missing: lodash.upperfirst@4.3.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0292932Z npm error Missing: find-up@7.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0293850Z npm error Missing: @types/conventional-commits-parser@5.0.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0294652Z npm error Missing: chalk@5.6.2 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0295308Z npm error Missing: fast-deep-equal@3.1.3 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0295973Z npm error Missing: fast-uri@3.1.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0296720Z npm error Missing: json-schema-traverse@1.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0297536Z npm error Missing: require-from-string@2.0.2 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0298310Z npm error Missing: compare-func@2.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0299014Z npm error Missing: array-ify@1.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0299733Z npm error Missing: dot-prop@5.3.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0300665Z npm error Missing: is-text-path@2.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0301413Z npm error Missing: JSONStream@1.3.5 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0302097Z npm error Missing: meow@12.1.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0303081Z npm error Missing: split2@4.2.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0303669Z npm error Missing: env-paths@2.2.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0304317Z npm error Missing: import-fresh@3.3.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0304933Z npm error Missing: js-yaml@4.1.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0305549Z npm error Missing: parse-json@5.2.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0306135Z npm error Missing: jiti@2.5.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0306781Z npm error Missing: is-obj@2.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0307413Z npm error Missing: locate-path@7.2.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0308053Z npm error Missing: path-exists@5.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0308695Z npm error Missing: unicorn-magic@0.1.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0309301Z npm error Missing: dargs@8.1.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0309857Z npm error Missing: ini@4.1.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0310458Z npm error Missing: parent-module@1.0.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0311108Z npm error Missing: resolve-from@4.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0311989Z npm error Missing: text-extensions@2.4.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0313658Z npm error Missing: argparse@2.0.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0314312Z npm error Missing: jsonparse@1.3.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0314942Z npm error Missing: through@2.3.8 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0315536Z npm error Missing: p-locate@6.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0316143Z npm error Missing: callsites@3.1.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0316743Z npm error Missing: error-ex@1.3.2 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0317517Z npm error Missing: json-parse-even-better-errors@2.3.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0318254Z npm error Missing: is-arrayish@0.2.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0318850Z npm error Missing: cliui@8.0.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0319488Z npm error Missing: get-caller-file@2.0.5 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0320227Z npm error Missing: require-directory@2.1.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0320897Z npm error Missing: string-width@4.2.3 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0321486Z npm error Missing: y18n@5.0.8 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0322104Z npm error Missing: yargs-parser@21.1.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0322943Z npm error Missing: string-width@4.2.3 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0323676Z npm error Missing: strip-ansi@6.0.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0324381Z npm error Missing: wrap-ansi@7.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0325090Z npm error Missing: emoji-regex@8.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0325768Z npm error Missing: emoji-regex@8.0.0 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0326767Z npm error Missing: strip-ansi@6.0.1 from lock file
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0327277Z npm error
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0327696Z npm error Clean install a project
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0328119Z npm error
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0328436Z npm error Usage:
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0328768Z npm error npm ci
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0329089Z npm error
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0329428Z npm error Options:
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0330209Z npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0331329Z npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0332616Z npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0333740Z npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0334623Z npm error [--no-bin-links] [--no-fund] [--dry-run]
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0335522Z npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0336510Z npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0337130Z npm error
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0337736Z npm error aliases: clean-install, ic, install-clean, isntall-clean
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0338386Z npm error
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0338820Z npm error Run "npm help ci" for more info
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0339879Z npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2025-09-10T12_13_41_012Z-debug-0.log
+build-and-test (18.x, windows-latest)	Install & Build & Test	2025-09-10T12:13:51.0460001Z ##[error]Process completed with exit code 1.
+build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	﻿2025-09-10T12:13:51.0542161Z Post job cleanup.
+build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:51.1516346Z [command]/usr/bin/git version
+build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:51.1557860Z git version 2.51.0
+build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:51.1619682Z Temporarily overriding HOME='/home/runner/work/_temp/78d94d9c-ba3a-4bb8-965d-2c6965ab660c' before making global git config changes
+build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:51.1622161Z Adding repository directory to the temporary git global config as a safe directory
+build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:51.1626556Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:51.1664151Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:51.1699233Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:51.1936718Z fatal: No url found for submodule path 'LightRAG' in .gitmodules
+build-and-test (18.x, windows-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:51.1982933Z ##[warning]The process '/usr/bin/git' failed with exit code 128
+build-and-test (18.x, windows-latest)	Complete job	﻿2025-09-10T12:13:51.2060997Z Cleaning up orphan processes
+commitlint	Set up job	﻿2025-09-10T12:13:32.9002845Z Current runner version: '2.328.0'
+commitlint	Set up job	2025-09-10T12:13:32.9037265Z ##[group]Runner Image Provisioner
+commitlint	Set up job	2025-09-10T12:13:32.9038617Z Hosted Compute Agent
+commitlint	Set up job	2025-09-10T12:13:32.9039518Z Version: 20250829.383
+commitlint	Set up job	2025-09-10T12:13:32.9040481Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+commitlint	Set up job	2025-09-10T12:13:32.9042077Z Build Date: 2025-08-29T13:48:48Z
+commitlint	Set up job	2025-09-10T12:13:32.9043066Z ##[endgroup]
+commitlint	Set up job	2025-09-10T12:13:32.9043990Z ##[group]Operating System
+commitlint	Set up job	2025-09-10T12:13:32.9045035Z Ubuntu
+commitlint	Set up job	2025-09-10T12:13:32.9045856Z 24.04.3
+commitlint	Set up job	2025-09-10T12:13:32.9046581Z LTS
+commitlint	Set up job	2025-09-10T12:13:32.9047625Z ##[endgroup]
+commitlint	Set up job	2025-09-10T12:13:32.9048400Z ##[group]Runner Image
+commitlint	Set up job	2025-09-10T12:13:32.9049344Z Image: ubuntu-24.04
+commitlint	Set up job	2025-09-10T12:13:32.9050300Z Version: 20250907.24.1
+commitlint	Set up job	2025-09-10T12:13:32.9052345Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
+commitlint	Set up job	2025-09-10T12:13:32.9054939Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
+commitlint	Set up job	2025-09-10T12:13:32.9057011Z ##[endgroup]
+commitlint	Set up job	2025-09-10T12:13:32.9059004Z ##[group]GITHUB_TOKEN Permissions
+commitlint	Set up job	2025-09-10T12:13:32.9061552Z Contents: read
+commitlint	Set up job	2025-09-10T12:13:32.9062620Z Metadata: read
+commitlint	Set up job	2025-09-10T12:13:32.9063509Z Packages: read
+commitlint	Set up job	2025-09-10T12:13:32.9064295Z ##[endgroup]
+commitlint	Set up job	2025-09-10T12:13:32.9067069Z Secret source: Actions
+commitlint	Set up job	2025-09-10T12:13:32.9068101Z Prepare workflow directory
+commitlint	Set up job	2025-09-10T12:13:32.9715306Z Prepare all required actions
+commitlint	Set up job	2025-09-10T12:13:32.9772488Z Getting action download info
+commitlint	Set up job	2025-09-10T12:13:33.5084379Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+commitlint	Set up job	2025-09-10T12:13:33.7051481Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+commitlint	Set up job	2025-09-10T12:13:33.8789596Z Complete job name: commitlint
+commitlint	Run actions/checkout@v4	﻿2025-09-10T12:13:33.9428383Z ##[group]Run actions/checkout@v4
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9429212Z with:
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9429610Z   repository: sattva2020/N8N-Self
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9430444Z   token: ***
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9431051Z   ssh-strict: true
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9431445Z   ssh-user: git
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9432171Z   persist-credentials: true
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9432636Z   clean: true
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9433032Z   sparse-checkout-cone-mode: true
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9433496Z   fetch-depth: 1
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9433869Z   fetch-tags: false
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9434250Z   show-progress: true
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9434645Z   lfs: false
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9434991Z   submodules: false
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9435381Z   set-safe-directory: true
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:33.9436113Z ##[endgroup]
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0563969Z Syncing repository: sattva2020/N8N-Self
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0566354Z ##[group]Getting Git version info
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0567504Z Working directory is '/home/runner/work/N8N-Self/N8N-Self'
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0569513Z [command]/usr/bin/git version
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0685207Z git version 2.51.0
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0716847Z ##[endgroup]
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0728293Z Temporarily overriding HOME='/home/runner/work/_temp/502953a4-97b3-4ebe-8f03-e9525dc912a6' before making global git config changes
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0731649Z Adding repository directory to the temporary git global config as a safe directory
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0739200Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0777574Z Deleting the contents of '/home/runner/work/N8N-Self/N8N-Self'
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0782091Z ##[group]Initializing the repository
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0787101Z [command]/usr/bin/git init /home/runner/work/N8N-Self/N8N-Self
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0903001Z hint: Using 'master' as the name for the initial branch. This default branch name
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0906453Z hint: is subject to change. To configure the initial branch name to use in all
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0908289Z hint: of your new repositories, which will suppress this warning, call:
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0909530Z hint:
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0910326Z hint: 	git config --global init.defaultBranch <name>
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0911290Z hint:
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0912847Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0914470Z hint: 'development'. The just-created branch can be renamed via this command:
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0915755Z hint:
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0916428Z hint: 	git branch -m <name>
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0917207Z hint:
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0918223Z hint: Disable this message with "git config set advice.defaultBranchName false"
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0919781Z Initialized empty Git repository in /home/runner/work/N8N-Self/N8N-Self/.git/
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0953432Z [command]/usr/bin/git remote add origin https://github.com/sattva2020/N8N-Self
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0967453Z ##[endgroup]
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0970441Z ##[group]Disabling automatic garbage collection
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.0971533Z [command]/usr/bin/git config --local gc.auto 0
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.1004919Z ##[endgroup]
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.1006646Z ##[group]Setting up auth
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.1009611Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.1043494Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.1372332Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.1404507Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.1631279Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.1681215Z ##[endgroup]
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.1684914Z ##[group]Fetching the repository
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:34.1692479Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5139dae041375db64c7fb63f4210dfc0e2406df8:refs/remotes/pull/3/merge
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:36.7995674Z From https://github.com/sattva2020/N8N-Self
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:36.7999999Z  * [new ref]         5139dae041375db64c7fb63f4210dfc0e2406df8 -> pull/3/merge
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:36.8037257Z ##[endgroup]
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:36.8039481Z ##[group]Determining the checkout info
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:36.8040355Z ##[endgroup]
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:36.8046404Z [command]/usr/bin/git sparse-checkout disable
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:36.8089559Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:36.8121512Z ##[group]Checking out the ref
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:36.8126357Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3/merge
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8088986Z Note: switching to 'refs/remotes/pull/3/merge'.
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8095635Z 
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8096461Z You are in 'detached HEAD' state. You can look around, make experimental
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8097533Z changes and commit them, and you can discard any commits you make in this
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8098543Z state without impacting any branches by switching back to a branch.
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8099190Z 
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8099679Z If you want to create a new branch to retain commits you create, you may
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8100565Z do so (now or later) by using -c with the switch command. Example:
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8101107Z 
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8101408Z   git switch -c <new-branch-name>
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8102141Z 
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8102489Z Or undo this operation with:
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8103822Z 
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8104022Z   git switch -
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8104273Z 
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8104711Z Turn off this advice by setting config variable advice.detachedHead to false
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8105240Z 
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8105834Z HEAD is now at 5139dae Merge 1111d982e48811dc9e3514eea3dff61dba8c7602 into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8127363Z ##[endgroup]
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8170352Z [command]/usr/bin/git log -1 --format=%H
+commitlint	Run actions/checkout@v4	2025-09-10T12:13:37.8194865Z 5139dae041375db64c7fb63f4210dfc0e2406df8
+commitlint	Setup Node	﻿2025-09-10T12:13:37.8437630Z ##[group]Run actions/setup-node@v4
+commitlint	Setup Node	2025-09-10T12:13:37.8437971Z with:
+commitlint	Setup Node	2025-09-10T12:13:37.8438186Z   node-version: 18.x
+commitlint	Setup Node	2025-09-10T12:13:37.8438425Z   always-auth: false
+commitlint	Setup Node	2025-09-10T12:13:37.8438650Z   check-latest: false
+commitlint	Setup Node	2025-09-10T12:13:37.8439021Z   token: ***
+commitlint	Setup Node	2025-09-10T12:13:37.8439241Z ##[endgroup]
+commitlint	Setup Node	2025-09-10T12:13:38.0230390Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
+commitlint	Setup Node	2025-09-10T12:13:38.0231641Z ##[group]Environment details
+commitlint	Setup Node	2025-09-10T12:13:38.5151093Z node: v18.20.8
+commitlint	Setup Node	2025-09-10T12:13:38.5155440Z npm: 10.8.2
+commitlint	Setup Node	2025-09-10T12:13:38.5156317Z yarn: 1.22.22
+commitlint	Setup Node	2025-09-10T12:13:38.5157953Z ##[endgroup]
+commitlint	Install commitlint	﻿2025-09-10T12:13:38.5269171Z ##[group]Run cd dashboard/frontend
+commitlint	Install commitlint	2025-09-10T12:13:38.5269563Z [36;1mcd dashboard/frontend[0m
+commitlint	Install commitlint	2025-09-10T12:13:38.5269825Z [36;1mnpm ci --prefer-offline[0m
+commitlint	Install commitlint	2025-09-10T12:13:38.5334419Z shell: /usr/bin/bash -e {0}
+commitlint	Install commitlint	2025-09-10T12:13:38.5334698Z ##[endgroup]
+commitlint	Install commitlint	2025-09-10T12:13:43.7990569Z npm error code EUSAGE
+commitlint	Install commitlint	2025-09-10T12:13:43.7998322Z npm error
+commitlint	Install commitlint	2025-09-10T12:13:43.8000047Z npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+commitlint	Install commitlint	2025-09-10T12:13:43.8002413Z npm error
+commitlint	Install commitlint	2025-09-10T12:13:43.8003193Z npm error Missing: @commitlint/config-conventional@17.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8005031Z npm error Missing: commitlint@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8007805Z npm error Missing: conventional-changelog-conventionalcommits@6.1.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8008691Z npm error Missing: @commitlint/cli@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8009364Z npm error Missing: @commitlint/types@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8010139Z npm error Missing: @commitlint/format@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8010788Z npm error Missing: @commitlint/lint@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8011471Z npm error Missing: @commitlint/load@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8012423Z npm error Missing: @commitlint/read@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8013031Z npm error Missing: tinyexec@1.0.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8013572Z npm error Missing: yargs@17.7.2 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8014144Z npm error Missing: chalk@5.6.2 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8014828Z npm error Missing: @commitlint/is-ignored@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8015504Z npm error Missing: @commitlint/parse@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8016159Z npm error Missing: @commitlint/rules@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8016791Z npm error Missing: semver@7.7.2 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8017307Z npm error Missing: @commitlint/config-validator@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8017859Z npm error Missing: @commitlint/execute-rule@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8018371Z npm error Missing: @commitlint/resolve-extends@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8018775Z npm error Missing: chalk@5.6.2 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8019143Z npm error Missing: cosmiconfig@9.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8019607Z npm error Missing: cosmiconfig-typescript-loader@6.1.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8020125Z npm error Missing: lodash.isplainobject@4.0.6 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8020547Z npm error Missing: lodash.merge@4.6.2 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8020919Z npm error Missing: lodash.uniq@4.5.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8021290Z npm error Missing: ajv@8.17.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8021974Z npm error Missing: conventional-changelog-angular@7.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8022850Z npm error Missing: conventional-commits-parser@5.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8023707Z npm error Missing: @commitlint/top-level@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8024455Z npm error Missing: git-raw-commits@4.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8025178Z npm error Missing: global-directory@4.0.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8026291Z npm error Missing: import-meta-resolve@4.2.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8027021Z npm error Missing: lodash.mergewith@4.6.2 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8027697Z npm error Missing: resolve-from@5.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8028401Z npm error Missing: @commitlint/ensure@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8029138Z npm error Missing: @commitlint/message@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8029891Z npm error Missing: @commitlint/to-lines@19.8.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8030606Z npm error Missing: lodash.camelcase@4.3.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8031295Z npm error Missing: lodash.kebabcase@4.1.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8032279Z npm error Missing: lodash.snakecase@4.1.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8033273Z npm error Missing: lodash.startcase@4.4.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8033994Z npm error Missing: lodash.upperfirst@4.3.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8034656Z npm error Missing: find-up@7.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8035472Z npm error Missing: @types/conventional-commits-parser@5.0.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8036214Z npm error Missing: chalk@5.6.2 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8036870Z npm error Missing: fast-deep-equal@3.1.3 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8037530Z npm error Missing: fast-uri@3.1.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8038236Z npm error Missing: json-schema-traverse@1.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8038972Z npm error Missing: require-from-string@2.0.2 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8039663Z npm error Missing: compare-func@2.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8040332Z npm error Missing: array-ify@1.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8040982Z npm error Missing: dot-prop@5.3.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8041597Z npm error Missing: is-text-path@2.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8042604Z npm error Missing: JSONStream@1.3.5 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8043192Z npm error Missing: meow@12.1.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8043786Z npm error Missing: split2@4.2.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8044411Z npm error Missing: env-paths@2.2.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8045031Z npm error Missing: import-fresh@3.3.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8045634Z npm error Missing: js-yaml@4.1.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8046223Z npm error Missing: parse-json@5.2.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8046802Z npm error Missing: jiti@2.5.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8047351Z npm error Missing: is-obj@2.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8047931Z npm error Missing: locate-path@7.2.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8048541Z npm error Missing: path-exists@5.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8049180Z npm error Missing: unicorn-magic@0.1.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8049774Z npm error Missing: dargs@8.1.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8050316Z npm error Missing: ini@4.1.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8050926Z npm error Missing: parent-module@1.0.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8051574Z npm error Missing: resolve-from@4.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8052598Z npm error Missing: text-extensions@2.4.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8053269Z npm error Missing: argparse@2.0.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8142464Z npm error Missing: jsonparse@1.3.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8143318Z npm error Missing: through@2.3.8 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8143997Z npm error Missing: p-locate@6.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8144653Z npm error Missing: callsites@3.1.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8145324Z npm error Missing: error-ex@1.3.2 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8146118Z npm error Missing: json-parse-even-better-errors@2.3.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8146887Z npm error Missing: is-arrayish@0.2.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8147525Z npm error Missing: cliui@8.0.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8148189Z npm error Missing: get-caller-file@2.0.5 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8148915Z npm error Missing: require-directory@2.1.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8149844Z npm error Missing: string-width@4.2.3 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8150462Z npm error Missing: y18n@5.0.8 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8151106Z npm error Missing: yargs-parser@21.1.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8151932Z npm error Missing: string-width@4.2.3 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8152592Z npm error Missing: strip-ansi@6.0.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8153246Z npm error Missing: wrap-ansi@7.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8153894Z npm error Missing: emoji-regex@8.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8154541Z npm error Missing: emoji-regex@8.0.0 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8155188Z npm error Missing: strip-ansi@6.0.1 from lock file
+commitlint	Install commitlint	2025-09-10T12:13:43.8155849Z npm error
+commitlint	Install commitlint	2025-09-10T12:13:43.8156263Z npm error Clean install a project
+commitlint	Install commitlint	2025-09-10T12:13:43.8156667Z npm error
+commitlint	Install commitlint	2025-09-10T12:13:43.8156958Z npm error Usage:
+commitlint	Install commitlint	2025-09-10T12:13:43.8157297Z npm error npm ci
+commitlint	Install commitlint	2025-09-10T12:13:43.8157603Z npm error
+commitlint	Install commitlint	2025-09-10T12:13:43.8157896Z npm error Options:
+commitlint	Install commitlint	2025-09-10T12:13:43.8158633Z npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+commitlint	Install commitlint	2025-09-10T12:13:43.8159687Z npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+commitlint	Install commitlint	2025-09-10T12:13:43.8163931Z npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+commitlint	Install commitlint	2025-09-10T12:13:43.8166464Z npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+commitlint	Install commitlint	2025-09-10T12:13:43.8166986Z npm error [--no-bin-links] [--no-fund] [--dry-run]
+commitlint	Install commitlint	2025-09-10T12:13:43.8167511Z npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+commitlint	Install commitlint	2025-09-10T12:13:43.8168091Z npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+commitlint	Install commitlint	2025-09-10T12:13:43.8168454Z npm error
+commitlint	Install commitlint	2025-09-10T12:13:43.8168833Z npm error aliases: clean-install, ic, install-clean, isntall-clean
+commitlint	Install commitlint	2025-09-10T12:13:43.8169170Z npm error
+commitlint	Install commitlint	2025-09-10T12:13:43.8169426Z npm error Run "npm help ci" for more info
+commitlint	Install commitlint	2025-09-10T12:13:43.8170135Z npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2025-09-10T12_13_38_609Z-debug-0.log
+commitlint	Install commitlint	2025-09-10T12:13:43.8183075Z ##[error]Process completed with exit code 1.
+commitlint	Post Run actions/checkout@v4	﻿2025-09-10T12:13:43.8292740Z Post job cleanup.
+commitlint	Post Run actions/checkout@v4	2025-09-10T12:13:43.9232194Z [command]/usr/bin/git version
+commitlint	Post Run actions/checkout@v4	2025-09-10T12:13:43.9272309Z git version 2.51.0
+commitlint	Post Run actions/checkout@v4	2025-09-10T12:13:43.9326836Z Temporarily overriding HOME='/home/runner/work/_temp/148856db-aeb0-497a-84e4-1939a8017a1f' before making global git config changes
+commitlint	Post Run actions/checkout@v4	2025-09-10T12:13:43.9329858Z Adding repository directory to the temporary git global config as a safe directory
+commitlint	Post Run actions/checkout@v4	2025-09-10T12:13:43.9333462Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+commitlint	Post Run actions/checkout@v4	2025-09-10T12:13:43.9369288Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+commitlint	Post Run actions/checkout@v4	2025-09-10T12:13:43.9403703Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+commitlint	Post Run actions/checkout@v4	2025-09-10T12:13:43.9644927Z fatal: No url found for submodule path 'LightRAG' in .gitmodules
+commitlint	Post Run actions/checkout@v4	2025-09-10T12:13:43.9688529Z ##[warning]The process '/usr/bin/git' failed with exit code 128
+commitlint	Complete job	﻿2025-09-10T12:13:43.9771329Z Cleaning up orphan processes
+build-and-test (18.x, ubuntu-latest)	Set up job	﻿2025-09-10T12:13:32.8415732Z Current runner version: '2.328.0'
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8451319Z ##[group]Runner Image Provisioner
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8452697Z Hosted Compute Agent
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8454038Z Version: 20250829.383
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8455117Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8456396Z Build Date: 2025-08-29T13:48:48Z
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8457467Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8458427Z ##[group]Operating System
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8459326Z Ubuntu
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8460480Z 24.04.3
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8461281Z LTS
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8461951Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8462890Z ##[group]Runner Image
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8464050Z Image: ubuntu-24.04
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8464863Z Version: 20250907.24.1
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8466771Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8469350Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8471452Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8473677Z ##[group]GITHUB_TOKEN Permissions
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8476381Z Contents: read
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8477260Z Metadata: read
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8478093Z Packages: read
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8478927Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8482043Z Secret source: Actions
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.8483440Z Prepare workflow directory
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.9137950Z Prepare all required actions
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:32.9196600Z Getting action download info
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:33.6063541Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:33.9077022Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:34.3138578Z Download action repository 'actions/cache@v4' (SHA:0400d5f644dc74513175e3cd8d07132dd4860809)
+build-and-test (18.x, ubuntu-latest)	Set up job	2025-09-10T12:13:35.6913594Z Complete job name: build-and-test (18.x, ubuntu-latest)
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	﻿2025-09-10T12:13:35.7472557Z ##[group]Run actions/checkout@v4
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7473397Z with:
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7473661Z   repository: sattva2020/N8N-Self
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7474135Z   token: ***
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7474366Z   ssh-strict: true
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7474593Z   ssh-user: git
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7474821Z   persist-credentials: true
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7475083Z   clean: true
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7475320Z   sparse-checkout-cone-mode: true
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7475615Z   fetch-depth: 1
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7475832Z   fetch-tags: false
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7476077Z   show-progress: true
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7476292Z   lfs: false
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7476504Z   submodules: false
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7476729Z   set-safe-directory: true
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.7477188Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8777852Z Syncing repository: sattva2020/N8N-Self
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8780028Z ##[group]Getting Git version info
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8780747Z Working directory is '/home/runner/work/N8N-Self/N8N-Self'
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8790139Z [command]/usr/bin/git version
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8792356Z git version 2.51.0
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8795917Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8801574Z Temporarily overriding HOME='/home/runner/work/_temp/1c071e80-894e-42b0-9ecc-d36dd3488e62' before making global git config changes
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8802904Z Adding repository directory to the temporary git global config as a safe directory
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8805737Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8842550Z Deleting the contents of '/home/runner/work/N8N-Self/N8N-Self'
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8847540Z ##[group]Initializing the repository
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8852499Z [command]/usr/bin/git init /home/runner/work/N8N-Self/N8N-Self
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8958390Z hint: Using 'master' as the name for the initial branch. This default branch name
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8961950Z hint: is subject to change. To configure the initial branch name to use in all
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8965483Z hint: of your new repositories, which will suppress this warning, call:
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8966604Z hint:
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8967161Z hint: 	git config --global init.defaultBranch <name>
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8967787Z hint:
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8968375Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8969309Z hint: 'development'. The just-created branch can be renamed via this command:
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8970046Z hint:
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8970465Z hint: 	git branch -m <name>
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8970924Z hint:
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8971549Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8974205Z Initialized empty Git repository in /home/runner/work/N8N-Self/N8N-Self/.git/
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.8979882Z [command]/usr/bin/git remote add origin https://github.com/sattva2020/N8N-Self
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.9041480Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.9044351Z ##[group]Disabling automatic garbage collection
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.9046718Z [command]/usr/bin/git config --local gc.auto 0
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.9079914Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.9082011Z ##[group]Setting up auth
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.9087621Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.9121321Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:35.9601207Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.0434947Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.0436422Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.0437461Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.0438185Z ##[group]Fetching the repository
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:36.0438920Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5139dae041375db64c7fb63f4210dfc0e2406df8:refs/remotes/pull/3/merge
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:38.5294987Z From https://github.com/sattva2020/N8N-Self
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:38.5314398Z  * [new ref]         5139dae041375db64c7fb63f4210dfc0e2406df8 -> pull/3/merge
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:38.5337143Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:38.5338072Z ##[group]Determining the checkout info
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:38.5338919Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:38.5345609Z [command]/usr/bin/git sparse-checkout disable
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:38.5402795Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:38.5435085Z ##[group]Checking out the ref
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:38.5438672Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/3/merge
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5321559Z Note: switching to 'refs/remotes/pull/3/merge'.
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5328033Z 
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5328775Z You are in 'detached HEAD' state. You can look around, make experimental
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5335284Z changes and commit them, and you can discard any commits you make in this
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5336121Z state without impacting any branches by switching back to a branch.
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5336557Z 
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5336884Z If you want to create a new branch to retain commits you create, you may
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5337550Z do so (now or later) by using -c with the switch command. Example:
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5337945Z 
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5338102Z   git switch -c <new-branch-name>
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5338373Z 
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5338525Z Or undo this operation with:
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5338781Z 
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5338905Z   git switch -
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5339105Z 
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5339436Z Turn off this advice by setting config variable advice.detachedHead to false
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5339907Z 
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5340442Z HEAD is now at 5139dae Merge 1111d982e48811dc9e3514eea3dff61dba8c7602 into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5376465Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5430792Z [command]/usr/bin/git log -1 --format=%H
+build-and-test (18.x, ubuntu-latest)	Run actions/checkout@v4	2025-09-10T12:13:39.5467819Z 5139dae041375db64c7fb63f4210dfc0e2406df8
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	﻿2025-09-10T12:13:39.5698920Z ##[group]Run actions/setup-node@v4
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:39.5699197Z with:
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:39.5699378Z   node-version: 18.x
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:39.5699572Z   always-auth: false
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:39.5699757Z   check-latest: false
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:39.5700059Z   token: ***
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:39.5700240Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:39.7506822Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:39.7509759Z ##[group]Environment details
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:42.5647894Z node: v18.20.8
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:42.5649163Z npm: 10.8.2
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:42.5649890Z yarn: 1.22.22
+build-and-test (18.x, ubuntu-latest)	Use Node.js 18.x	2025-09-10T12:13:42.5674199Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Cache node modules	﻿2025-09-10T12:13:43.5586818Z ##[group]Run actions/cache@v4
+build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T12:13:43.5587200Z with:
+build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T12:13:43.5587506Z   path: **/node_modules
 build-and-test (18.x, ubuntu-latest)	Cache node modules	~/.npm
 build-and-test (18.x, ubuntu-latest)	Cache node modules	
-build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T11:58:13.1764473Z   key: Linux-node-18.x-7f7cd62d60be09abac6ab73e6e5b84b5d4d321dbe6490448c1a7ce122acd4a73
-build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T11:58:13.1764891Z   restore-keys: Linux-node-18.x-
+build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T12:13:43.5588201Z   key: Linux-node-18.x-9c4515ee7adb94e86eaefcee7a417f196dc4582eff054bf1d1b2cc0e45105eb1
+build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T12:13:43.5588947Z   restore-keys: Linux-node-18.x-
 build-and-test (18.x, ubuntu-latest)	Cache node modules	
-build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T11:58:13.1765141Z   enableCrossOsArchive: false
-build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T11:58:13.1833443Z   fail-on-cache-miss: false
-build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T11:58:13.1833896Z   lookup-only: false
-build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T11:58:13.1834259Z   save-always: false
-build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T11:58:13.1834615Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T11:58:13.4863286Z Cache not found for input keys: Linux-node-18.x-7f7cd62d60be09abac6ab73e6e5b84b5d4d321dbe6490448c1a7ce122acd4a73, Linux-node-18.x-
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	﻿2025-09-10T11:58:13.4992208Z ##[group]Run cd dashboard/frontend
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:13.4992613Z [36;1mcd dashboard/frontend[0m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:13.4992862Z [36;1mnpm ci --prefer-offline[0m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:13.4993147Z [36;1mnpm run build --if-present[0m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:13.4993404Z [36;1mnpm test --if-present[0m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:13.5111223Z shell: /usr/bin/bash -e {0}
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:13.5111519Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:19.8954585Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:20.1052829Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6480997Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6499180Z added 355 packages, and audited 356 packages in 9s
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6500124Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6500609Z 98 packages are looking for funding
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6501284Z   run `npm fund` for details
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6619950Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6643833Z 3 moderate severity vulnerabilities
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6647301Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6649138Z To address all issues (including breaking changes), run:
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6653022Z   npm audit fix --force
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6654280Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.6657679Z Run `npm audit` for details.
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.8258219Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.8260940Z > dashboard-frontend@0.1.0 build
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.8261561Z > vite build
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:22.8261771Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:23.2449947Z [36mvite v4.5.14 [32mbuilding for production...[36m[39m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:23.2750289Z transforming...
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.2199156Z [32m✓[39m 86 modules transformed.
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.3410025Z rendering chunks...
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.3465978Z computing gzip size...
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.3576525Z [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.39 kB[22m[1m[22m[2m │ gzip:  0.26 kB[22m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.3580433Z [2mdist/[22m[2massets/[22m[35mindex-d7e3efe0.css  [39m[1m[2m  8.69 kB[22m[1m[22m[2m │ gzip:  2.24 kB[22m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.3582829Z [2mdist/[22m[2massets/[22m[36mindex-fae3c9fc.js   [39m[1m[2m183.57 kB[22m[1m[22m[2m │ gzip: 61.46 kB[22m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.3585167Z [32m✓ built in 2.11s[39m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.5296682Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.5328682Z > dashboard-frontend@0.1.0 test
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.5329972Z > vitest
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.5330559Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.9253766Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.9256922Z [7m[1m[36m RUN [39m[22m[27m [36mv0.34.6[39m [90m/home/runner/work/N8N-Self/N8N-Self/dashboard/frontend[39m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:25.9258299Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2426099Z  [32m✓[39m src/components/TopBar.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 49[2mms[22m[39m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2537426Z [90mstderr[2m | unknown test[22m[39m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2538463Z Error: Error: connect ECONNREFUSED ::1:3000
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2539629Z     at Object.dispatchError (/home/runner/work/N8N-Self/N8N-Self/dashboard/frontend/node_modules/jsdom/lib/jsdom/living/xhr/xhr-utils.js:63:19)
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2541433Z     at Request.<anonymous> (/home/runner/work/N8N-Self/N8N-Self/dashboard/frontend/node_modules/jsdom/lib/jsdom/living/xhr/XMLHttpRequest-impl.js:655:18)
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2542621Z     at Request.emit (node:events:529:35)
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2543909Z     at ClientRequest.<anonymous> (/home/runner/work/N8N-Self/N8N-Self/dashboard/frontend/node_modules/jsdom/lib/jsdom/living/helpers/http-request.js:127:14)
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2545062Z     at ClientRequest.emit (node:events:517:28)
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2545737Z     at Socket.socketErrorListener (node:_http_client:501:9)
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2546294Z     at Socket.emit (node:events:517:28)
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2546851Z     at emitErrorNT (node:internal/streams/destroy:151:8)
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2547491Z     at emitErrorCloseNT (node:internal/streams/destroy:116:3)
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2548778Z     at processTicksAndRejections (node:internal/process/task_queues:82:21) [90mundefined[39m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:27.2549387Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:28.1450297Z  [32m✓[39m src/components/ServicesTable.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 37[2mms[22m[39m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:28.1614898Z 
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:28.1631042Z [2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:28.1631954Z [2m      Tests [22m [1m[32m2 passed[39m[22m[90m (2)[39m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:28.1815366Z [2m   Start at [22m 11:58:25
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:28.1819213Z [2m   Duration [22m 2.24s[2m (transform 59ms, setup 141ms, collect 355ms, tests 86ms, environment 894ms, prepare 323ms)[22m
-build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T11:58:28.1822049Z 
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	﻿2025-09-10T11:58:28.2110171Z ##[group]Run cd dashboard/frontend
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:28.2110513Z [36;1mcd dashboard/frontend[0m
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:28.2110765Z [36;1mnpm ci --prefer-offline[0m
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:28.2111021Z [36;1mnpm run typecheck --if-present[0m
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:28.2111281Z [36;1mnpm test --if-present[0m
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:28.2141901Z shell: /usr/bin/bash -e {0}
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:28.2142149Z ##[endgroup]
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:30.5400097Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:30.6632247Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2497228Z 
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2500172Z added 355 packages, and audited 356 packages in 4s
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2503912Z 
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2504225Z 98 packages are looking for funding
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2504707Z   run `npm fund` for details
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2602644Z 
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2603654Z 3 moderate severity vulnerabilities
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2604296Z 
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2604993Z To address all issues (including breaking changes), run:
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2615037Z   npm audit fix --force
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2621607Z 
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.2624075Z Run `npm audit` for details.
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.4187604Z 
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.4189523Z > dashboard-frontend@0.1.0 typecheck
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.4190810Z > tsc --noEmit
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:32.4191692Z 
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.6344510Z ##[error]src/components/ServicesTable.test.tsx(4,1): error TS2593: Cannot find name 'test'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.6355392Z ##[error]src/components/ServicesTable.test.tsx(7,3): error TS2304: Cannot find name 'expect'.
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.6380757Z ##[error]src/components/TopBar.test.tsx(5,1): error TS2593: Cannot find name 'test'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.6384112Z ##[error]src/components/TopBar.test.tsx(7,3): error TS2304: Cannot find name 'expect'.
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.6385983Z ##[error]src/components/TopBar.test.tsx(8,3): error TS2304: Cannot find name 'expect'.
-build-and-test (18.x, ubuntu-latest)	CI pre-push mirror (typecheck + tests)	2025-09-10T11:58:35.6851895Z ##[error]Process completed with exit code 2.
-build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	﻿2025-09-10T11:58:35.6962848Z Post job cleanup.
-build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.8308847Z [command]/usr/bin/git version
-build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.8358318Z git version 2.51.0
-build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.8412149Z Temporarily overriding HOME='/home/runner/work/_temp/56e2119b-d908-4426-bf88-4725ab1d7a1f' before making global git config changes
-build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.8419808Z Adding repository directory to the temporary git global config as a safe directory
-build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.8439793Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
-build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.8492882Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.8543914Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.9146397Z fatal: No url found for submodule path 'LightRAG' in .gitmodules
-build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T11:58:35.9279249Z ##[warning]The process '/usr/bin/git' failed with exit code 128
-build-and-test (18.x, ubuntu-latest)	Complete job	﻿2025-09-10T11:58:35.9389946Z Cleaning up orphan processes
+build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T12:13:43.5589371Z   enableCrossOsArchive: false
+build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T12:13:43.5589767Z   fail-on-cache-miss: false
+build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T12:13:43.5590140Z   lookup-only: false
+build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T12:13:43.5590457Z   save-always: false
+build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T12:13:43.5590780Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Cache node modules	2025-09-10T12:13:43.9679429Z Cache not found for input keys: Linux-node-18.x-9c4515ee7adb94e86eaefcee7a417f196dc4582eff054bf1d1b2cc0e45105eb1, Linux-node-18.x-
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	﻿2025-09-10T12:13:43.9757476Z ##[group]Run cd dashboard/frontend
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:43.9757842Z [36;1mcd dashboard/frontend[0m
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:43.9758092Z [36;1mnpm ci --prefer-offline[0m
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:43.9758347Z [36;1mnpm run build --if-present[0m
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:43.9758602Z [36;1mnpm test --if-present[0m
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:43.9908623Z shell: /usr/bin/bash -e {0}
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:43.9908912Z ##[endgroup]
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8312869Z npm error code EUSAGE
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8328264Z npm error
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8336232Z npm error `npm ci` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8342850Z npm error
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8343915Z npm error Missing: @commitlint/config-conventional@17.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8344779Z npm error Missing: commitlint@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8345756Z npm error Missing: conventional-changelog-conventionalcommits@6.1.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8346813Z npm error Missing: @commitlint/cli@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8347593Z npm error Missing: @commitlint/types@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8348355Z npm error Missing: @commitlint/format@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8349127Z npm error Missing: @commitlint/lint@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8349864Z npm error Missing: @commitlint/load@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8350648Z npm error Missing: @commitlint/read@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8351344Z npm error Missing: tinyexec@1.0.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8351995Z npm error Missing: yargs@17.7.2 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8352616Z npm error Missing: chalk@5.6.2 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8353565Z npm error Missing: @commitlint/is-ignored@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8354362Z npm error Missing: @commitlint/parse@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8355120Z npm error Missing: @commitlint/rules@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8355859Z npm error Missing: semver@7.7.2 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8356661Z npm error Missing: @commitlint/config-validator@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8357551Z npm error Missing: @commitlint/execute-rule@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8358429Z npm error Missing: @commitlint/resolve-extends@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8359162Z npm error Missing: chalk@5.6.2 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8360277Z npm error Missing: cosmiconfig@9.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8361454Z npm error Missing: cosmiconfig-typescript-loader@6.1.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8362322Z npm error Missing: lodash.isplainobject@4.0.6 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8363411Z npm error Missing: lodash.merge@4.6.2 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8364302Z npm error Missing: lodash.uniq@4.5.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8365118Z npm error Missing: ajv@8.17.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8366015Z npm error Missing: conventional-changelog-angular@7.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8367102Z npm error Missing: conventional-commits-parser@5.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8368064Z npm error Missing: @commitlint/top-level@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8368939Z npm error Missing: git-raw-commits@4.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8369785Z npm error Missing: global-directory@4.0.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8370674Z npm error Missing: import-meta-resolve@4.2.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8371449Z npm error Missing: lodash.mergewith@4.6.2 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8403753Z npm error Missing: resolve-from@5.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8404663Z npm error Missing: @commitlint/ensure@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8405572Z npm error Missing: @commitlint/message@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8406493Z npm error Missing: @commitlint/to-lines@19.8.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8407403Z npm error Missing: lodash.camelcase@4.3.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8408699Z npm error Missing: lodash.kebabcase@4.1.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8409581Z npm error Missing: lodash.snakecase@4.1.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8410444Z npm error Missing: lodash.startcase@4.4.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8411372Z npm error Missing: lodash.upperfirst@4.3.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8412131Z npm error Missing: find-up@7.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8413854Z npm error Missing: @types/conventional-commits-parser@5.0.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8414686Z npm error Missing: chalk@5.6.2 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8415392Z npm error Missing: fast-deep-equal@3.1.3 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8416052Z npm error Missing: fast-uri@3.1.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8416793Z npm error Missing: json-schema-traverse@1.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8417586Z npm error Missing: require-from-string@2.0.2 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8418327Z npm error Missing: compare-func@2.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8419035Z npm error Missing: array-ify@1.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8419693Z npm error Missing: dot-prop@5.3.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8420370Z npm error Missing: is-text-path@2.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8421051Z npm error Missing: JSONStream@1.3.5 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8422008Z npm error Missing: meow@12.1.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8422776Z npm error Missing: split2@4.2.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8424013Z npm error Missing: env-paths@2.2.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8424813Z npm error Missing: import-fresh@3.3.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8425593Z npm error Missing: js-yaml@4.1.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8426271Z npm error Missing: parse-json@5.2.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8434352Z npm error Missing: jiti@2.5.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8435240Z npm error Missing: is-obj@2.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8436073Z npm error Missing: locate-path@7.2.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8436888Z npm error Missing: path-exists@5.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8437674Z npm error Missing: unicorn-magic@0.1.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8438475Z npm error Missing: dargs@8.1.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8439047Z npm error Missing: ini@4.1.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8439683Z npm error Missing: parent-module@1.0.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8440347Z npm error Missing: resolve-from@4.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8441511Z npm error Missing: text-extensions@2.4.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8442341Z npm error Missing: argparse@2.0.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8443254Z npm error Missing: jsonparse@1.3.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8444005Z npm error Missing: through@2.3.8 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8444731Z npm error Missing: p-locate@6.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8445477Z npm error Missing: callsites@3.1.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8446219Z npm error Missing: error-ex@1.3.2 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8447155Z npm error Missing: json-parse-even-better-errors@2.3.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8448046Z npm error Missing: is-arrayish@0.2.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8448796Z npm error Missing: cliui@8.0.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8449585Z npm error Missing: get-caller-file@2.0.5 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8450416Z npm error Missing: require-directory@2.1.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8451224Z npm error Missing: string-width@4.2.3 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8451946Z npm error Missing: y18n@5.0.8 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8452685Z npm error Missing: yargs-parser@21.1.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8475787Z npm error Missing: string-width@4.2.3 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8476509Z npm error Missing: strip-ansi@6.0.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8477179Z npm error Missing: wrap-ansi@7.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8477826Z npm error Missing: emoji-regex@8.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8478494Z npm error Missing: emoji-regex@8.0.0 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8479513Z npm error Missing: strip-ansi@6.0.1 from lock file
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8480040Z npm error
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8480483Z npm error Clean install a project
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8480918Z npm error
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8481244Z npm error Usage:
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8481590Z npm error npm ci
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8481934Z npm error
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8482291Z npm error Options:
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8483372Z npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8484533Z npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8485687Z npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8486814Z npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8487711Z npm error [--no-bin-links] [--no-fund] [--dry-run]
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8488614Z npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8489637Z npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8490258Z npm error
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8490869Z npm error aliases: clean-install, ic, install-clean, isntall-clean
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8491441Z npm error
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8491875Z npm error Run "npm help ci" for more info
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8513207Z npm error A complete log of this run can be found in: /home/runner/.npm/_logs/2025-09-10T12_13_44_097Z-debug-0.log
+build-and-test (18.x, ubuntu-latest)	Install & Build & Test	2025-09-10T12:13:54.8734316Z ##[error]The operation was canceled.
+build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	﻿2025-09-10T12:13:54.8810752Z Post job cleanup.
+build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:54.9768392Z [command]/usr/bin/git version
+build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:54.9809195Z git version 2.51.0
+build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:54.9865373Z Temporarily overriding HOME='/home/runner/work/_temp/6aa3a8fc-8e55-4377-a9b7-b6b0e1b12a8d' before making global git config changes
+build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:54.9868822Z Adding repository directory to the temporary git global config as a safe directory
+build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:54.9872446Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:54.9910417Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:54.9947305Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:55.0188343Z fatal: No url found for submodule path 'LightRAG' in .gitmodules
+build-and-test (18.x, ubuntu-latest)	Post Run actions/checkout@v4	2025-09-10T12:13:55.0230654Z ##[warning]The process '/usr/bin/git' failed with exit code 128
+build-and-test (18.x, ubuntu-latest)	Complete job	﻿2025-09-10T12:13:55.0310202Z Cleaning up orphan processes
