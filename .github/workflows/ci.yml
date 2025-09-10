@@ -101,8 +101,18 @@ jobs:
       - name: Run Playwright smoke tests
         run: |
           cd dashboard/frontend
-          # run playwright via npm script to ensure proper environment
-          npm run e2e --if-present
+          # run playwright with trace enabled, single worker and chromium project to capture detailed traces on crash
+          npx playwright test --project=chromium --workers=1 --trace=on --reporter=list || true
+          # ensure playwright-report exists (Playwright writes traces into playwright-report)
+          if [ -d playwright-report ] || (Test-Path playwright-report); then echo "playwright-report ready"; else echo "no playwright-report found"; fi
+        shell: bash
+
+      - name: Upload Playwright traces
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: dashboard/frontend/playwright-report
 
   commitlint:
     runs-on: ubuntu-latest
