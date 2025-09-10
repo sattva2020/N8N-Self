@@ -146,7 +146,7 @@ jobs:
           cat detect_output.json | jq '.results | length' > detect_count.txt || true
 
       - name: Create issue when new secrets found
-        if: steps.detect.outputs == '' || always()
+        if: always()
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -156,13 +156,20 @@ jobs:
             const findings = Object.keys(out.results || {});
             if (findings.length === 0) {
               core.info('No new secrets detected');
-            } else {
-              const body = ['New potential secrets detected when running detect-secrets against the baseline:', '', ...findings.map(f => `- ${f}`)].join('\n');
-              await github.issues.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: `detect-secrets: new potential secrets found (${findings.length})`,
-                body,
-              });
-              core.setFailed('New potential secrets detected; see created issue for details');
+              return;
             }
+            // create a gist with the full output for triage
+            const gistResp = await github.rest.gists.create({
+              files: { 'detect_output.json': { content: JSON.stringify(out, null, 2) } },
+              public: false,
+              description: `detect-secrets output for ${context.repo.owner}/${context.repo.repo} @ ${process.env.GITHUB_SHA}`,
+            });
+            const gistUrl = gistResp.data.html_url;
+            const body = ['New potential secrets detected when running detect-secrets against the baseline:', '', ...findings.map(f => `- ${f}`), '', `Full output: ${gistUrl}`].join('\n');
+            await github.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `detect-secrets: new potential secrets found (${findings.length})`,
+              body,
+            });
+            core.setFailed('New potential secrets detected; see created issue for details');

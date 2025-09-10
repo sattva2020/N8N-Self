@@ -19,6 +19,9 @@ function shouldKeep(filename) {
   if (/node_modules\//i.test(normalized)) return false;
   if (/^lightrag/i.test(normalized)) return false;
   if (/^lightrag_conf/i.test(normalized)) return false;
+  // drop infra envs and samples
+  if (/^infra\//i.test(normalized)) return false;
+  if (/\.env$/i.test(normalized) && normalized.indexOf('infra/') !== -1) return false;
   return true;
 }
 
