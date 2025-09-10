@@ -54,9 +54,19 @@ services:
       - POLL_INTERVAL=15
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     networks:
       - backend
       - proxy
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
     labels:
       - traefik.enable=true
       - traefik.docker.network=stack_proxy

@@ -10,7 +10,7 @@ export default function App() {
 }
 import React, { useEffect, useState, useCallback } from 'react'
 import { createRoot } from 'react-dom/client'
-import './styles.module.css'
+import './index.css'
 import TopBar from './components/TopBar'
 import ServicesTable from './components/ServicesTable'
 import DetailsPanel from './components/DetailsPanel'

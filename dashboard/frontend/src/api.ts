@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+axios.defaults.withCredentials = true
+
 export async function getInfo() {
   const { data } = await axios.get('/api/info')
   return data
