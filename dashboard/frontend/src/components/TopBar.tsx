@@ -5,6 +5,10 @@ export default function TopBar({ info }: { info?: any }) {
   const [user, setUser] = useState<any>(null)
   useEffect(() => {
     let mounted = true
+    // Avoid real network calls during unit tests: tests can set global.__TEST__ = true
+    if ((typeof process !== 'undefined' && process.env.NODE_ENV === 'test') || (typeof window !== 'undefined' && (window as any).__TEST__)) {
+      return () => { mounted = false }
+    }
     axios.get('/oauth2/userinfo').then(r => { if (mounted) setUser(r.data) }).catch(()=>{})
     return ()=>{ mounted=false }
   }, [])
