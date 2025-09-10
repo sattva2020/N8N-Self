@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: |
+          cd dashboard/frontend
+          npm ci
+
+      - name: Build
+        run: |
+          cd dashboard/frontend
+          npm run build --if-present
+
+      - name: Test
+        run: |
+          cd dashboard/frontend
+          npm test --if-present
+
+  e2e:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+
+      - name: Install deps
+        run: |
+          cd dashboard/frontend
+          npm ci
+
+      - name: Build frontend
+        run: |
+          cd dashboard/frontend
+          npm run build --if-present
+
+      - name: Install Playwright browsers
+        run: |
+          cd dashboard/frontend
+          npx playwright install --with-deps
+
+      - name: Start static server
+        run: |
+          cd dashboard/frontend
+          nohup npm run serve-dist > serve.log 2>&1 &
+          # wait for server
+          for i in {1..20}; do
+            if curl -sSf http://127.0.0.1:5175/ >/dev/null; then echo server ready && break; fi
+            sleep 1
+          done
+
+      - name: Run Playwright e2e
+        run: |
+          cd dashboard/frontend
+          npx playwright test --config=playwright.config.js --reporter=list || (cat serve.log && exit 1)
+
+      - name: Dump server log
+        if: failure()
+        run: |
+          cd dashboard/frontend
+          tail -n 200 serve.log || true
