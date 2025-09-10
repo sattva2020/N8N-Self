@@ -1,7 +1,6 @@
+vi.mock('axios');
 import axios from 'axios';
 import * as api from './api';
-
-vi.mock('axios');
 
 describe('api', () => {
   it('getInfo calls axios.get and returns data', async () => {

@@ -1,9 +1,8 @@
+vi.mock('../api');
 import React from 'react';
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import LogsPane from './LogsPane';
 import * as api from '../api';
-
-vi.mock('../api');
 
 describe('LogsPane', () => {
   beforeEach(() => {
@@ -27,12 +26,15 @@ describe('LogsPane', () => {
     // use act and fake timers to simulate follow polling
     await act(async () => {
       vi.useFakeTimers();
-      fireEvent.click(followCheckbox);
-      expect(followCheckbox.checked).toBe(true);
-      // advance timers to let interval trigger
-      vi.advanceTimersByTime(3100);
-      await Promise.resolve();
-      vi.useRealTimers();
+      try {
+        fireEvent.click(followCheckbox);
+        expect(followCheckbox.checked).toBe(true);
+        // advance timers to let interval trigger
+        vi.advanceTimersByTime(3100);
+        await Promise.resolve();
+      } finally {
+        vi.useRealTimers();
+      }
     });
 
     fireEvent.click(screen.getByText(/Close/i));
