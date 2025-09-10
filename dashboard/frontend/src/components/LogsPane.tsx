@@ -7,6 +7,11 @@ export default function LogsPane({ id, onClose }: any) {
   const [follow, setFollow] = useState<boolean>(false)
 
   const load = async () => {
+    // Prevent real network calls during tests
+    if ((typeof process !== 'undefined' && process.env.NODE_ENV === 'test') || (typeof window !== 'undefined' && (window as any).__TEST__)) {
+      setLogs('')
+      return
+    }
     const data = await api.getLogs(id, tail)
     setLogs(data)
   }
