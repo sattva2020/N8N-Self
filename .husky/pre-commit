@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# Run lint-staged from repo root
+npx --no-install lint-staged || exit 1
+
+# run legacy large-file check
+bash scripts/check-large-files.sh || true
