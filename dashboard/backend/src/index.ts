@@ -11,7 +11,7 @@ fastify.get('/api/health', async () => ({ ok: true }));
 fastify.get('/api/info', async () => ({
   service: 'dashboard-backend',
   version: process.env.npm_package_version || '0.0.0',
-  env: process.env.NODE_ENV || 'development'
+  env: process.env.NODE_ENV || 'development',
 }));
 
 fastify.get('/api/services', async (request: FastifyRequest, reply: FastifyReply) => {
@@ -22,7 +22,7 @@ fastify.get('/api/services', async (request: FastifyRequest, reply: FastifyReply
       names: c.Names,
       image: c.Image,
       status: c.Status,
-      labels: c.Labels
+      labels: c.Labels,
     }));
     return reply.send(services);
   } catch (err) {
@@ -71,12 +71,15 @@ fastify.get('/api/events', (request, reply) => {
   reply.raw.writeHead(200, {
     Connection: 'keep-alive',
     'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache'
+    'Cache-Control': 'no-cache',
   });
-  const interval = setInterval(async () => {
-    const containers = await docker.listContainers({ all: true });
-    reply.raw.write(`data: ${JSON.stringify(containers)}\n\n`);
-  }, Number(process.env.POLL_INTERVAL || 15000));
+  const interval = setInterval(
+    async () => {
+      const containers = await docker.listContainers({ all: true });
+      reply.raw.write(`data: ${JSON.stringify(containers)}\n\n`);
+    },
+    Number(process.env.POLL_INTERVAL || 15000)
+  );
   request.raw.on('close', () => clearInterval(interval));
 });
 

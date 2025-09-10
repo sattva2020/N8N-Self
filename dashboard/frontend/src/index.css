@@ -2,14 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-body { @apply bg-gray-50 font-sans }
+body {
+  @apply bg-gray-50 font-sans;
+}
 
-.appRoot { @apply min-h-screen }
-.topbar { @apply flex items-center p-3 bg-white shadow }
-.layout { @apply flex gap-4 p-4 }
-.main { @apply flex-1 bg-white p-4 rounded }
-.side { @apply w-80 bg-white p-4 rounded }
-.servicesTable table { @apply w-full border-collapse }
-.servicesTable th, .servicesTable td { @apply p-2 border-b }
-.servicesTable tr.selected { @apply bg-blue-50 }
-.logsPane { @apply fixed bottom-3 left-3 right-3 max-h-[50%] bg-black text-white rounded overflow-auto }
+.appRoot {
+  @apply min-h-screen;
+}
+.topbar {
+  @apply flex items-center p-3 bg-white shadow;
+}
+.layout {
+  @apply flex gap-4 p-4;
+}
+.main {
+  @apply flex-1 bg-white p-4 rounded;
+}
+.side {
+  @apply w-80 bg-white p-4 rounded;
+}
+.servicesTable table {
+  @apply w-full border-collapse;
+}
+.servicesTable th,
+.servicesTable td {
+  @apply p-2 border-b;
+}
+.servicesTable tr.selected {
+  @apply bg-blue-50;
+}
+.logsPane {
+  @apply fixed bottom-3 left-3 right-3 max-h-[50%] bg-black text-white rounded overflow-auto;
+}
