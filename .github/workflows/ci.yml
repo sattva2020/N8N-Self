@@ -113,8 +113,16 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           echo "Running commitlint on pull request commits"
-          git fetch --no-tags --prune --depth=1 origin +refs/pull/${{ github.event.number }}/merge
-          git log --pretty=format:%B origin/HEAD..FETCH_HEAD | npx --no-install commitlint --verbose || true
+          # fetch the base branch to compute commit range reliably
+          if [ -n "${{ github.event.pull_request.base.ref }}" ]; then
+            git fetch --no-tags --prune --depth=1 origin ${{ github.event.pull_request.base.ref }} || true
+            git fetch --no-tags --prune --depth=1 origin +refs/pull/${{ github.event.number }}/merge || true
+            git log --pretty=format:%B origin/${{ github.event.pull_request.base.ref }}..FETCH_HEAD | npx commitlint --verbose || true
+          else
+            # fallback: run commitlint on FETCH_HEAD message
+            git fetch --no-tags --prune --depth=1 origin +refs/pull/${{ github.event.number }}/merge || true
+            git log --pretty=format:%B FETCH_HEAD | npx commitlint --verbose || true
+          fi
 
   secret-scan:
     name: Secret scan (detect-secrets)
