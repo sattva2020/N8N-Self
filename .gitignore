@@ -19,3 +19,7 @@ stack/.env
 .internal/
 docs_local/
 *.local.md
+
+# Ignore local LightRAG copies and overrides
+LightRAG/
+LightRAG_conf/.env

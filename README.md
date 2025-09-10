@@ -171,3 +171,28 @@ PRUNE=true DOMAIN_NAME='sattva-ai.top' ACME_EMAIL='you@example.com' bash scripts
 - После операций с ACME и сертификатами избегайте частых попыток пересоздания `acme.json` — можно попасть под rate limits Let's Encrypt.
 
  
+## LightRAG (отдельный репозиторий)
+
+Репозиторий `LightRAG` больше не включён в виде submodule в этом репозитории. Чтобы работать с LightRAG отдельно, клонируйте его рядом с текущим проектом и подключите override вручную:
+
+```bash
+# клонируем LightRAG рядом с этим репо (положим соседнюю папку)
+git clone https://github.com/HKUDS/LightRAG.git ../LightRAG
+
+# скопируйте нужные override файлы из LightRAG в этот репозиторий
+cp ../LightRAG/docker-compose.override.yml LightRAG_conf/docker-compose.override.yml
+
+# запустите деплой LightRAG (скрипт ожидает наличие LightRAG_conf/override)
+bash scripts/30_deploy_lightrag.sh
+```
+
+Если вы предпочитаете submodule-рабочий процесс, добавьте submodule вручную:
+
+```bash
+git submodule add https://github.com/HKUDS/LightRAG.git LightRAG
+git submodule update --init --recursive
+```
+
+Оставьте `LightRAG` как локальную папку, если вы запускаете и тестируете её часто — это ускоряет разработку и предотвращает неожиданные проблемы с submodule в CI.
+
+
