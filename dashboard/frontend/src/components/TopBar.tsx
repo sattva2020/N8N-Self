@@ -36,17 +36,19 @@ export default function TopBar({ info }: { info?: any }) {
 
   return (
     <header className="topbar">
-      <div className="logo text-lg font-semibold">Project Dashboard</div>
-      <div className="flex-1" />
-      <div className="env text-sm text-gray-600 mr-4">{info ? info.env : 'unknown'}</div>
-      <div className="user flex items-center gap-2">
-        <div className="text-sm text-gray-700">{user ? user.email : 'User'}</div>
-        <button
-          onClick={logout}
-          className="px-2 py-1 text-sm bg-gray-100 rounded hover:bg-gray-200"
-        >
-          Logout
-        </button>
+      <div className="container mx-auto flex items-center w-full px-4">
+        <div className="logo text-lg font-semibold">Project Dashboard</div>
+        <div className="flex-1" />
+        <div className="env text-sm text-gray-600 mr-4">{info ? info.env : 'unknown'}</div>
+        <div className="user flex items-center gap-2">
+          <div className="text-sm text-gray-700">{user ? user.email : 'User'}</div>
+          <button
+            onClick={logout}
+            className="px-2 py-1 text-sm bg-gray-100 rounded hover:bg-gray-200"
+          >
+            Logout
+          </button>
+        </div>
       </div>
     </header>
   );

@@ -81,7 +81,13 @@ jobs:
         run: |
           cd dashboard/frontend
           nohup npm run serve-dist > serve.log 2>&1 &
-          sleep 2
+          # wait for the server port to be accepting connections
+          for i in {1..20}; do
+            if nc -z localhost 5175; then
+              echo "server is up"; break
+            fi
+            sleep 1
+          done
         shell: bash
 
       - name: Start static server (Windows)
@@ -95,6 +101,7 @@ jobs:
       - name: Run Playwright smoke tests
         run: |
           cd dashboard/frontend
+          # run playwright via npm script to ensure proper environment
           npm run e2e --if-present
 
   commitlint:
@@ -113,15 +120,16 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           echo "Running commitlint on pull request commits"
+          cd dashboard/frontend
           # fetch the base branch to compute commit range reliably
           if [ -n "${{ github.event.pull_request.base.ref }}" ]; then
             git fetch --no-tags --prune --depth=1 origin ${{ github.event.pull_request.base.ref }} || true
             git fetch --no-tags --prune --depth=1 origin +refs/pull/${{ github.event.number }}/merge || true
-            git log --pretty=format:%B origin/${{ github.event.pull_request.base.ref }}..FETCH_HEAD | npx commitlint --verbose || true
+            git log --pretty=format:%B origin/${{ github.event.pull_request.base.ref }}..FETCH_HEAD | npm run commitlint --silent || true
           else
             # fallback: run commitlint on FETCH_HEAD message
             git fetch --no-tags --prune --depth=1 origin +refs/pull/${{ github.event.number }}/merge || true
-            git log --pretty=format:%B FETCH_HEAD | npx commitlint --verbose || true
+            git log --pretty=format:%B FETCH_HEAD | npm run commitlint --silent || true
           fi
 
   secret-scan:

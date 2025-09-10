@@ -69,7 +69,7 @@ function DashboardApp() {
   return (
     <div className="appRoot">
       <TopBar info={info} />
-      <div className="layout">
+      <div className="layout container mx-auto px-4">
         <div className="main">
           <ServicesTable
             services={services}

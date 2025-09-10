@@ -8,7 +8,7 @@ export default function ServicesTable({
   onShowLogs,
 }: any) {
   return (
-    <div className="services-table bg-white rounded shadow-sm overflow-hidden">
+    <div className="servicesTable bg-white rounded shadow-sm overflow-hidden">
       <div className="px-4 py-3 border-b bg-gray-50 text-sm text-gray-700">Services</div>
       <table className="min-w-full text-sm">
         <thead className="bg-gray-100 text-gray-600">
@@ -29,7 +29,7 @@ export default function ServicesTable({
             return (
               <tr
                 key={id}
-                className={`${id === selected ? 'bg-gray-50' : ''} hover:bg-gray-50 cursor-pointer`}
+                className={`${id === selected ? 'selected' : ''} hover:bg-gray-50 cursor-pointer`}
                 onClick={() => onSelect && onSelect(id)}
               >
                 <td className="px-4 py-2">{idx + 1}</td>
