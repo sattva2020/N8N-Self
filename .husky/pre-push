@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# In CI we mirror heavy checks; locally run lightweight checks
+# Run frontend typecheck and tests via npm
+if [ -d "dashboard/frontend" ]; then
+  (cd dashboard/frontend && npx --no-install tsc --noEmit) || exit 1
+  (cd dashboard/frontend && npx --no-install vitest --run) || exit 1
+fi
