@@ -1,0 +1,16 @@
+# Ignore node modules for frontend to avoid committing huge vendor files
+dashboard/frontend/node_modules/
+
+# Build output
+/dist/
+dashboard/frontend/dist/
+
+# Env files
+.env
+stack/.env
+
+# VS Code
+/.vscode/
+
+# OS files
+.DS_Store
