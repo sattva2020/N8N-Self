@@ -22,3 +22,11 @@ git push
 ```
 
 If CI fails the `secret-scan` job, inspect the findings and either remove the accidental secret or update the baseline if the finding is a false positive.
+
+Note about GitHub Actions secrets
+
+- The baseline may contain entries that look like secrets but are references to GitHub Actions secrets (for example `github-token: ${{ secrets.GITHUB_TOKEN }}` in workflow files).
+- These are false positives for the purposes of rotating credentials because the actual secret values are stored in GitHub Actions and are not present in the repository.
+- Recommendation: keep such entries in `.secrets.baseline` and document them here so the CI secret-scan remains stable and does not create noise (issues/gists) on every run.
+
+If you intentionally change a workflow to include an inline secret-like string, remove it and rotate any real credential before updating the baseline.
