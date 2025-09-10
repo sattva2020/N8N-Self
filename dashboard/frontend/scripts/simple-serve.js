@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const root = path.resolve(__dirname, '..', 'dist')
 const port = process.env.PORT || 5175
-const host = process.env.HOST || '127.0.0.1'
+const host = process.env.HOST || '0.0.0.0'
 
 function getContentType(file) {
   if (file.endsWith('.html')) return 'text/html; charset=utf-8'

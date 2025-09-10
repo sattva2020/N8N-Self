@@ -15,11 +15,12 @@ export default function TopBar({ info }: { info?: any }) {
 
   return (
     <header className="topbar">
-      <div className="logo">Project Dashboard</div>
-      <div className="spacer" />
-      <div className="env">{info ? info.env : 'unknown'}</div>
-      <div className="user">{user ? `${user.email} ▾` : 'User ▾'}
-        <button onClick={logout} className="ml-2 px-2 py-1 text-sm bg-gray-100 rounded">Logout</button>
+      <div className="logo text-lg font-semibold">Project Dashboard</div>
+      <div className="flex-1" />
+      <div className="env text-sm text-gray-600 mr-4">{info ? info.env : 'unknown'}</div>
+      <div className="user flex items-center gap-2">
+        <div className="text-sm text-gray-700">{user ? user.email : 'User'}</div>
+        <button onClick={logout} className="px-2 py-1 text-sm bg-gray-100 rounded hover:bg-gray-200">Logout</button>
       </div>
     </header>
   )

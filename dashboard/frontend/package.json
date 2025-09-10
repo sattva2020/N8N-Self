@@ -10,7 +10,10 @@
   "test": "vitest",
   "test:watch": "vitest --watch",
   "e2e": "playwright test",
-  "e2e:headed": "playwright test --headed"
+  "e2e:headed": "playwright test --headed",
+  "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+  "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --max-warnings=0",
+  "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -30,5 +33,23 @@
   "postcss": "8.4.24",
   "autoprefixer": "10.4.14",
   "minimist": "^1.2.8"
+  }
+
+  ,
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx,jsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{css,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 100
   }
 }

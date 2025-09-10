@@ -1,13 +1,3 @@
-import React from 'react'
-
-export default function App() {
-  return (
-    <div style={{ padding: 20 }}>
-      <h1>Project Dashboard</h1>
-      <p>Services overview will appear here.</p>
-    </div>
-  )
-}
 import React, { useEffect, useState, useCallback } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
@@ -81,7 +71,6 @@ function DashboardApp() {
           <DetailsPanel service={services.find(s => (s.Id||s.id) === selected)} />
         </aside>
       </div>
-
       {showLogsFor && (
         <LogsPane id={showLogsFor} onClose={() => setShowLogsFor(null)} />
       )}
@@ -94,3 +83,5 @@ createRoot(document.getElementById('root')!).render(
     <DashboardApp />
   </React.StrictMode>
 )
+
+export default DashboardApp
