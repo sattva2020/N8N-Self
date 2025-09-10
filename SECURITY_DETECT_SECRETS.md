@@ -29,4 +29,29 @@ Note about GitHub Actions secrets
 - These are false positives for the purposes of rotating credentials because the actual secret values are stored in GitHub Actions and are not present in the repository.
 - Recommendation: keep such entries in `.secrets.baseline` and document them here so the CI secret-scan remains stable and does not create noise (issues/gists) on every run.
 
+## Why this repository has a verified baseline entry
+
+During routine scans with `detect-secrets` the CI reported a finding in `.github/workflows/ci.yml` on line 153. The finding matched the detector for "Secret Keyword". The specific match corresponds to the textual presence of a workflow input or key name that resembles a secret (for example entries that reference `secrets.GITHUB_TOKEN` or similar placeholder strings). After manual inspection the maintainers determined that:
+
+- the repository does not contain any actual credential values in that location — only workflow variable names or template placeholders;
+- the GH Actions runtime injects the real secret values at execution time and they are not present in the repository text; and
+- the finding is stable and expected for our CI workflows (it would reappear on every scan unless explicitly allowed).
+
+## Decision and action taken
+
+We marked the baseline entry as `is_verified: true` in `.secrets.baseline`. That documents the finding as an intentional/known false positive and prevents the CI `secret-scan` job from failing on this specific occurrence. This keeps the CI noise low while preserving protection against new/unexpected secrets.
+
+## How to review or revert this decision
+
+1. If you later modify the workflow and remove the placeholder or add a real secret inline (which you should avoid), re-run `detect-secrets scan --all-files` locally and verify the changes.
+2. To remove the `verified` mark: edit `.secrets.baseline`, set `is_verified: false` (or delete the entry) and commit. CI will then report new findings and you can triage them again.
+3. If you see a different secret reported by the CI that you don't recognize, open the gist created by the CI job (the job uploads full results) and inspect the surrounding file context.
+
+## Best practices
+
+- Never commit plaintext credentials into the repository. Use environment variables stored in CI provider secrets or a secrets manager.
+- Keep the `.secrets.baseline` under version control and document any verified entries in this `SECURITY_DETECT_SECRETS.md` file with the rationale and the date of verification.
+- When updating workflows, re-run `detect-secrets` locally, review the changed baseline carefully, and add a short justification to this doc if you add a new verified entry.
+
+
 If you intentionally change a workflow to include an inline secret-like string, remove it and rotate any real credential before updating the baseline.

@@ -28,8 +28,10 @@ function DashboardApp() {
     // SSE for events
     let evt: EventSource | null = null
     try {
-      evt = new EventSource('/api/events')
-      evt.onmessage = (ev) => {
+      // Avoid creating real EventSource in unit tests / jsdom
+      if (!(typeof process !== 'undefined' && process.env.NODE_ENV === 'test') && !(typeof window !== 'undefined' && (window as any).__TEST__)) {
+        evt = new EventSource('/api/events')
+        evt.onmessage = (ev) => {
         try {
           const data = JSON.parse(ev.data)
           // data is array of containers
@@ -40,6 +42,7 @@ function DashboardApp() {
             return Array.from(byId.values())
           })
         } catch (err) { console.error('sse parse', err) }
+        }
       }
       evt.onerror = (err) => { console.warn('SSE err', err) }
     } catch (e) {
