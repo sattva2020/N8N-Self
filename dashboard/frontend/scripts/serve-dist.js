@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const argv = require('minimist')(process.argv.slice(2));
-const port = argv.port || argv.p || 5175;
+const port = argv.port || argv.p || 5177;
 // Default to 0.0.0.0 which works well in CI and avoids some Windows/WSL bind restrictions.
 // Allow overriding with --host if needed (e.g., --host 127.0.0.1).
 const host = argv.host || '0.0.0.0';

@@ -63,18 +63,22 @@ jobs:
           npx playwright install --with-deps
 
       - name: Start static server
+        env:
+          PORT: 5177
+          STRICT_PORT: '1'
         run: |
           cd dashboard/frontend
-          nohup npm run serve-dist > serve.log 2>&1 &
+          nohup env PORT=$PORT npm run serve-dist > serve.log 2>&1 &
           # wait for server
           for i in {1..20}; do
-            if curl -sSf http://127.0.0.1:5175/ >/dev/null; then echo server ready && break; fi
+            if curl -sSf http://127.0.0.1:${PORT}/ >/dev/null; then echo server ready && break; fi
             sleep 1
           done
 
       - name: Run Playwright e2e
         run: |
           cd dashboard/frontend
+          mkdir -p playwright-report
           npx playwright test --config=playwright.config.js --reporter=list || (cat serve.log && exit 1)
 
       - name: Dump server log
@@ -82,3 +86,24 @@ jobs:
         run: |
           cd dashboard/frontend
           tail -n 200 serve.log || true
+
+      - name: Assert served port matches expected (frontend-local)
+        run: |
+          cd dashboard/frontend
+          if [ -f tmp/served-port ]; then
+            served=$(cat tmp/served-port)
+            echo "served-port=$served"
+            if [ "$served" != "$PORT" ]; then
+              echo "ERROR: served port ($served) != expected PORT ($PORT)" >&2
+              cat serve.log || true
+              exit 2
+            fi
+          else
+            echo "WARNING: tmp/served-port not found; falling back to curl check"
+            if ! curl -sSf http://127.0.0.1:${PORT}/ >/dev/null; then
+              echo "ERROR: no server listening on $PORT" >&2
+              cat serve.log || true
+              exit 2
+            fi
+          fi
+        shell: bash

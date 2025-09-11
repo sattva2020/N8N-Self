@@ -23,7 +23,10 @@ export default defineConfig({
     // If a server is already running locally, reuse it (convenient for dev).
     reuseExistingServer: true,
     // Prefer polling a port instead of a full url to avoid host/url mismatches.
-    port: 5175,
+    // Read port from env so simple-serve's auto-fallback (or manual env) stays in sync.
+    port: parseInt(process.env.PORT ?? '5177', 10),
+    // Ensure the server process started by Playwright receives the same PORT env.
+    env: { PORT: process.env.PORT ?? '5177' },
     timeout: 120_000,
   },
 });

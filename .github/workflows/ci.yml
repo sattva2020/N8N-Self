@@ -78,12 +78,15 @@ jobs:
 
       - name: Start static server (Linux/macOS)
         if: runner.os != 'Windows'
+        env:
+          PORT: 5177
+          STRICT_PORT: '1'
         run: |
           cd dashboard/frontend
-          nohup npm run serve-dist > serve.log 2>&1 &
+          nohup env PORT=$PORT npm run serve-dist > serve.log 2>&1 &
           # wait for the server port to be accepting connections
           for i in {1..20}; do
-            if nc -z localhost 5175; then
+            if nc -z localhost $PORT; then
               echo "server is up"; break
             fi
             sleep 1
@@ -92,26 +95,51 @@ jobs:
 
       - name: Start static server (Windows)
         if: runner.os == 'Windows'
+        env:
+          PORT: 5177
+          STRICT_PORT: '1'
         run: |
           cd dashboard/frontend
-          Start-Process -NoNewWindow -FilePath npm -ArgumentList 'run','serve-dist'
+          # start serve-dist with PORT env so server and Playwright agree
+          Start-Process -NoNewWindow -FilePath npm -ArgumentList 'run','serve-dist' -Environment @{ PORT = $env:PORT; STRICT_PORT = $env:STRICT_PORT }
           Start-Sleep -Seconds 2
         shell: pwsh
+
+      - name: Assert served port matches expected (repo-level)
+        run: |
+          cd dashboard/frontend
+          # the simple server writes actual port to tmp/served-port when it starts
+          if [ -f tmp/served-port ]; then
+            served=$(cat tmp/served-port)
+            echo "served-port=$served"
+            if [ "$served" != "$PORT" ]; then
+              echo "ERROR: served port ($served) != expected PORT ($PORT)" >&2
+              cat serve.log || true
+              exit 2
+            fi
+          else
+            echo "WARNING: tmp/served-port not found; falling back to nc check"
+            if ! nc -z localhost $PORT; then
+              echo "ERROR: no server listening on $PORT" >&2
+              cat serve.log || true
+              exit 2
+            fi
+          fi
+        shell: bash
 
       - name: Run Playwright smoke tests
         run: |
           cd dashboard/frontend
+          mkdir -p playwright-report
           # run playwright with trace enabled, single worker and chromium project to capture detailed traces on crash
           npx playwright test --project=chromium --workers=1 --trace=on --reporter=list || true
-          # ensure playwright-report exists (Playwright writes traces into playwright-report)
-          if [ -d playwright-report ] || (Test-Path playwright-report); then echo "playwright-report ready"; else echo "no playwright-report found"; fi
         shell: bash
 
       - name: Upload Playwright traces
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-report-${{ matrix.os }}
           path: dashboard/frontend/playwright-report
 
   commitlint:
