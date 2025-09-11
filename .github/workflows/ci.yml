@@ -49,6 +49,7 @@ jobs:
 
   e2e-smoke:
     needs: build-and-test
+    timeout-minutes: 45
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
@@ -66,10 +67,23 @@ jobs:
           cd dashboard/frontend
           npm ci --prefer-offline
 
-      - name: Install Playwright Browsers
+      - name: Cache Playwright browsers
+        if: runner.os != 'Windows'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-browsers-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            playwright-browsers-${{ runner.os }}-
+
+      - name: Install Playwright Browsers (with retries)
         run: |
           cd dashboard/frontend
-          npx playwright install --with-deps
+          for i in 1 2 3; do
+            npx playwright install --with-deps && break || true
+            echo "playwright install failed, retrying ($i/3)..."
+            sleep 5
+          done
 
       - name: Build frontend
         run: |
@@ -133,6 +147,13 @@ jobs:
           mkdir -p playwright-report
           # run playwright with trace enabled, single worker and chromium project to capture detailed traces on crash
           npx playwright test --project=chromium --workers=1 --trace=on --reporter=list || true
+        shell: bash
+
+      - name: Ensure playwright-report dir
+        if: always()
+        run: |
+          cd dashboard/frontend
+          mkdir -p playwright-report || true
         shell: bash
 
       - name: Upload Playwright traces
