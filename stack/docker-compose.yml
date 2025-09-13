@@ -1,63 +1,49 @@
 services:
   traefik:
     image: traefik:latest
+    restart: always
     command:
-      - --providers.docker=true
-      - --providers.docker.exposedbydefault=false
-      - --log.level=DEBUG
-      - --accesslog=true
-      - --entrypoints.web.address=:80
-      - --entrypoints.websecure.address=:443
-      - --certificatesresolvers.le.acme.email=${ACME_EMAIL}
-      - --certificatesresolvers.le.acme.storage=/letsencrypt/acme.json
-      - --certificatesresolvers.le.acme.httpchallenge=true
-      - --certificatesresolvers.le.acme.httpchallenge.entrypoint=web
-      - --api.dashboard=true
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.mytlschallenge.acme.tlschallenge=true"
+      - "--certificatesresolvers.mytlschallenge.acme.email=${ACME_EMAIL}"
+      - "--certificatesresolvers.mytlschallenge.acme.storage=/letsencrypt/acme.json"
+
+  #    - --providers.docker=true
+  #    - --providers.docker.exposedbydefault=false
+  #    - --entrypoints.web.address=:80
+  #    - --entrypoints.web.http.redirections.entryPoint.to=websecure
+  #    - --entrypoints.web.http.redirections.entrypoint.scheme=https
+  #    - --entrypoints.websecure.address=:443
+  #    - --certificatesresolvers.mytlschallenge.acme.tlschallenge=true
+  #    - --certificatesresolvers.le.acme.email=${ACME_EMAIL}
+  #    - --certificatesresolvers.le.acme.storage=/letsencrypt/acme.json
+  #   - --certificatesresolvers.le.acme.tlschallenge=true
+  #    - --api.dashboard=true
     ports:
       - "80:80"
       - "443:443"
       - "8080:8080" # traefik dashboard
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
       - traefik_letsencrypt:/letsencrypt
+      - /var/run/docker.sock:/var/run/docker.sock:ro
       - ../secrets:/run/secrets:ro
     environment:
       - TZ=${TZ}
     labels:
-      - traefik.enable=true
-      - traefik.docker.network=proxy
-      - traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN_NAME}`)
-      - traefik.http.routers.traefik.entrypoints=websecure
-      - traefik.http.routers.traefik.tls.certresolver=le
-      - traefik.http.services.traefik.loadbalancer.server.port=8080
+      traefik.enable: "true"
+      traefik.docker.network: "proxy"
+      traefik.http.routers.traefik.rule: "Host(`traefik.${DOMAIN_NAME}`)"
+      traefik.http.routers.traefik.entrypoints: "websecure"
+      traefik.http.routers.traefik.tls.certresolver: "mytlschallenge"
+      traefik.http.services.traefik.loadbalancer.server.port: "8080"
     networks:
       - proxy
-
-  caddy:
-    image: caddy:2-alpine
-    environment:
-      - ACME_EMAIL=${ACME_EMAIL}
-      - DOMAIN_NAME=${DOMAIN_NAME}
-    volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
-      - caddy_data:/data
-      - caddy_config:/config
-    restart: unless-stopped
-    labels:
-      - traefik.enable=true
-      - traefik.docker.network=proxy
-      # HTTP (80) route for ACME HTTP-01 challenges and redirects
-      - traefik.http.routers.caddy-n8n.rule=Host(`n8n.${DOMAIN_NAME}`)
-      - traefik.http.routers.caddy-n8n.entrypoints=web
-      - traefik.http.services.caddy-n8n.loadbalancer.server.port=80
-      # HTTPS (443) TCP passthrough for TLS-ALPN-01 and normal TLS
-      - traefik.tcp.routers.caddy-n8n-tls.rule=HostSNI(`n8n.${DOMAIN_NAME}`)
-      - traefik.tcp.routers.caddy-n8n-tls.entrypoints=websecure
-      - traefik.tcp.routers.caddy-n8n-tls.tls.passthrough=true
-      - traefik.tcp.services.caddy-n8n-tls.loadbalancer.server.port=443
-    networks:
-      - proxy
-      - backend
 
   n8n-postgres:
     image: postgres:16-alpine
@@ -83,25 +69,47 @@ services:
       - backend
 
   n8n:
-    image: n8nio/n8n:latest
+    image: docker.n8n.io/n8nio/n8n
+    restart: always
+    ports:
+      - "127.0.0.1:5678:5678"
     environment:
+      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
       - DB_TYPE=postgresdb
       - DB_POSTGRESDB_HOST=n8n-postgres
       - DB_POSTGRESDB_PORT=5432
       - DB_POSTGRESDB_DATABASE=n8n
       - DB_POSTGRESDB_USER=n8n
       - DB_POSTGRESDB_PASSWORD_FILE=/run/secrets/n8n_db_password
-      - N8N_HOST=n8n.${DOMAIN_NAME}
+      - N8N_HOST=${SUBDOMAIN}.${DOMAIN_NAME}
       - N8N_PROTOCOL=https
       - N8N_PORT=5678
+      - N8N_RUNNERS_ENABLED=true
       - NODE_ENV=production
-      - GENERIC_TIMEZONE=${TZ}
+      - WEBHOOK_URL=https://${SUBDOMAIN}.${DOMAIN_NAME}/
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
+      - TZ=${GENERIC_TIMEZONE}
       - N8N_ENCRYPTION_KEY_FILE=/run/secrets/n8n_encryption_key
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.n8n.rule=Host(`${SUBDOMAIN}.${DOMAIN_NAME}`)
+      - traefik.http.routers.n8n.tls=true
+      - traefik.http.routers.n8n.entrypoints=web,websecure
+      - traefik.http.routers.n8n.tls.certresolver=mytlschallenge
+      - traefik.http.middlewares.n8n.headers.SSLRedirect=true
+      - traefik.http.middlewares.n8n.headers.STSSeconds=315360000
+      - traefik.http.middlewares.n8n.headers.browserXSSFilter=true
+      - traefik.http.middlewares.n8n.headers.contentTypeNosniff=true
+      - traefik.http.middlewares.n8n.headers.forceSTSHeader=true
+      - traefik.http.middlewares.n8n.headers.SSLHost=${DOMAIN_NAME}
+      - traefik.http.middlewares.n8n.headers.STSIncludeSubdomains=true
+      - traefik.http.middlewares.n8n.headers.STSPreload=true
+      - traefik.http.routers.n8n.middlewares=n8n@docker
     volumes:
       - n8n_data:/home/node/.n8n
       - ../secrets:/run/secrets:ro
-      - ../local-files:/files
-    restart: unless-stopped
+      - ./local-files:/files
+#    restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:5678/ || exit 1"]
       interval: 10s
@@ -110,6 +118,7 @@ services:
     depends_on:
       - n8n-postgres
     networks:
+      - proxy
       - backend
 
   ollama:
@@ -146,5 +155,3 @@ volumes:
   n8n_data:
   ollama_data:
   pgvectordata:
-  caddy_data:
-  caddy_config:

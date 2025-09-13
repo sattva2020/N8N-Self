@@ -40,7 +40,7 @@ services:
       - traefik.docker.network=stack_proxy
       - traefik.http.routers.oauth2-proxy.rule=Host(`auth.${DOMAIN_NAME}`)
       - traefik.http.routers.oauth2-proxy.entrypoints=websecure
-      - traefik.http.routers.oauth2-proxy.tls.certresolver=le
+      - traefik.http.routers.oauth2-proxy.tls.certresolver=mytlschallenge
       - traefik.http.services.oauth2-proxy.loadbalancer.server.port=4180
     networks:
       - proxy
@@ -72,7 +72,7 @@ services:
       - traefik.docker.network=stack_proxy
       - traefik.http.routers.dashboard-backend.rule=Host(`dashboard.${DOMAIN_NAME}`)
       - traefik.http.routers.dashboard-backend.entrypoints=websecure
-      - traefik.http.routers.dashboard-backend.tls.certresolver=le
+      - traefik.http.routers.dashboard-backend.tls.certresolver=mytlschallenge
       - traefik.http.routers.dashboard-backend.middlewares=oauth2-proxy@docker
 
   dashboard-frontend:
@@ -85,7 +85,7 @@ services:
       - traefik.docker.network=stack_proxy
       - traefik.http.routers.dashboard.rule=Host(`dashboard.${DOMAIN_NAME}`)
       - traefik.http.routers.dashboard.entrypoints=websecure
-      - traefik.http.routers.dashboard.tls.certresolver=le
+      - traefik.http.routers.dashboard.tls.certresolver=mytlschallenge
       - traefik.http.routers.dashboard.middlewares=oauth2-proxy@docker
 
 networks:
