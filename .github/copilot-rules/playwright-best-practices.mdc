@@ -1,0 +1,10 @@
+---
+name: playwright-best-practices.mdc
+description: Best practices for Playwright testing
+globs: **/*.{ts,js}
+---
+
+- Use test fixtures to set up and tear down test environments
+- Implement retries for flaky tests to improve stability
+- Organize tests into suites for better maintainability
+- Use the `--trace` option to capture detailed logs for debugging

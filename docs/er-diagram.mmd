@@ -1,0 +1,78 @@
+%% ER-диаграмма (Mermaid) для N8N-Self
+%% Файл сгенерирован на основе отсутствующей явной SQL схемы; модель — предположение, корректируйте по необходимости.
+
+erDiagram
+    USERS {
+        int id PK "Primary key"
+        string email "Unique"
+        string name
+        string hashed_password
+        datetime created_at
+        datetime updated_at
+    }
+
+    WORKFLOWS {
+        int id PK
+        string name
+        int owner_id FK "USERS.id"
+        text definition "JSON/YAML definition"
+        string status
+        datetime created_at
+        datetime updated_at
+    }
+
+    EXECUTIONS {
+        int id PK
+        int workflow_id FK "WORKFLOWS.id"
+        int triggered_by_id FK "USERS.id (nullable)"
+        string status
+        json result_summary
+        datetime started_at
+        datetime finished_at
+    }
+
+    NODES {
+        int id PK
+        int workflow_id FK "WORKFLOWS.id"
+        string name
+        string type
+        json config
+    }
+
+    CREDENTIALS {
+        int id PK
+        int user_id FK "USERS.id"
+        string name
+        text encrypted_payload
+        datetime created_at
+    }
+
+    ARTIFACTS {
+        int id PK
+        int execution_id FK "EXECUTIONS.id"
+        string path
+        string type
+        datetime created_at
+    }
+
+    LOGS {
+        int id PK
+        int execution_id FK "EXECUTIONS.id"
+        text message
+        string level
+        datetime ts
+    }
+
+    %% Отношения (cardinality выражено Mermaid-нотацией)
+    USERS ||--o{ WORKFLOWS : "owns"
+    WORKFLOWS ||--o{ NODES : "contains"
+    WORKFLOWS ||--o{ EXECUTIONS : "has"
+    USERS ||--o{ CREDENTIALS : "owns"
+    EXECUTIONS ||--o{ ARTIFACTS : "produces"
+    EXECUTIONS ||--o{ LOGS : "generates"
+    USERS ||--o{ EXECUTIONS : "triggers" 
+
+%% Примечания
+%% 1) Это предположительная модель, составленная без явного DDL в репозитории (есть только расширение vector в pgvector_init/01_init.sql).
+%% 2) Если у вас есть реальные миграции, ORM-модели или дамп БД — пришлите их, я обновлю диаграмму строго по схеме.
+%% 3) Могу сгенерировать PNG/SVG из этого файла (через mermaid-cli) и добавить в репо при желании.

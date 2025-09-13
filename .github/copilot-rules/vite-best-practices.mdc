@@ -1,0 +1,10 @@
+---
+name: vite-best-practices.mdc
+description: Best practices for Vite applications
+globs: **/*.{ts,tsx,js,jsx}
+---
+
+- Use Vite's built-in features for fast development and hot module replacement
+- Optimize build performance with code splitting and lazy loading
+- Configure environment variables properly for different environments
+- Leverage Vite plugins for enhanced functionality

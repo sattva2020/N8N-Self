@@ -1,0 +1,10 @@
+---
+name: nodejs-best-practices.mdc
+description: Best practices for Node.js applications
+globs: **/*.{js}
+---
+
+- Use environment variables for configuration
+- Handle errors gracefully with try-catch blocks
+- Use async/await for asynchronous operations
+- Keep dependencies up to date and audit for vulnerabilities

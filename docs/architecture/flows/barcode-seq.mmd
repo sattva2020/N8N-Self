@@ -1,0 +1,14 @@
+sequenceDiagram
+  actor User
+  participant App as Mobile App
+  participant OFF as Open Food Facts
+  participant API as FLCS API
+  participant DB as Postgres
+
+  User->>App: Навести камеру на штрих-код
+  App->>OFF: GET /product/{barcode}
+  OFF-->>App: product JSON
+  App->>API: POST /v1/parse-ingredients (если нужен разбор)
+  API-->>App: {ingredients, score, summary}
+  App->>DB: (опц.) save scan_event/food cache
+  App-->>User: Карточка + Health Score + «Добавить в дневник»

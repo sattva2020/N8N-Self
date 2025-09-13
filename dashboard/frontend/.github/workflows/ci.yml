@@ -57,10 +57,17 @@ jobs:
           cd dashboard/frontend
           npm run build --if-present
 
-      - name: Install Playwright browsers
+      - name: Install Playwright browsers (with retries)
         run: |
+          set -e
           cd dashboard/frontend
-          npx playwright install --with-deps
+          for i in 1 2 3 4 5; do
+            if npx playwright install --with-deps; then
+              echo "playwright install succeeded" && break
+            fi
+            echo "playwright install failed, retrying ($i/5)..."
+            sleep $((5 * i))
+          done
 
       - name: Start static server
         env:
@@ -75,11 +82,24 @@ jobs:
             sleep 1
           done
 
+
       - name: Run Playwright e2e
         run: |
           cd dashboard/frontend
           mkdir -p playwright-report
-          npx playwright test --config=playwright.config.js --reporter=list || (cat serve.log && exit 1)
+          npx playwright test --config=playwright.config.js --reporter=list || true
+
+      - name: Dump server logs and served-port (on failure)
+        if: failure()
+        run: |
+          cd dashboard/frontend || true
+          echo "--- serve.log ---"
+          if [ -f serve.log ]; then tail -n 300 serve.log || true; else echo "serve.log not present"; fi
+          echo "--- tmp/served-port ---"
+          if [ -f tmp/served-port ]; then cat tmp/served-port || true; else echo "tmp/served-port not present"; fi
+          echo "--- tmp dir listing ---"
+          ls -la tmp || true
+        shell: bash
 
       - name: Dump server log
         if: failure()

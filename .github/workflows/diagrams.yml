@@ -1,0 +1,81 @@
+name: Render Architecture Diagrams
+
+on:
+  push:
+    paths:
+      - 'docs/architecture/**'
+  workflow_dispatch: {}
+
+jobs:
+  render:
+    runs-on: ${{ matrix.os }}
+    # Use service containers only on Linux runners (Windows does not support Docker service containers in GitHub Actions)
+    services: 
+      kroki:
+        image: yugabytelabs/kroki:latest
+        ports:
+          - 8000:8000
+        options: >-
+          --health-cmd="curl -fsS http://localhost:8000/ || exit 1"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=6
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node (for potential tools)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Make scripts executable (Unix)
+        if: runner.os == 'Linux' || runner.os == 'macOS'
+        run: chmod +x ./scripts/gen-diagrams.sh
+
+      - name: Wait for local Kroki (Linux only)
+        if: runner.os == 'Linux'
+        run: |
+          set -e
+          echo "Waiting for kroki at http://localhost:8000/ ..."
+          ATTEMPTS=12
+          SLEEP=5
+          i=0
+          until curl -fsS http://localhost:8000/ >/dev/null 2>&1; do
+            i=$((i+1))
+            if [ $i -ge $ATTEMPTS ]; then
+              echo "kroki did not become ready after $((ATTEMPTS * SLEEP))s"
+              exit 1
+            fi
+            echo "kroki not ready yet, sleeping $SLEEP s (attempt $i/$ATTEMPTS)"
+            sleep $SLEEP
+          done
+          echo "kroki is ready"
+
+
+      - name: Run generator
+        shell: pwsh
+        run: |
+          if ($env:RUNNER_OS -eq 'Windows') {
+            ./scripts/gen-diagrams.ps1
+          } else {
+            ./scripts/gen-diagrams.sh
+          }
+        env:
+          KROKI_URL: ${{ runner.os == 'Linux' && 'http://localhost:8000' || secrets.KROKI_URL }}
+
+      - name: Upload diagram outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagrams-${{ matrix.os }}
+          path: docs/architecture/out
+
+      # Optional: deploy to GitHub Pages if configured (uncomment to enable)
+      #- name: Deploy to GitHub Pages
+      #  uses: peaceiris/actions-gh-pages@v4
+      #  with:
+      #    github_token: ${{ secrets.GITHUB_TOKEN }}
+      #    publish_dir: docs/architecture/out

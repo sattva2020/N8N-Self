@@ -76,14 +76,33 @@ jobs:
           restore-keys: |
             playwright-browsers-${{ runner.os }}-
 
-      - name: Install Playwright Browsers (with retries)
+      - name: Install Playwright Browsers (Linux/macOS) (with retries)
+        if: runner.os != 'Windows'
         run: |
           cd dashboard/frontend
-          for i in 1 2 3; do
-            npx playwright install --with-deps && break || true
-            echo "playwright install failed, retrying ($i/3)..."
-            sleep 5
+          set -e
+          for i in 1 2 3 4 5; do
+            if npx playwright install --with-deps; then
+              echo "playwright install succeeded" && break
+            fi
+            echo "playwright install failed, retrying ($i/5)..."
+            sleep $((5 * i))
           done
+
+      - name: Install Playwright Browsers (Windows) (with retries)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          cd dashboard/frontend
+          $rc = 1
+          for ($i = 1; $i -le 5; $i++) {
+            npx playwright install --with-deps
+            $rc = $LASTEXITCODE
+            if ($rc -eq 0) { Write-Host "playwright install succeeded"; break }
+            Write-Host "playwright install failed, retrying ($i/5)..."
+            Start-Sleep -Seconds (5 * $i)
+          }
+          exit $rc
 
       - name: Build frontend
         run: |
@@ -148,6 +167,30 @@ jobs:
           # run playwright with trace enabled, single worker and chromium project to capture detailed traces on crash
           npx playwright test --project=chromium --workers=1 --trace=on --reporter=list || true
         shell: bash
+
+      - name: Dump server logs and served-port (Linux/macOS)
+        if: failure() && runner.os != 'Windows'
+        run: |
+          cd dashboard/frontend || true
+          echo "--- serve.log ---"
+          if [ -f serve.log ]; then cat serve.log || true; else echo "serve.log not present"; fi
+          echo "--- tmp/served-port ---"
+          if [ -f tmp/served-port ]; then cat tmp/served-port || true; else echo "tmp/served-port not present"; fi
+          echo "--- tmp dir listing ---"
+          ls -la tmp || true
+        shell: bash
+
+      - name: Dump server logs and served-port (Windows)
+        if: failure() && runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Set-Location dashboard/frontend
+          Write-Host '--- serve.log ---'
+          if (Test-Path .\serve.log) { Get-Content .\serve.log -Tail 300 -ErrorAction SilentlyContinue } else { Write-Host 'serve.log not present' }
+          Write-Host '--- tmp/served-port ---'
+          if (Test-Path .\tmp\served-port) { Get-Content .\tmp\served-port -ErrorAction SilentlyContinue } else { Write-Host 'tmp/served-port not present' }
+          Write-Host '--- tmp dir listing ---'
+          if (Test-Path .\tmp) { Get-ChildItem .\tmp -Force } else { Write-Host 'tmp dir not present' }
 
       - name: Ensure playwright-report dir
         if: always()

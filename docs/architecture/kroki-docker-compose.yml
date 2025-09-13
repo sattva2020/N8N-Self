@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  kroki:
+    image: yugabytelabs/kroki:latest
+    container_name: kroki
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    environment:
+      KROKI_BASIC_AUTH_USERNAME: ""
+      KROKI_BASIC_AUTH_PASSWORD: ""
+    volumes:
+      - kroki-data:/var/lib/kroki
+
+volumes:
+  kroki-data:
+
+# Usage:
+# docker compose -f docs/architecture/kroki-docker-compose.yml up -d
+# Then set KROKI_URL=http://localhost:8000 and run scripts/gen-diagrams.*

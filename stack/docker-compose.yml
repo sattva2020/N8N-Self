@@ -33,6 +33,32 @@ services:
     networks:
       - proxy
 
+  caddy:
+    image: caddy:2-alpine
+    environment:
+      - ACME_EMAIL=${ACME_EMAIL}
+      - DOMAIN_NAME=${DOMAIN_NAME}
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+      # HTTP (80) route for ACME HTTP-01 challenges and redirects
+      - traefik.http.routers.caddy-n8n.rule=Host(`n8n.${DOMAIN_NAME}`)
+      - traefik.http.routers.caddy-n8n.entrypoints=web
+      - traefik.http.services.caddy-n8n.loadbalancer.server.port=80
+      # HTTPS (443) TCP passthrough for TLS-ALPN-01 and normal TLS
+      - traefik.tcp.routers.caddy-n8n-tls.rule=HostSNI(`n8n.${DOMAIN_NAME}`)
+      - traefik.tcp.routers.caddy-n8n-tls.entrypoints=websecure
+      - traefik.tcp.routers.caddy-n8n-tls.tls.passthrough=true
+      - traefik.tcp.services.caddy-n8n-tls.loadbalancer.server.port=443
+    networks:
+      - proxy
+      - backend
+
   n8n-postgres:
     image: postgres:16-alpine
     environment:
@@ -42,6 +68,12 @@ services:
     volumes:
       - n8n_pgdata:/var/lib/postgresql/data
       - ../secrets:/run/secrets:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U n8n -d n8n -h localhost || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     networks:
       - backend
 
@@ -68,24 +100,16 @@ services:
     volumes:
       - n8n_data:/home/node/.n8n
       - ../secrets:/run/secrets:ro
-    labels:
-      - traefik.enable=true
-      - traefik.docker.network=proxy
-      - traefik.http.routers.n8n.rule=Host(`n8n.${DOMAIN_NAME}`)
-      - traefik.http.routers.n8n.entrypoints=websecure
-      - traefik.http.routers.n8n.tls.certresolver=le
-      - traefik.http.services.n8n.loadbalancer.server.port=5678
-      - traefik.http.middlewares.secure-headers.headers.stsSeconds=15552000
-      - traefik.http.middlewares.secure-headers.headers.frameDeny=true
-      - traefik.http.middlewares.secure-headers.headers.contentTypeNosniff=true
-      - traefik.http.middlewares.secure-headers.headers.browserXssFilter=true
-      - traefik.http.middlewares.n8n-ratelimit.ratelimit.average=50
-      - traefik.http.middlewares.n8n-ratelimit.ratelimit.burst=100
-      - traefik.http.routers.n8n.middlewares=secure-headers,n8n-ratelimit
+      - ../local-files:/files
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5678/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     depends_on:
       - n8n-postgres
     networks:
-      - proxy
       - backend
 
   ollama:
@@ -122,3 +146,5 @@ volumes:
   n8n_data:
   ollama_data:
   pgvectordata:
+  caddy_data:
+  caddy_config:

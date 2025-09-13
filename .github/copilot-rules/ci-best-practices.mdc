@@ -1,0 +1,12 @@
+---
+name: ci-best-practices.mdc
+description: Best practices for Continuous Integration (CI)
+globs: **/*.yml
+---
+
+- Ensure deterministic builds by locking dependencies (e.g., using package-lock.json)
+- Run tests in isolated environments to prevent side effects
+- Collect and store logs and reports for easy access and debugging
+- Set appropriate timeouts for jobs to avoid hanging processes
+
+Make sure to adapt the globs based on your project's specific file structure and requirements.
