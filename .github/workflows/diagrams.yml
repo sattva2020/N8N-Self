@@ -9,8 +9,9 @@ on:
 jobs:
   render:
     runs-on: ${{ matrix.os }}
-    # Use service containers only on Linux runners (Windows does not support Docker service containers in GitHub Actions)
-    services: 
+    # NOTE: Windows runners do not support Docker service containers. We therefore
+    # run this job only on Ubuntu and use a local Kroki service container there.
+    services:
       kroki:
         image: yugabytelabs/kroki:latest
         ports:
@@ -22,7 +23,7 @@ jobs:
           --health-retries=6
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
 
     steps:
       - uses: actions/checkout@v4
@@ -57,15 +58,11 @@ jobs:
 
 
       - name: Run generator
-        shell: pwsh
-        run: |
-          if ($env:RUNNER_OS -eq 'Windows') {
-            ./scripts/gen-diagrams.ps1
-          } else {
-            ./scripts/gen-diagrams.sh
-          }
+        shell: bash
         env:
-          KROKI_URL: ${{ runner.os == 'Linux' && 'http://localhost:8000' || secrets.KROKI_URL }}
+          KROKI_URL: http://localhost:8000
+        run: |
+          ./scripts/gen-diagrams.sh
 
       - name: Upload diagram outputs
         uses: actions/upload-artifact@v4

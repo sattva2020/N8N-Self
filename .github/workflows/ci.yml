@@ -138,7 +138,8 @@ jobs:
           Start-Sleep -Seconds 2
         shell: pwsh
 
-      - name: Assert served port matches expected (repo-level)
+      - name: Assert served port matches expected (Linux/macOS)
+        if: runner.os != 'Windows'
         run: |
           cd dashboard/frontend
           # the simple server writes actual port to tmp/served-port when it starts
@@ -159,6 +160,36 @@ jobs:
             fi
           fi
         shell: bash
+
+      - name: Assert served port matches expected (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Set-Location dashboard/frontend
+          $servedFile = Join-Path tmp served-port
+          if (Test-Path $servedFile) {
+            $served = Get-Content $servedFile -ErrorAction SilentlyContinue
+            Write-Host "served-port=$served"
+            if ($served -ne $env:PORT) {
+              Write-Error "ERROR: served port ($served) != expected PORT ($env:PORT)"
+              if (Test-Path .\serve.log) { Get-Content .\serve.log -Tail 200 -ErrorAction SilentlyContinue }
+              exit 2
+            }
+          } else {
+            Write-Warning 'tmp/served-port not found; falling back to TCP check'
+            try {
+              $client = New-Object System.Net.Sockets.TcpClient
+              $async = $client.BeginConnect('127.0.0.1', [int]$env:PORT, $null, $null)
+              $success = $async.AsyncWaitHandle.WaitOne([TimeSpan]::FromSeconds(2))
+              if (-not $success) { throw 'timeout' }
+              $client.EndConnect($async)
+              $client.Close()
+            } catch {
+              Write-Error "ERROR: no server listening on $env:PORT"
+              if (Test-Path .\serve.log) { Get-Content .\serve.log -Tail 200 -ErrorAction SilentlyContinue }
+              exit 2
+            }
+          }
 
       - name: Run Playwright smoke tests
         run: |
