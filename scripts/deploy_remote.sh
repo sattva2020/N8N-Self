@@ -50,7 +50,7 @@ ssh $SSH_OPTS "$TARGET" bash -lc "ls -la $REMOTE_PATH/secrets || true"
 echo "Starting stack compose on remote (traefik + stack)"
 ssh $SSH_OPTS "$TARGET" bash -lc "cd $REMOTE_PATH && docker compose -f stack/docker-compose.yml up -d"
 
-echo "Starting infra compose (dashboard/keycloak)"
-ssh $SSH_OPTS "$TARGET" bash -lc "cd $REMOTE_PATH && docker compose -f infra/docker-compose.dashboard.yml up -d --build"
+echo "Starting optional infra compose (dashboard/keycloak) if present"
+ssh $SSH_OPTS "$TARGET" bash -lc "cd $REMOTE_PATH && if [ -f infra/docker-compose.dashboard.yml ]; then docker compose -f infra/docker-compose.dashboard.yml up -d --build; else echo 'infra/docker-compose.dashboard.yml not found, skipping'; fi"
 
 echo "Deploy finished. Check logs: ssh $TARGET 'docker compose -f $REMOTE_PATH/stack/docker-compose.yml logs -f traefik'"

@@ -33,6 +33,12 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Setup Java (for Structurizr CLI)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
       - name: Make scripts executable (Unix)
         if: runner.os == 'Linux' || runner.os == 'macOS'
         run: chmod +x ./scripts/gen-diagrams.sh
@@ -56,11 +62,30 @@ jobs:
           done
           echo "kroki is ready"
 
+      - name: Download Structurizr CLI (latest)
+        if: runner.os == 'Linux'
+        run: |
+          set -euxo pipefail
+          WORKDIR="$(pwd)/.tools"
+          mkdir -p "$WORKDIR"
+          cd "$WORKDIR"
+          echo "Downloading Structurizr CLI zip..."
+          curl -fsSL -o structurizr-cli.zip \
+            https://github.com/structurizr/cli/releases/latest/download/structurizr-cli.zip
+          unzip -o structurizr-cli.zip
+          # Find the jar produced by the zip (structurizr-cli-<ver>.jar)
+          JAR_PATH=$(find . -maxdepth 2 -type f -name 'structurizr-cli-*.jar' | head -n 1)
+          if [ -z "$JAR_PATH" ]; then
+            echo "Could not locate structurizr-cli-*.jar after unzip" >&2
+            exit 1
+          fi
+          echo "STRUCTURIZR_CLI_JAR=$WORKDIR/$JAR_PATH" >> $GITHUB_ENV
 
       - name: Run generator
         shell: bash
         env:
           KROKI_URL: http://localhost:8000
+          STRUCTURIZR_CLI_JAR: ${{ env.STRUCTURIZR_CLI_JAR }}
         run: |
           ./scripts/gen-diagrams.sh
 
