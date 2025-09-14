@@ -92,3 +92,31 @@ jobs:
             -e "SUBDOMAIN=${{ inputs.subdomain }}" \
             -e "TZ=${{ inputs.tz }}" \
             -e "GENERIC_TIMEZONE=${{ inputs.generic_timezone }}"
+
+      - name: Collect remote docker logs (on failure)
+        if: failure()
+        run: |
+          set -e
+          mkdir -p ansible-logs
+          # Docker process listing on remote
+          ansible -i tests/ansible/inventory.ci.ini n8n -m shell -a "docker ps -a" > ansible-logs/docker-ps.txt || true
+          # Compose status and logs on remote
+          ansible -i tests/ansible/inventory.ci.ini n8n -m shell -a "cd /opt/n8n/stack && docker compose ps" > ansible-logs/compose-ps.txt || true
+          ansible -i tests/ansible/inventory.ci.ini n8n -m shell -a "cd /opt/n8n/stack && docker compose logs --no-color --tail=500" > ansible-logs/compose-logs.txt || true
+          # System info
+          ansible -i tests/ansible/inventory.ci.ini n8n -m shell -a "df -h" > ansible-logs/df-h.txt || true
+          ansible -i tests/ansible/inventory.ci.ini n8n -m shell -a "free -m" > ansible-logs/free-m.txt || true
+
+      - name: Collect endpoint headers (always)
+        if: always()
+        run: |
+          mkdir -p ansible-logs
+          curl -sk -I https://traefik.${{ inputs.domain_name }} > ansible-logs/traefik-head.txt || true
+          curl -sk -I https://${{ inputs.subdomain }}.${{ inputs.domain_name }} > ansible-logs/n8n-head.txt || true
+
+      - name: Upload smoke artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ansible-smoke-logs
+          path: ansible-logs
