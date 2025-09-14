@@ -1,0 +1,19 @@
+---
+# Общие переменные для деплоя/смок‑теста
+repo_root: "{{ playbook_dir | realpath }}/../../"
+stack_dir: "{{ repo_root }}/stack"
+secrets_dir: "{{ repo_root }}/secrets"
+compose_files:
+  - "{{ stack_dir }}/docker-compose.yml"
+# prod режим: override не подключаем (он отключает ACME)
+
+DOMAIN_NAME: sattva-ai.top
+SUBDOMAIN: n8n
+ACME_EMAIL: ruslan.griban@gmail.com
+TZ: Europe/Kyiv
+GENERIC_TIMEZONE: Europe/Kyiv
+
+# Эндпоинты для смок‑проверки
+traefik_url: "https://traefik.{{ DOMAIN_NAME }}"
+n8n_url: "https://{{ SUBDOMAIN }}.{{ DOMAIN_NAME }}"
+*** End Patch
