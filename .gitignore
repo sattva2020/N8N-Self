@@ -12,6 +12,16 @@ secrets/
 node_modules/
 *.log
 
+# SSH/keys/certs (безопасность)
+id_rsa
+id_rsa*
+id_ed25519
+id_ed25519*
+*.pem
+*.key
+*.ppk
+*.p12
+
 # ОС и IDE
 .DS_Store
 Thumbs.db
