@@ -1,6 +1,7 @@
 services:
   traefik:
     image: traefik:latest
+    container_name: n8n-traefik
     restart: always
     command:
       - "--api.insecure=true"
@@ -47,6 +48,7 @@ services:
 
   n8n-postgres:
     image: postgres:16-alpine
+    container_name: n8n-postgres
     environment:
       - POSTGRES_DB=n8n
       - POSTGRES_USER=n8n
@@ -65,11 +67,13 @@ services:
 
   redis:
     image: redis:7-alpine
+    container_name: n8n-redis
     networks:
       - backend
 
   n8n:
     image: docker.n8n.io/n8nio/n8n
+    container_name: n8n
     restart: always
     ports:
       - "127.0.0.1:5678:5678"
@@ -123,6 +127,7 @@ services:
 
   ollama:
     image: ollama/ollama:latest
+    container_name: n8n-ollama
     volumes:
       - ollama_data:/root/.ollama
     networks:
@@ -130,6 +135,7 @@ services:
 
   pgvector:
     image: pgvector/pgvector:pg16
+    container_name: n8n-pgvector
     environment:
       - POSTGRES_DB=lightrag
       - POSTGRES_USER=lightrag

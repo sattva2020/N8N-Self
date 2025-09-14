@@ -1,4 +1,22 @@
-# Ignore node modules for frontend to avoid committing huge vendor files
+# Локальные и служебные каталоги (не публикуем)
+.internal/
+__archive__/
+_dev/
+tests/**/logs/
+
+# Среды и секреты
+.env
+secrets/
+
+# Node/JS
+node_modules/
+*.log
+
+# ОС и IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/# Ignore node modules for frontend to avoid committing huge vendor files
 dashboard/frontend/node_modules/
 
 # Build output

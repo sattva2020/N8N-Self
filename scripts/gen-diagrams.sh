@@ -6,6 +6,7 @@ OUT_DIR="$(pwd)/docs/architecture/out"
 mkdir -p "$OUT_DIR"
 
 KROKI_URL="${KROKI_URL:-https://kroki.io}"
+STRUCTURIZR_CLI_JAR="${STRUCTURIZR_CLI_JAR:-}"
 
 echo "Rendering diagrams to $OUT_DIR using Kroki at $KROKI_URL"
 
@@ -33,28 +34,51 @@ render_mermaid() {
   local src="$1"
   local base=$(basename "$src" .mmd)
   local out_png="$OUT_DIR/${base}.png"
-  echo "Rendering $src -> $out_png"
+  local out_svg="$OUT_DIR/${base}.svg"
+  echo "Rendering $src -> $out_png / $out_svg"
   if ! retry_post "$src" "$KROKI_URL/mermaid/png" "$out_png"; then
-    echo "ERROR: rendering $src failed after retries"
-    return 1
+    echo "ERROR: rendering $src to PNG failed after retries"
+  fi
+  if ! retry_post "$src" "$KROKI_URL/mermaid/svg" "$out_svg"; then
+    echo "ERROR: rendering $src to SVG failed after retries"
   fi
 }
 
-render_structurizr() {
+render_structurizr_via_export() {
+  local src="$1" # .dsl
+  local base=$(basename "$src" .dsl)
+  local export_dir="$(pwd)/docs/architecture/.structurizr-export-${base}"
+  rm -rf "$export_dir" && mkdir -p "$export_dir"
+  echo "Exporting Structurizr DSL $src -> Mermaid into $export_dir"
+  # Export all views into Mermaid files
+  java -jar "$STRUCTURIZR_CLI_JAR" export -workspace "$src" -format mermaid -output "$export_dir"
+  # Render each exported .mmd
+  find "$export_dir" -type f -name '*.mmd' | while read -r mf; do
+    render_mermaid "$mf"
+  done
+}
+
+render_structurizr_fallback() {
   local src="$1"
   local base=$(basename "$src" .dsl)
-  local out_png="$OUT_DIR/${base}.png"
-  echo "Note: Structurizr DSL rendering via Kroki is not supported; saving source to out for reference: $src -> $OUT_DIR/"
+  echo "Structurizr CLI not configured; copying $src into out/ for reference"
   cp "$src" "$OUT_DIR/"
 }
 
-
+# 1) Render all Mermaid sources under docs/architecture
 find docs/architecture -type f -name '*.mmd' | while read -r f; do
   render_mermaid "$f" || echo "Warning: render failed for $f"
 done
 
-find docs/architecture -type f -name '*.dsl' | while read -r f; do
-  render_structurizr "$f"
-done
+# 2) Structurizr: export to Mermaid if CLI is available, otherwise copy DSL
+if [ -n "$STRUCTURIZR_CLI_JAR" ] && [ -f "$STRUCTURIZR_CLI_JAR" ]; then
+  find docs/architecture -type f -name '*.dsl' | while read -r f; do
+    render_structurizr_via_export "$f" || echo "Warning: structurizr export failed for $f"
+  done
+else
+  find docs/architecture -type f -name '*.dsl' | while read -r f; do
+    render_structurizr_fallback "$f"
+  done
+fi
 
 echo "Done. Outputs in $OUT_DIR"

@@ -1,0 +1,31 @@
+﻿2025-09-11T06:22:12.0974744Z Current runner version: '2.328.0'
+2025-09-11T06:22:12.1034880Z ##[group]Runner Image Provisioner
+2025-09-11T06:22:12.1036016Z Hosted Compute Agent
+2025-09-11T06:22:12.1036808Z Version: 20250829.383
+2025-09-11T06:22:12.1037704Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+2025-09-11T06:22:12.1038755Z Build Date: 2025-08-29T13:48:48Z
+2025-09-11T06:22:12.1039674Z ##[endgroup]
+2025-09-11T06:22:12.1040405Z ##[group]Operating System
+2025-09-11T06:22:12.1041316Z Microsoft Windows Server 2022
+2025-09-11T06:22:12.1042125Z 10.0.20348
+2025-09-11T06:22:12.1042799Z Datacenter
+2025-09-11T06:22:12.1043424Z ##[endgroup]
+2025-09-11T06:22:12.1044092Z ##[group]Runner Image
+2025-09-11T06:22:12.1044882Z Image: windows-2022
+2025-09-11T06:22:12.1045584Z Version: 20250907.29.1
+2025-09-11T06:22:12.1047274Z Included Software: https://github.com/actions/runner-images/blob/win22/20250907.29/images/windows/Windows2022-Readme.md
+2025-09-11T06:22:12.1049605Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20250907.29
+2025-09-11T06:22:12.1051847Z ##[endgroup]
+2025-09-11T06:22:12.1053571Z ##[group]GITHUB_TOKEN Permissions
+2025-09-11T06:22:12.1055833Z Contents: read
+2025-09-11T06:22:12.1056601Z Metadata: read
+2025-09-11T06:22:12.1057274Z Packages: read
+2025-09-11T06:22:12.1057907Z ##[endgroup]
+2025-09-11T06:22:12.1060853Z Secret source: Actions
+2025-09-11T06:22:12.1061920Z Prepare workflow directory
+2025-09-11T06:22:12.1524091Z Prepare all required actions
+2025-09-11T06:22:12.1578642Z Getting action download info
+2025-09-11T06:22:12.4834775Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-09-11T06:22:12.6504236Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-09-11T06:22:12.8138929Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-09-11T06:22:13.1580455Z Complete job name: e2e-smoke (windows-latest, 18.x)

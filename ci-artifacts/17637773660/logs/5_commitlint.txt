@@ -1,0 +1,191 @@
+﻿2025-09-11T07:48:04.7321284Z Current runner version: '2.328.0'
+2025-09-11T07:48:04.7356638Z ##[group]Runner Image Provisioner
+2025-09-11T07:48:04.7357969Z Hosted Compute Agent
+2025-09-11T07:48:04.7359043Z Version: 20250829.383
+2025-09-11T07:48:04.7360120Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+2025-09-11T07:48:04.7361354Z Build Date: 2025-08-29T13:48:48Z
+2025-09-11T07:48:04.7362270Z ##[endgroup]
+2025-09-11T07:48:04.7363357Z ##[group]Operating System
+2025-09-11T07:48:04.7364547Z Ubuntu
+2025-09-11T07:48:04.7365412Z 24.04.3
+2025-09-11T07:48:04.7366252Z LTS
+2025-09-11T07:48:04.7367083Z ##[endgroup]
+2025-09-11T07:48:04.7367949Z ##[group]Runner Image
+2025-09-11T07:48:04.7369089Z Image: ubuntu-24.04
+2025-09-11T07:48:04.7370009Z Version: 20250907.24.1
+2025-09-11T07:48:04.7371786Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
+2025-09-11T07:48:04.7375058Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
+2025-09-11T07:48:04.7376798Z ##[endgroup]
+2025-09-11T07:48:04.7378826Z ##[group]GITHUB_TOKEN Permissions
+2025-09-11T07:48:04.7381354Z Contents: read
+2025-09-11T07:48:04.7382315Z Metadata: read
+2025-09-11T07:48:04.7383216Z Packages: read
+2025-09-11T07:48:04.7384024Z ##[endgroup]
+2025-09-11T07:48:04.7387518Z Secret source: Actions
+2025-09-11T07:48:04.7388602Z Prepare workflow directory
+2025-09-11T07:48:04.8052942Z Prepare all required actions
+2025-09-11T07:48:04.8111253Z Getting action download info
+2025-09-11T07:48:05.3049330Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-09-11T07:48:05.5055111Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-09-11T07:48:05.6849355Z Complete job name: commitlint
+2025-09-11T07:48:05.7497327Z ##[group]Run actions/checkout@v4
+2025-09-11T07:48:05.7498147Z with:
+2025-09-11T07:48:05.7498538Z   repository: sattva2020/N8N-Self
+2025-09-11T07:48:05.7499161Z   token: ***
+2025-09-11T07:48:05.7499559Z   ssh-strict: true
+2025-09-11T07:48:05.7499939Z   ssh-user: git
+2025-09-11T07:48:05.7500324Z   persist-credentials: true
+2025-09-11T07:48:05.7500752Z   clean: true
+2025-09-11T07:48:05.7501140Z   sparse-checkout-cone-mode: true
+2025-09-11T07:48:05.7501601Z   fetch-depth: 1
+2025-09-11T07:48:05.7501973Z   fetch-tags: false
+2025-09-11T07:48:05.7502382Z   show-progress: true
+2025-09-11T07:48:05.7502773Z   lfs: false
+2025-09-11T07:48:05.7503124Z   submodules: false
+2025-09-11T07:48:05.7503519Z   set-safe-directory: true
+2025-09-11T07:48:05.7504307Z ##[endgroup]
+2025-09-11T07:48:05.8627064Z Syncing repository: sattva2020/N8N-Self
+2025-09-11T07:48:05.8629974Z ##[group]Getting Git version info
+2025-09-11T07:48:05.8631269Z Working directory is '/home/runner/work/N8N-Self/N8N-Self'
+2025-09-11T07:48:05.8633296Z [command]/usr/bin/git version
+2025-09-11T07:48:05.8736290Z git version 2.51.0
+2025-09-11T07:48:05.8765431Z ##[endgroup]
+2025-09-11T07:48:05.8779276Z Temporarily overriding HOME='/home/runner/work/_temp/e72f47a4-ce51-452f-bc0d-c58e0da1c3b7' before making global git config changes
+2025-09-11T07:48:05.8782533Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-11T07:48:05.8786960Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+2025-09-11T07:48:05.8829601Z Deleting the contents of '/home/runner/work/N8N-Self/N8N-Self'
+2025-09-11T07:48:05.8834625Z ##[group]Initializing the repository
+2025-09-11T07:48:05.8839276Z [command]/usr/bin/git init /home/runner/work/N8N-Self/N8N-Self
+2025-09-11T07:48:05.8948426Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-11T07:48:05.8950851Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-11T07:48:05.8953756Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-11T07:48:05.8955078Z hint:
+2025-09-11T07:48:05.8956206Z hint: 	git config --global init.defaultBranch <name>
+2025-09-11T07:48:05.8957258Z hint:
+2025-09-11T07:48:05.8958672Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-11T07:48:05.8960282Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-11T07:48:05.8961586Z hint:
+2025-09-11T07:48:05.8962303Z hint: 	git branch -m <name>
+2025-09-11T07:48:05.8963049Z hint:
+2025-09-11T07:48:05.8964027Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-11T07:48:05.8966851Z Initialized empty Git repository in /home/runner/work/N8N-Self/N8N-Self/.git/
+2025-09-11T07:48:05.8971191Z [command]/usr/bin/git remote add origin https://github.com/sattva2020/N8N-Self
+2025-09-11T07:48:05.9012769Z ##[endgroup]
+2025-09-11T07:48:05.9016072Z ##[group]Disabling automatic garbage collection
+2025-09-11T07:48:05.9017200Z [command]/usr/bin/git config --local gc.auto 0
+2025-09-11T07:48:05.9048528Z ##[endgroup]
+2025-09-11T07:48:05.9049724Z ##[group]Setting up auth
+2025-09-11T07:48:05.9055593Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-11T07:48:05.9088562Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-11T07:48:05.9440023Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-11T07:48:05.9468827Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-11T07:48:05.9708486Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-11T07:48:05.9751426Z ##[endgroup]
+2025-09-11T07:48:05.9753836Z ##[group]Fetching the repository
+2025-09-11T07:48:05.9761772Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a4e5c88403e2468312523e1ff628f265d57025a3:refs/remotes/pull/4/merge
+2025-09-11T07:48:08.4463057Z From https://github.com/sattva2020/N8N-Self
+2025-09-11T07:48:08.4484028Z  * [new ref]         a4e5c88403e2468312523e1ff628f265d57025a3 -> pull/4/merge
+2025-09-11T07:48:08.4512111Z ##[endgroup]
+2025-09-11T07:48:08.4513847Z ##[group]Determining the checkout info
+2025-09-11T07:48:08.4525106Z ##[endgroup]
+2025-09-11T07:48:08.4528829Z [command]/usr/bin/git sparse-checkout disable
+2025-09-11T07:48:08.4593965Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-11T07:48:08.4643680Z ##[group]Checking out the ref
+2025-09-11T07:48:08.4647317Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4/merge
+2025-09-11T07:48:09.4631784Z Note: switching to 'refs/remotes/pull/4/merge'.
+2025-09-11T07:48:09.4633757Z 
+2025-09-11T07:48:09.4634441Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-09-11T07:48:09.4635334Z changes and commit them, and you can discard any commits you make in this
+2025-09-11T07:48:09.4636213Z state without impacting any branches by switching back to a branch.
+2025-09-11T07:48:09.4636720Z 
+2025-09-11T07:48:09.4637089Z If you want to create a new branch to retain commits you create, you may
+2025-09-11T07:48:09.4637876Z do so (now or later) by using -c with the switch command. Example:
+2025-09-11T07:48:09.4638321Z 
+2025-09-11T07:48:09.4638525Z   git switch -c <new-branch-name>
+2025-09-11T07:48:09.4638840Z 
+2025-09-11T07:48:09.4639032Z Or undo this operation with:
+2025-09-11T07:48:09.4639319Z 
+2025-09-11T07:48:09.4639509Z   git switch -
+2025-09-11T07:48:09.4639746Z 
+2025-09-11T07:48:09.4640164Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-09-11T07:48:09.4640676Z 
+2025-09-11T07:48:09.4641273Z HEAD is now at a4e5c88 Merge 4d7538491204619ee077593d9b41ecda9841635d into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+2025-09-11T07:48:09.4668751Z ##[endgroup]
+2025-09-11T07:48:09.4709928Z [command]/usr/bin/git log -1 --format=%H
+2025-09-11T07:48:09.4733826Z a4e5c88403e2468312523e1ff628f265d57025a3
+2025-09-11T07:48:09.4968150Z ##[group]Run actions/setup-node@v4
+2025-09-11T07:48:09.4968481Z with:
+2025-09-11T07:48:09.4968702Z   node-version: 18.x
+2025-09-11T07:48:09.4968940Z   always-auth: false
+2025-09-11T07:48:09.4969166Z   check-latest: false
+2025-09-11T07:48:09.4969531Z   token: ***
+2025-09-11T07:48:09.4969752Z ##[endgroup]
+2025-09-11T07:48:09.7031510Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
+2025-09-11T07:48:09.7045075Z ##[group]Environment details
+2025-09-11T07:48:11.7600193Z node: v18.20.8
+2025-09-11T07:48:11.7602665Z npm: 10.8.2
+2025-09-11T07:48:11.7614891Z yarn: 1.22.22
+2025-09-11T07:48:11.7616255Z ##[endgroup]
+2025-09-11T07:48:11.7741007Z ##[group]Run cd dashboard/frontend
+2025-09-11T07:48:11.7741370Z [36;1mcd dashboard/frontend[0m
+2025-09-11T07:48:11.7741639Z [36;1mnpm ci --prefer-offline[0m
+2025-09-11T07:48:11.7868409Z shell: /usr/bin/bash -e {0}
+2025-09-11T07:48:11.7868682Z ##[endgroup]
+2025-09-11T07:48:17.8672278Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-09-11T07:48:18.7120213Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-09-11T07:48:19.1426312Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2025-09-11T07:48:19.7291410Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2025-09-11T07:48:20.1722876Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-09-11T07:48:20.2096583Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-09-11T07:48:20.3704639Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-11T07:48:24.0646532Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-09-11T07:48:24.7565188Z 
+2025-09-11T07:48:24.7569558Z added 589 packages, and audited 590 packages in 13s
+2025-09-11T07:48:24.7571647Z 
+2025-09-11T07:48:24.7573351Z 180 packages are looking for funding
+2025-09-11T07:48:24.7575817Z   run `npm fund` for details
+2025-09-11T07:48:24.7727968Z 
+2025-09-11T07:48:24.7730721Z 3 moderate severity vulnerabilities
+2025-09-11T07:48:24.7739617Z 
+2025-09-11T07:48:24.7740083Z To address all issues (including breaking changes), run:
+2025-09-11T07:48:24.7740592Z   npm audit fix --force
+2025-09-11T07:48:24.7740873Z 
+2025-09-11T07:48:24.7741086Z Run `npm audit` for details.
+2025-09-11T07:48:24.8078944Z ##[group]Run echo "Running commitlint on pull request commits"
+2025-09-11T07:48:24.8079410Z [36;1mecho "Running commitlint on pull request commits"[0m
+2025-09-11T07:48:24.8079721Z [36;1mcd dashboard/frontend[0m
+2025-09-11T07:48:24.8080013Z [36;1m# fetch the base branch to compute commit range reliably[0m
+2025-09-11T07:48:24.8080344Z [36;1mif [ -n "main" ]; then[0m
+2025-09-11T07:48:24.8143612Z [36;1m  git fetch --no-tags --prune --depth=1 origin main || true[0m
+2025-09-11T07:48:24.8144534Z [36;1m  git fetch --no-tags --prune --depth=1 origin +refs/pull/4/merge || true[0m
+2025-09-11T07:48:24.8145471Z [36;1m  git log --pretty=format:%B origin/main..FETCH_HEAD | npm run commitlint --silent || true[0m
+2025-09-11T07:48:24.8146250Z [36;1melse[0m
+2025-09-11T07:48:24.8146719Z [36;1m  # fallback: run commitlint on FETCH_HEAD message[0m
+2025-09-11T07:48:24.8147473Z [36;1m  git fetch --no-tags --prune --depth=1 origin +refs/pull/4/merge || true[0m
+2025-09-11T07:48:24.8148299Z [36;1m  git log --pretty=format:%B FETCH_HEAD | npm run commitlint --silent || true[0m
+2025-09-11T07:48:24.8148922Z [36;1mfi[0m
+2025-09-11T07:48:24.8186064Z shell: /usr/bin/bash -e {0}
+2025-09-11T07:48:24.8186299Z ##[endgroup]
+2025-09-11T07:48:24.8240044Z Running commitlint on pull request commits
+2025-09-11T07:48:25.4885871Z From https://github.com/sattva2020/N8N-Self
+2025-09-11T07:48:25.4886908Z  * branch            main       -> FETCH_HEAD
+2025-09-11T07:48:25.4887758Z  * [new branch]      main       -> origin/main
+2025-09-11T07:48:26.1380737Z From https://github.com/sattva2020/N8N-Self
+2025-09-11T07:48:26.1415209Z  * branch            refs/pull/4/merge -> FETCH_HEAD
+2025-09-11T07:48:26.7670870Z ⧗   input: Merge 4d7538491204619ee077593d9b41ecda9841635d into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+2025-09-11T07:48:26.7671512Z 
+2025-09-11T07:48:26.7671795Z ✔   found 0 problems, 0 warnings
+2025-09-11T07:48:26.7911980Z Post job cleanup.
+2025-09-11T07:48:26.9588458Z Post job cleanup.
+2025-09-11T07:48:27.0536233Z [command]/usr/bin/git version
+2025-09-11T07:48:27.0579818Z git version 2.51.0
+2025-09-11T07:48:27.0630864Z Temporarily overriding HOME='/home/runner/work/_temp/4e58f256-004e-4b31-9d5d-0c4a5aca2852' before making global git config changes
+2025-09-11T07:48:27.0633560Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-11T07:48:27.0649759Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+2025-09-11T07:48:27.0689547Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-11T07:48:27.0725635Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-11T07:48:27.0983753Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-11T07:48:27.1008756Z http.https://github.com/.extraheader
+2025-09-11T07:48:27.1023299Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-09-11T07:48:27.1057226Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-11T07:48:27.1407109Z Cleaning up orphan processes

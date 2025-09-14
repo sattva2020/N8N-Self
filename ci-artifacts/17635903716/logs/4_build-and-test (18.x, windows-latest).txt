@@ -1,0 +1,273 @@
+﻿2025-09-11T06:21:15.0335395Z Current runner version: '2.328.0'
+2025-09-11T06:21:15.0370044Z ##[group]Runner Image Provisioner
+2025-09-11T06:21:15.0371333Z Hosted Compute Agent
+2025-09-11T06:21:15.0372244Z Version: 20250829.383
+2025-09-11T06:21:15.0373175Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+2025-09-11T06:21:15.0374468Z Build Date: 2025-08-29T13:48:48Z
+2025-09-11T06:21:15.0375715Z ##[endgroup]
+2025-09-11T06:21:15.0376699Z ##[group]Operating System
+2025-09-11T06:21:15.0377590Z Ubuntu
+2025-09-11T06:21:15.0378548Z 24.04.3
+2025-09-11T06:21:15.0379333Z LTS
+2025-09-11T06:21:15.0380053Z ##[endgroup]
+2025-09-11T06:21:15.0381083Z ##[group]Runner Image
+2025-09-11T06:21:15.0382019Z Image: ubuntu-24.04
+2025-09-11T06:21:15.0382827Z Version: 20250907.24.1
+2025-09-11T06:21:15.0384913Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
+2025-09-11T06:21:15.0387658Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
+2025-09-11T06:21:15.0389410Z ##[endgroup]
+2025-09-11T06:21:15.0391321Z ##[group]GITHUB_TOKEN Permissions
+2025-09-11T06:21:15.0394022Z Contents: read
+2025-09-11T06:21:15.0395085Z Metadata: read
+2025-09-11T06:21:15.0395972Z Packages: read
+2025-09-11T06:21:15.0396866Z ##[endgroup]
+2025-09-11T06:21:15.0400099Z Secret source: Actions
+2025-09-11T06:21:15.0401203Z Prepare workflow directory
+2025-09-11T06:21:15.1089308Z Prepare all required actions
+2025-09-11T06:21:15.1146903Z Getting action download info
+2025-09-11T06:21:15.6949188Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-09-11T06:21:15.8731351Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-09-11T06:21:15.9692851Z Download action repository 'actions/cache@v4' (SHA:0400d5f644dc74513175e3cd8d07132dd4860809)
+2025-09-11T06:21:16.1719937Z Complete job name: build-and-test (18.x, windows-latest)
+2025-09-11T06:21:16.2340785Z ##[group]Run actions/checkout@v4
+2025-09-11T06:21:16.2341651Z with:
+2025-09-11T06:21:16.2342062Z   repository: sattva2020/N8N-Self
+2025-09-11T06:21:16.2342764Z   token: ***
+2025-09-11T06:21:16.2343134Z   ssh-strict: true
+2025-09-11T06:21:16.2343531Z   ssh-user: git
+2025-09-11T06:21:16.2343927Z   persist-credentials: true
+2025-09-11T06:21:16.2344370Z   clean: true
+2025-09-11T06:21:16.2344953Z   sparse-checkout-cone-mode: true
+2025-09-11T06:21:16.2345429Z   fetch-depth: 1
+2025-09-11T06:21:16.2345807Z   fetch-tags: false
+2025-09-11T06:21:16.2346198Z   show-progress: true
+2025-09-11T06:21:16.2346595Z   lfs: false
+2025-09-11T06:21:16.2346961Z   submodules: false
+2025-09-11T06:21:16.2347415Z   set-safe-directory: true
+2025-09-11T06:21:16.2348142Z ##[endgroup]
+2025-09-11T06:21:16.3590213Z Syncing repository: sattva2020/N8N-Self
+2025-09-11T06:21:16.3592895Z ##[group]Getting Git version info
+2025-09-11T06:21:16.3593642Z Working directory is '/home/runner/work/N8N-Self/N8N-Self'
+2025-09-11T06:21:16.3596426Z [command]/usr/bin/git version
+2025-09-11T06:21:16.3776392Z git version 2.51.0
+2025-09-11T06:21:16.3804219Z ##[endgroup]
+2025-09-11T06:21:16.3821980Z Temporarily overriding HOME='/home/runner/work/_temp/c8fc0e51-d902-4e51-8ba6-c2e29779dba2' before making global git config changes
+2025-09-11T06:21:16.3824283Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-11T06:21:16.3829667Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+2025-09-11T06:21:16.3875563Z Deleting the contents of '/home/runner/work/N8N-Self/N8N-Self'
+2025-09-11T06:21:16.3880458Z ##[group]Initializing the repository
+2025-09-11T06:21:16.3886436Z [command]/usr/bin/git init /home/runner/work/N8N-Self/N8N-Self
+2025-09-11T06:21:16.4002214Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-11T06:21:16.4004283Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-11T06:21:16.4008182Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-11T06:21:16.4009945Z hint:
+2025-09-11T06:21:16.4010763Z hint: 	git config --global init.defaultBranch <name>
+2025-09-11T06:21:16.4011705Z hint:
+2025-09-11T06:21:16.4012595Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-11T06:21:16.4014026Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-11T06:21:16.4015415Z hint:
+2025-09-11T06:21:16.4016460Z hint: 	git branch -m <name>
+2025-09-11T06:21:16.4017240Z hint:
+2025-09-11T06:21:16.4018567Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-11T06:21:16.4020240Z Initialized empty Git repository in /home/runner/work/N8N-Self/N8N-Self/.git/
+2025-09-11T06:21:16.4026048Z [command]/usr/bin/git remote add origin https://github.com/sattva2020/N8N-Self
+2025-09-11T06:21:16.4075131Z ##[endgroup]
+2025-09-11T06:21:16.4076320Z ##[group]Disabling automatic garbage collection
+2025-09-11T06:21:16.4077371Z [command]/usr/bin/git config --local gc.auto 0
+2025-09-11T06:21:16.4112516Z ##[endgroup]
+2025-09-11T06:21:16.4113708Z ##[group]Setting up auth
+2025-09-11T06:21:16.4126588Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-11T06:21:16.4158478Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-11T06:21:16.4512117Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-11T06:21:16.4546900Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-11T06:21:16.4797475Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-11T06:21:16.4847641Z ##[endgroup]
+2025-09-11T06:21:16.4850670Z ##[group]Fetching the repository
+2025-09-11T06:21:16.4859096Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a86a43acea3db8d667e28aaf0da18f14a61a1dab:refs/remotes/pull/4/merge
+2025-09-11T06:21:18.7785326Z From https://github.com/sattva2020/N8N-Self
+2025-09-11T06:21:18.7786292Z  * [new ref]         a86a43acea3db8d667e28aaf0da18f14a61a1dab -> pull/4/merge
+2025-09-11T06:21:18.7819768Z ##[endgroup]
+2025-09-11T06:21:18.7820542Z ##[group]Determining the checkout info
+2025-09-11T06:21:18.7821758Z ##[endgroup]
+2025-09-11T06:21:18.7824106Z [command]/usr/bin/git sparse-checkout disable
+2025-09-11T06:21:18.7868179Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-11T06:21:18.7900335Z ##[group]Checking out the ref
+2025-09-11T06:21:18.7904246Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4/merge
+2025-09-11T06:21:19.8090775Z Note: switching to 'refs/remotes/pull/4/merge'.
+2025-09-11T06:21:19.8093026Z 
+2025-09-11T06:21:19.8093615Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-09-11T06:21:19.8094968Z changes and commit them, and you can discard any commits you make in this
+2025-09-11T06:21:19.8096111Z state without impacting any branches by switching back to a branch.
+2025-09-11T06:21:19.8096740Z 
+2025-09-11T06:21:19.8097216Z If you want to create a new branch to retain commits you create, you may
+2025-09-11T06:21:19.8098118Z do so (now or later) by using -c with the switch command. Example:
+2025-09-11T06:21:19.8098667Z 
+2025-09-11T06:21:19.8098963Z   git switch -c <new-branch-name>
+2025-09-11T06:21:19.8099399Z 
+2025-09-11T06:21:19.8099718Z Or undo this operation with:
+2025-09-11T06:21:19.8100119Z 
+2025-09-11T06:21:19.8100441Z   git switch -
+2025-09-11T06:21:19.8100877Z 
+2025-09-11T06:21:19.8101425Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-09-11T06:21:19.8102117Z 
+2025-09-11T06:21:19.8102899Z HEAD is now at a86a43a Merge bfd9e5fbca8111592139ab0542afc5b13bcb13db into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+2025-09-11T06:21:19.8130817Z ##[endgroup]
+2025-09-11T06:21:19.8173930Z [command]/usr/bin/git log -1 --format=%H
+2025-09-11T06:21:19.8198462Z a86a43acea3db8d667e28aaf0da18f14a61a1dab
+2025-09-11T06:21:19.8445066Z ##[group]Run actions/setup-node@v4
+2025-09-11T06:21:19.8445421Z with:
+2025-09-11T06:21:19.8445654Z   node-version: 18.x
+2025-09-11T06:21:19.8445881Z   always-auth: false
+2025-09-11T06:21:19.8446111Z   check-latest: false
+2025-09-11T06:21:19.8446488Z   token: ***
+2025-09-11T06:21:19.8446713Z ##[endgroup]
+2025-09-11T06:21:20.0405444Z Found in cache @ /opt/hostedtoolcache/node/18.20.8/x64
+2025-09-11T06:21:20.0414151Z ##[group]Environment details
+2025-09-11T06:21:22.1640784Z node: v18.20.8
+2025-09-11T06:21:22.1642011Z npm: 10.8.2
+2025-09-11T06:21:22.1645833Z yarn: 1.22.22
+2025-09-11T06:21:22.1647010Z ##[endgroup]
+2025-09-11T06:21:23.1928448Z ##[group]Run actions/cache@v4
+2025-09-11T06:21:23.1928881Z with:
+2025-09-11T06:21:23.1929198Z   path: **/node_modules
+~/.npm
+
+2025-09-11T06:21:23.1929915Z   key: Linux-node-18.x-34911ae93f909afeddde5938e9fc1ca836d04dd7ce1c0241dcb30629a1e2bd93
+2025-09-11T06:21:23.1930669Z   restore-keys: Linux-node-18.x-
+
+2025-09-11T06:21:23.1931088Z   enableCrossOsArchive: false
+2025-09-11T06:21:23.1931546Z   fail-on-cache-miss: false
+2025-09-11T06:21:23.1931939Z   lookup-only: false
+2025-09-11T06:21:23.1932311Z   save-always: false
+2025-09-11T06:21:23.1932653Z ##[endgroup]
+2025-09-11T06:21:23.8115341Z Cache hit for: Linux-node-18.x-34911ae93f909afeddde5938e9fc1ca836d04dd7ce1c0241dcb30629a1e2bd93
+2025-09-11T06:21:25.1179347Z Received 0 of 89608748 (0.0%), 0.0 MBs/sec
+2025-09-11T06:21:26.1171135Z Received 85414444 of 89608748 (95.3%), 40.7 MBs/sec
+2025-09-11T06:21:26.2109070Z Received 89608748 of 89608748 (100.0%), 40.8 MBs/sec
+2025-09-11T06:21:26.2111054Z Cache Size: ~85 MB (89608748 B)
+2025-09-11T06:21:26.2143513Z [command]/usr/bin/tar -xf /home/runner/work/_temp/b4ac3054-7292-4d82-a958-b50af6d5d8fb/cache.tzst -P -C /home/runner/work/N8N-Self/N8N-Self --use-compress-program unzstd
+2025-09-11T06:21:28.3177359Z Cache restored successfully
+2025-09-11T06:21:28.3432617Z Cache restored from key: Linux-node-18.x-34911ae93f909afeddde5938e9fc1ca836d04dd7ce1c0241dcb30629a1e2bd93
+2025-09-11T06:21:28.3567058Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:21:28.3567504Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:21:28.3567766Z [36;1mnpm ci --prefer-offline[0m
+2025-09-11T06:21:28.3568039Z [36;1mnpm run build --if-present[0m
+2025-09-11T06:21:28.3568295Z [36;1mnpm test --if-present[0m
+2025-09-11T06:21:28.3757198Z shell: /usr/bin/bash -e {0}
+2025-09-11T06:21:28.3757557Z ##[endgroup]
+2025-09-11T06:21:35.3426592Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-09-11T06:21:35.5010393Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-09-11T06:21:35.5150473Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-09-11T06:21:35.5332369Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2025-09-11T06:21:35.6437533Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-09-11T06:21:35.6438992Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-11T06:21:35.7288223Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2025-09-11T06:21:37.7194015Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-09-11T06:21:38.3472128Z 
+2025-09-11T06:21:38.3484884Z added 589 packages, and audited 590 packages in 10s
+2025-09-11T06:21:38.3486606Z 
+2025-09-11T06:21:38.3487056Z 180 packages are looking for funding
+2025-09-11T06:21:38.3488581Z   run `npm fund` for details
+2025-09-11T06:21:38.3618966Z 
+2025-09-11T06:21:38.3623629Z 3 moderate severity vulnerabilities
+2025-09-11T06:21:38.3628295Z 
+2025-09-11T06:21:38.3631551Z To address all issues (including breaking changes), run:
+2025-09-11T06:21:38.3634847Z   npm audit fix --force
+2025-09-11T06:21:38.3637294Z 
+2025-09-11T06:21:38.3641943Z Run `npm audit` for details.
+2025-09-11T06:21:38.5397945Z 
+2025-09-11T06:21:38.5402931Z > dashboard-frontend@0.1.0 build
+2025-09-11T06:21:38.5407519Z > vite build
+2025-09-11T06:21:38.5411548Z 
+2025-09-11T06:21:38.9553914Z [36mvite v4.5.14 [32mbuilding for production...[36m[39m
+2025-09-11T06:21:38.9858197Z transforming...
+2025-09-11T06:21:41.0015081Z [32m✓[39m 86 modules transformed.
+2025-09-11T06:21:41.1359290Z rendering chunks...
+2025-09-11T06:21:41.1419240Z computing gzip size...
+2025-09-11T06:21:41.1532028Z [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.39 kB[22m[1m[22m[2m │ gzip:  0.26 kB[22m
+2025-09-11T06:21:41.1534887Z [2mdist/[22m[2massets/[22m[35mindex-4404f2c3.css  [39m[1m[2m  9.05 kB[22m[1m[22m[2m │ gzip:  2.32 kB[22m
+2025-09-11T06:21:41.1537355Z [2mdist/[22m[2massets/[22m[36mindex-26727ed1.js   [39m[1m[2m183.82 kB[22m[1m[22m[2m │ gzip: 61.53 kB[22m
+2025-09-11T06:21:41.1542059Z [32m✓ built in 2.20s[39m
+2025-09-11T06:21:41.3336148Z 
+2025-09-11T06:21:41.3338528Z > dashboard-frontend@0.1.0 test
+2025-09-11T06:21:41.3342651Z > vitest
+2025-09-11T06:21:41.3342859Z 
+2025-09-11T06:21:41.7330107Z 
+2025-09-11T06:21:41.7331928Z [7m[1m[36m RUN [39m[22m[27m [36mv0.34.6[39m [90m/home/runner/work/N8N-Self/N8N-Self/dashboard/frontend[39m
+2025-09-11T06:21:41.7333105Z 
+2025-09-11T06:21:43.0887819Z  [32m✓[39m src/components/LogsPane.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 61[2mms[22m[39m
+2025-09-11T06:21:43.9981601Z  [32m✓[39m src/components/DetailsPanel.test.tsx [2m ([22m[2m3 tests[22m[2m)[22m[90m 42[2mms[22m[39m
+2025-09-11T06:21:44.7837454Z  [32m✓[39m src/api.test.ts [2m ([22m[2m2 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+2025-09-11T06:21:45.6933069Z  [32m✓[39m src/components/TopBar.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 31[2mms[22m[39m
+2025-09-11T06:21:46.5765137Z  [32m✓[39m src/components/ServicesTable.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 36[2mms[22m[39m
+2025-09-11T06:21:46.5931910Z 
+2025-09-11T06:21:46.5947879Z [2m Test Files [22m [1m[32m5 passed[39m[22m[90m (5)[39m
+2025-09-11T06:21:46.5950868Z [2m      Tests [22m [1m[32m8 passed[39m[22m[90m (8)[39m
+2025-09-11T06:21:46.5955044Z [2m   Start at [22m 06:21:41
+2025-09-11T06:21:46.5976320Z [2m   Duration [22m 4.86s[2m (transform 116ms, setup 327ms, collect 787ms, tests 173ms, environment 2.20s, prepare 487ms)[22m
+2025-09-11T06:21:46.5977230Z 
+2025-09-11T06:21:46.6233560Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:21:46.6233903Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:21:46.6234163Z [36;1mnpm ci --prefer-offline[0m
+2025-09-11T06:21:46.6234433Z [36;1mnpm run typecheck --if-present[0m
+2025-09-11T06:21:46.6235030Z [36;1mnpm test --if-present[0m
+2025-09-11T06:21:46.6265854Z shell: /usr/bin/bash -e {0}
+2025-09-11T06:21:46.6266113Z ##[endgroup]
+2025-09-11T06:21:49.8941346Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-09-11T06:21:50.0524855Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-09-11T06:21:50.0660295Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-09-11T06:21:50.0850484Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2025-09-11T06:21:50.1908942Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-09-11T06:21:50.1920389Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-11T06:21:50.2704133Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2025-09-11T06:21:52.4146866Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-09-11T06:21:53.2876499Z 
+2025-09-11T06:21:53.2877652Z added 589 packages, and audited 590 packages in 7s
+2025-09-11T06:21:53.2878650Z 
+2025-09-11T06:21:53.2879152Z 180 packages are looking for funding
+2025-09-11T06:21:53.2879673Z   run `npm fund` for details
+2025-09-11T06:21:53.3040383Z 
+2025-09-11T06:21:53.3053809Z 3 moderate severity vulnerabilities
+2025-09-11T06:21:53.3054468Z 
+2025-09-11T06:21:53.3055269Z To address all issues (including breaking changes), run:
+2025-09-11T06:21:53.3055862Z   npm audit fix --force
+2025-09-11T06:21:53.3056094Z 
+2025-09-11T06:21:53.3056279Z Run `npm audit` for details.
+2025-09-11T06:21:53.5277322Z 
+2025-09-11T06:21:53.5277952Z > dashboard-frontend@0.1.0 typecheck
+2025-09-11T06:21:53.5278530Z > tsc --noEmit
+2025-09-11T06:21:53.5278792Z 
+2025-09-11T06:21:57.1787445Z 
+2025-09-11T06:21:57.1811644Z > dashboard-frontend@0.1.0 test
+2025-09-11T06:21:57.1812169Z > vitest
+2025-09-11T06:21:57.1812353Z 
+2025-09-11T06:21:57.5661747Z 
+2025-09-11T06:21:57.5663568Z [7m[1m[36m RUN [39m[22m[27m [36mv0.34.6[39m [90m/home/runner/work/N8N-Self/N8N-Self/dashboard/frontend[39m
+2025-09-11T06:21:57.5666285Z 
+2025-09-11T06:21:58.8909909Z  [32m✓[39m src/components/LogsPane.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 62[2mms[22m[39m
+2025-09-11T06:21:59.8031406Z  [32m✓[39m src/components/DetailsPanel.test.tsx [2m ([22m[2m3 tests[22m[2m)[22m[90m 48[2mms[22m[39m
+2025-09-11T06:22:00.5883820Z  [32m✓[39m src/api.test.ts [2m ([22m[2m2 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+2025-09-11T06:22:01.5061490Z  [32m✓[39m src/components/TopBar.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 32[2mms[22m[39m
+2025-09-11T06:22:02.3963267Z  [32m✓[39m src/components/ServicesTable.test.tsx [2m ([22m[2m1 test[22m[2m)[22m[90m 36[2mms[22m[39m
+2025-09-11T06:22:02.4129440Z 
+2025-09-11T06:22:02.4141337Z [2m Test Files [22m [1m[32m5 passed[39m[22m[90m (5)[39m
+2025-09-11T06:22:02.4147060Z [2m      Tests [22m [1m[32m8 passed[39m[22m[90m (8)[39m
+2025-09-11T06:22:02.4153523Z [2m   Start at [22m 06:21:57
+2025-09-11T06:22:02.4157354Z [2m   Duration [22m 4.85s[2m (transform 110ms, setup 330ms, collect 794ms, tests 182ms, environment 2.15s, prepare 536ms)[22m
+2025-09-11T06:22:02.4158911Z 
+2025-09-11T06:22:04.7873549Z Post job cleanup.
+2025-09-11T06:22:04.9300008Z Cache hit occurred on the primary key Linux-node-18.x-34911ae93f909afeddde5938e9fc1ca836d04dd7ce1c0241dcb30629a1e2bd93, not saving cache.
+2025-09-11T06:22:04.9417852Z Post job cleanup.
+2025-09-11T06:22:05.1146070Z Post job cleanup.
+2025-09-11T06:22:05.2152194Z [command]/usr/bin/git version
+2025-09-11T06:22:05.2194305Z git version 2.51.0
+2025-09-11T06:22:05.2242007Z Temporarily overriding HOME='/home/runner/work/_temp/e15bc7ea-69f8-449f-88fd-85eab92736ba' before making global git config changes
+2025-09-11T06:22:05.2244367Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-11T06:22:05.2260748Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+2025-09-11T06:22:05.2300110Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-11T06:22:05.2335789Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-11T06:22:05.2687428Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-11T06:22:05.2731653Z http.https://github.com/.extraheader
+2025-09-11T06:22:05.2748521Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-09-11T06:22:05.2825667Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-11T06:22:05.3390399Z Cleaning up orphan processes

@@ -1,0 +1,25 @@
+﻿2025-09-11T06:24:37.9629666Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:24:37.9630050Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:24:37.9630410Z [36;1m# the simple server writes actual port to tmp/served-port when it starts[0m
+2025-09-11T06:24:37.9630825Z [36;1mif [ -f tmp/served-port ]; then[0m
+2025-09-11T06:24:37.9631067Z [36;1m  served=$(cat tmp/served-port)[0m
+2025-09-11T06:24:37.9631302Z [36;1m  echo "served-port=$served"[0m
+2025-09-11T06:24:37.9631548Z [36;1m  if [ "$served" != "$PORT" ]; then[0m
+2025-09-11T06:24:37.9631872Z [36;1m    echo "ERROR: served port ($served) != expected PORT ($PORT)" >&2[0m
+2025-09-11T06:24:37.9632198Z [36;1m    cat serve.log || true[0m
+2025-09-11T06:24:37.9632398Z [36;1m    exit 2[0m
+2025-09-11T06:24:37.9632563Z [36;1m  fi[0m
+2025-09-11T06:24:37.9632703Z [36;1melse[0m
+2025-09-11T06:24:37.9632964Z [36;1m  echo "WARNING: tmp/served-port not found; falling back to nc check"[0m
+2025-09-11T06:24:37.9633314Z [36;1m  if ! nc -z localhost $PORT; then[0m
+2025-09-11T06:24:37.9633642Z [36;1m    echo "ERROR: no server listening on $PORT" >&2[0m
+2025-09-11T06:24:37.9634102Z [36;1m    cat serve.log || true[0m
+2025-09-11T06:24:37.9634297Z [36;1m    exit 2[0m
+2025-09-11T06:24:37.9634456Z [36;1m  fi[0m
+2025-09-11T06:24:37.9634592Z [36;1mfi[0m
+2025-09-11T06:24:37.9727161Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-09-11T06:24:37.9727625Z ##[endgroup]
+2025-09-11T06:24:38.2558184Z served-port=5177
+2025-09-11T06:24:38.2559174Z ERROR: served port (5177) != expected PORT ()
+2025-09-11T06:24:38.2708809Z cat: serve.log: No such file or directory
+2025-09-11T06:24:38.2760493Z ##[error]Process completed with exit code 2.

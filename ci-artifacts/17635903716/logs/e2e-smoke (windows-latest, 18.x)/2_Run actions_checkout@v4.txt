@@ -1,0 +1,127 @@
+﻿2025-09-11T06:22:13.3546003Z ##[group]Run actions/checkout@v4
+2025-09-11T06:22:13.3547309Z with:
+2025-09-11T06:22:13.3547828Z   repository: sattva2020/N8N-Self
+2025-09-11T06:22:13.3548714Z   token: ***
+2025-09-11T06:22:13.3549174Z   ssh-strict: true
+2025-09-11T06:22:13.3549639Z   ssh-user: git
+2025-09-11T06:22:13.3550119Z   persist-credentials: true
+2025-09-11T06:22:13.3550663Z   clean: true
+2025-09-11T06:22:13.3551140Z   sparse-checkout-cone-mode: true
+2025-09-11T06:22:13.3551735Z   fetch-depth: 1
+2025-09-11T06:22:13.3552229Z   fetch-tags: false
+2025-09-11T06:22:13.3552713Z   show-progress: true
+2025-09-11T06:22:13.3553205Z   lfs: false
+2025-09-11T06:22:13.3553643Z   submodules: false
+2025-09-11T06:22:13.3554155Z   set-safe-directory: true
+2025-09-11T06:22:13.3554927Z ##[endgroup]
+2025-09-11T06:22:13.5856724Z Syncing repository: sattva2020/N8N-Self
+2025-09-11T06:22:13.5858776Z ##[group]Getting Git version info
+2025-09-11T06:22:13.5859419Z Working directory is 'D:\a\N8N-Self\N8N-Self'
+2025-09-11T06:22:13.7244499Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-09-11T06:22:14.2901843Z git version 2.51.0.windows.1
+2025-09-11T06:22:14.2905624Z ##[endgroup]
+2025-09-11T06:22:14.2912665Z Temporarily overriding HOME='D:\a\_temp\a3f2d590-5971-46c5-9d77-41da91594369' before making global git config changes
+2025-09-11T06:22:14.2915754Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-11T06:22:14.2918558Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\N8N-Self\N8N-Self
+2025-09-11T06:22:14.3911100Z Deleting the contents of 'D:\a\N8N-Self\N8N-Self'
+2025-09-11T06:22:14.3913801Z ##[group]Initializing the repository
+2025-09-11T06:22:14.3915807Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\N8N-Self\N8N-Self
+2025-09-11T06:22:14.5754228Z Initialized empty Git repository in D:/a/N8N-Self/N8N-Self/.git/
+2025-09-11T06:22:14.5760310Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/sattva2020/N8N-Self
+2025-09-11T06:22:14.5801623Z ##[endgroup]
+2025-09-11T06:22:14.5803683Z ##[group]Disabling automatic garbage collection
+2025-09-11T06:22:14.5844899Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-09-11T06:22:14.6159165Z ##[endgroup]
+2025-09-11T06:22:14.6161435Z ##[group]Setting up auth
+2025-09-11T06:22:14.6164191Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-09-11T06:22:15.3479406Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-09-11T06:22:16.7281902Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-11T06:22:16.7557569Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-09-11T06:22:17.2812230Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-09-11T06:22:17.3084272Z ##[endgroup]
+2025-09-11T06:22:17.3085136Z ##[group]Fetching the repository
+2025-09-11T06:22:17.3114004Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a86a43acea3db8d667e28aaf0da18f14a61a1dab:refs/remotes/pull/4/merge
+2025-09-11T06:22:20.2637490Z From https://github.com/sattva2020/N8N-Self
+2025-09-11T06:22:20.2660326Z  * [new ref]         a86a43acea3db8d667e28aaf0da18f14a61a1dab -> pull/4/merge
+2025-09-11T06:22:20.3021160Z ##[endgroup]
+2025-09-11T06:22:20.3031082Z ##[group]Determining the checkout info
+2025-09-11T06:22:20.8792995Z ##[endgroup]
+2025-09-11T06:22:20.8793644Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-09-11T06:22:20.8836452Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-09-11T06:22:20.8837979Z ##[group]Checking out the ref
+2025-09-11T06:22:20.8838694Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/4/merge
+2025-09-11T06:22:21.4316765Z Updating files:  49% (4445/8949)
+2025-09-11T06:22:21.4467309Z Updating files:  50% (4475/8949)
+2025-09-11T06:22:21.4593228Z Updating files:  51% (4564/8949)
+2025-09-11T06:22:21.4724222Z Updating files:  52% (4654/8949)
+2025-09-11T06:22:21.4848279Z Updating files:  53% (4743/8949)
+2025-09-11T06:22:21.4967014Z Updating files:  54% (4833/8949)
+2025-09-11T06:22:21.5104259Z Updating files:  55% (4922/8949)
+2025-09-11T06:22:21.5203988Z Updating files:  56% (5012/8949)
+2025-09-11T06:22:21.5301887Z Updating files:  57% (5101/8949)
+2025-09-11T06:22:21.5426337Z Updating files:  58% (5191/8949)
+2025-09-11T06:22:21.5542762Z Updating files:  59% (5280/8949)
+2025-09-11T06:22:21.5698526Z Updating files:  60% (5370/8949)
+2025-09-11T06:22:21.5845484Z Updating files:  61% (5459/8949)
+2025-09-11T06:22:21.5973053Z Updating files:  62% (5549/8949)
+2025-09-11T06:22:21.6098246Z Updating files:  63% (5638/8949)
+2025-09-11T06:22:21.6285954Z Updating files:  64% (5728/8949)
+2025-09-11T06:22:21.6419050Z Updating files:  65% (5817/8949)
+2025-09-11T06:22:21.6666232Z Updating files:  66% (5907/8949)
+2025-09-11T06:22:21.6809542Z Updating files:  67% (5996/8949)
+2025-09-11T06:22:21.6939947Z Updating files:  68% (6086/8949)
+2025-09-11T06:22:21.7078007Z Updating files:  69% (6175/8949)
+2025-09-11T06:22:21.7223025Z Updating files:  70% (6265/8949)
+2025-09-11T06:22:21.7377804Z Updating files:  71% (6354/8949)
+2025-09-11T06:22:21.7501126Z Updating files:  72% (6444/8949)
+2025-09-11T06:22:21.7647952Z Updating files:  73% (6533/8949)
+2025-09-11T06:22:21.7907118Z Updating files:  74% (6623/8949)
+2025-09-11T06:22:21.8122637Z Updating files:  75% (6712/8949)
+2025-09-11T06:22:21.8295179Z Updating files:  76% (6802/8949)
+2025-09-11T06:22:21.8538841Z Updating files:  77% (6891/8949)
+2025-09-11T06:22:21.8731003Z Updating files:  78% (6981/8949)
+2025-09-11T06:22:21.8882272Z Updating files:  79% (7070/8949)
+2025-09-11T06:22:21.9062031Z Updating files:  80% (7160/8949)
+2025-09-11T06:22:21.9219100Z Updating files:  81% (7249/8949)
+2025-09-11T06:22:21.9354999Z Updating files:  82% (7339/8949)
+2025-09-11T06:22:21.9519230Z Updating files:  83% (7428/8949)
+2025-09-11T06:22:21.9760784Z Updating files:  84% (7518/8949)
+2025-09-11T06:22:21.9922169Z Updating files:  85% (7607/8949)
+2025-09-11T06:22:22.0101903Z Updating files:  86% (7697/8949)
+2025-09-11T06:22:22.0270356Z Updating files:  87% (7786/8949)
+2025-09-11T06:22:22.0421674Z Updating files:  88% (7876/8949)
+2025-09-11T06:22:22.0798027Z Updating files:  89% (7965/8949)
+2025-09-11T06:22:22.1126104Z Updating files:  90% (8055/8949)
+2025-09-11T06:22:22.1255764Z Updating files:  91% (8144/8949)
+2025-09-11T06:22:22.1843831Z Updating files:  92% (8234/8949)
+2025-09-11T06:22:22.2078203Z Updating files:  93% (8323/8949)
+2025-09-11T06:22:22.2901988Z Updating files:  94% (8413/8949)
+2025-09-11T06:22:22.3046482Z Updating files:  95% (8502/8949)
+2025-09-11T06:22:22.3185956Z Updating files:  96% (8592/8949)
+2025-09-11T06:22:22.3328543Z Updating files:  97% (8681/8949)
+2025-09-11T06:22:22.3478588Z Updating files:  98% (8771/8949)
+2025-09-11T06:22:22.7953113Z Updating files:  99% (8860/8949)
+2025-09-11T06:22:22.8088902Z Updating files:  99% (8901/8949)
+2025-09-11T06:22:22.8092242Z Updating files: 100% (8949/8949)
+2025-09-11T06:22:22.8092882Z Updating files: 100% (8949/8949), done.
+2025-09-11T06:22:22.8582628Z Note: switching to 'refs/remotes/pull/4/merge'.
+2025-09-11T06:22:22.8583441Z 
+2025-09-11T06:22:22.8599577Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-09-11T06:22:22.8600549Z changes and commit them, and you can discard any commits you make in this
+2025-09-11T06:22:22.8601327Z state without impacting any branches by switching back to a branch.
+2025-09-11T06:22:22.8603474Z 
+2025-09-11T06:22:22.8603870Z If you want to create a new branch to retain commits you create, you may
+2025-09-11T06:22:22.8605957Z do so (now or later) by using -c with the switch command. Example:
+2025-09-11T06:22:22.8606501Z 
+2025-09-11T06:22:22.8606798Z   git switch -c <new-branch-name>
+2025-09-11T06:22:22.8607176Z 
+2025-09-11T06:22:22.8607391Z Or undo this operation with:
+2025-09-11T06:22:22.8607696Z 
+2025-09-11T06:22:22.8607876Z   git switch -
+2025-09-11T06:22:22.8608150Z 
+2025-09-11T06:22:22.8608572Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-09-11T06:22:22.8609143Z 
+2025-09-11T06:22:22.8609794Z HEAD is now at a86a43a Merge bfd9e5fbca8111592139ab0542afc5b13bcb13db into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+2025-09-11T06:22:22.8676903Z ##[endgroup]
+2025-09-11T06:22:22.9125904Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-09-11T06:22:22.9351698Z a86a43acea3db8d667e28aaf0da18f14a61a1dab

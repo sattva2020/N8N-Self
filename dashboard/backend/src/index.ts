@@ -1,10 +1,43 @@
 import Fastify, { FastifyRequest, FastifyReply } from 'fastify';
 import Docker from 'dockerode';
 import dotenv from 'dotenv';
+import client from 'prom-client';
 
 dotenv.config();
 const fastify = Fastify({ logger: true });
 const docker = new Docker({ socketPath: process.env.DOCKER_SOCKET || '/var/run/docker.sock' });
+
+// Prometheus metrics
+const register = new client.Registry();
+client.collectDefaultMetrics({ register });
+const httpRequestDuration = new client.Histogram({
+  name: 'http_request_duration_seconds',
+  help: 'HTTP request duration in seconds',
+  labelNames: ['method', 'route', 'status_code'] as const,
+  buckets: [0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10],
+});
+register.registerMetric(httpRequestDuration);
+
+fastify.addHook('onRequest', async (req, _res) => {
+  // attach start time
+  (req as any)._start = process.hrtime.bigint();
+});
+
+fastify.addHook('onResponse', async (req, reply) => {
+  try {
+    const start = (req as any)._start as bigint | undefined;
+    if (start) {
+      const diffNs = Number(process.hrtime.bigint() - start);
+      const seconds = diffNs / 1e9;
+      const route = (reply as any).context?.config?.url || req.routerPath || req.raw.url || 'unknown';
+      httpRequestDuration
+        .labels(req.method, route, String(reply.statusCode))
+        .observe(seconds);
+    }
+  } catch (e) {
+    fastify.log.debug('metrics error', e);
+  }
+});
 
 fastify.get('/api/health', async () => ({ ok: true }));
 
@@ -85,6 +118,12 @@ fastify.get('/api/events', (request, reply) => {
 
 // basic health prober for containers (just wrapper)
 fastify.get('/api/health/probe', async () => ({ ok: true, timestamp: Date.now() }));
+
+// Prometheus metrics endpoint
+fastify.get('/metrics', async (_req, reply) => {
+  reply.type(register.contentType);
+  return await register.metrics();
+});
 
 const start = async () => {
   try {

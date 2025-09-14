@@ -8,6 +8,7 @@ echo "==> Параметры:"
 DOMAIN_NAME="${DOMAIN_NAME:-}"
 ACME_EMAIL="${ACME_EMAIL:-}"
 TZ="${TZ:-Europe/Kyiv}"
+SUBDOMAIN="${SUBDOMAIN:-n8n}"
 
 # Проверки: docker и docker compose
 check_command(){ command -v "$1" >/dev/null 2>&1; }
@@ -34,12 +35,16 @@ fi
 
 if [[ -z "${DOMAIN_NAME}" ]]; then read -rp "DOMAIN_NAME (напр. sattva-ai.top): " DOMAIN_NAME; fi
 if [[ -z "${ACME_EMAIL}" ]]; then read -rp "ACME_EMAIL (почта для Let's Encrypt): " ACME_EMAIL; fi
+if [[ -z "${SUBDOMAIN}" ]]; then read -rp "SUBDOMAIN для n8n (по умолчанию n8n): " SUBDOMAIN; SUBDOMAIN=${SUBDOMAIN:-n8n}; fi
 
 # stack/.env
 cat > "$BASE_DIR/stack/.env" <<EOF
 DOMAIN_NAME=${DOMAIN_NAME}
+SUBDOMAIN=${SUBDOMAIN}
 ACME_EMAIL=${ACME_EMAIL}
 TZ=${TZ}
+# для совместимости с конфигами — дублируем TZ
+GENERIC_TIMEZONE=${TZ}
 EOF
 
 umask 077
@@ -66,6 +71,7 @@ ${COMPOSE_CMD} up -d
 echo
 echo "==> Готово."
 echo "DOMAIN_NAME=${DOMAIN_NAME}"
+echo "SUBDOMAIN=${SUBDOMAIN}"
 echo "ACME_EMAIL=${ACME_EMAIL}"
 echo "TZ=${TZ}"
 echo "LightRAG Basic-Auth: user=admin pass=${LR_BASIC_PASS}"
