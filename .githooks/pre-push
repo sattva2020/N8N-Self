@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# pre-push hook: quick scan of commits being pushed for LOCAL-ONLY markers
+# This is a lightweight safety net; the main enforcement is pre-commit.
+
+UPSTREAM=""
+if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
+  UPSTREAM_REF=$(git rev-parse --abbrev-ref @{u})
+else
+  UPSTREAM_REF=""
+fi
+
+if [ -n "$UPSTREAM_REF" ]; then
+  # list commits to be pushed
+  COMMITS=$(git rev-list --no-merges "$UPSTREAM_REF"..HEAD)
+else
+  # fallback: check recent 50 commits
+  COMMITS=$(git rev-list --no-merges --max-count=50 HEAD)
+fi
+
+for c in $COMMITS; do
+  # list files changed in the commit
+  FILES=$(git diff-tree --no-commit-id --name-only -r "$c")
+  for f in $FILES; do
+    if git show "$c":"$f" 2>/dev/null | head -n 20 | grep -qE "^LOCAL-ONLY" 2>/dev/null; then
+      echo "ERROR: commit $c adds or modifies $f which contains 'LOCAL-ONLY' marker. Aborting push."
+      echo "Move local-only files to '.internal/' or remove the marker."
+      exit 1
+    fi
+    case "$f" in
+      .internal/*|docs_local/*)
+        echo "ERROR: commit $c touches local-only path $f. Aborting push."
+        exit 1
+        ;;
+    esac
+  done
+done
+
+echo "Running pre-push typecheck and tests (frontend)..."
+if [ -f "dashboard/frontend/package.json" ]; then
+  # run typecheck
+  if command -v npx >/dev/null 2>&1; then
+    npx --no-install --prefix dashboard/frontend tsc --noEmit || { echo "Typecheck failed"; exit 1; }
+    # run vitest in --run mode but only quick tests
+    npx --no-install --prefix dashboard/frontend vitest --run || { echo "Unit tests failed"; exit 1; }
+  fi
+fi
+
+echo "pre-push checks passed"
+exit 0

@@ -1,0 +1,15 @@
+{
+	# Optional: set email globally for ACME
+	email {$ACME_EMAIL}
+}
+
+n8n.{$DOMAIN_NAME} {
+	# TLS via Let's Encrypt (automatic)
+	tls {$ACME_EMAIL}
+
+	encode gzip
+	log
+
+	# Forward to n8n container over backend network
+	reverse_proxy n8n:5678
+}

@@ -1,0 +1,10 @@
+---
+name: github-actions-best-practices.mdc
+description: Best practices for GitHub Actions workflows
+globs: **/*.yml
+---
+
+- Use caching to speed up workflow execution (e.g., for dependencies)
+- Implement matrix builds to test across multiple environments
+- Use `if: failure()` to capture logs and diagnostic data on failure
+- Keep workflows modular by breaking them into reusable actions

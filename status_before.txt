@@ -1,0 +1,205 @@
+ M dashboard/frontend/node_modules/.package-lock.json
+ M dashboard/frontend/node_modules/postcss/README.md
+ M dashboard/frontend/node_modules/postcss/lib/at-rule.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/comment.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/container.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/container.js
+ M dashboard/frontend/node_modules/postcss/lib/css-syntax-error.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/css-syntax-error.js
+ M dashboard/frontend/node_modules/postcss/lib/declaration.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/declaration.js
+ M dashboard/frontend/node_modules/postcss/lib/document.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/fromJSON.js
+ M dashboard/frontend/node_modules/postcss/lib/input.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/input.js
+ M dashboard/frontend/node_modules/postcss/lib/lazy-result.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/lazy-result.js
+ M dashboard/frontend/node_modules/postcss/lib/list.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/list.js
+ M dashboard/frontend/node_modules/postcss/lib/map-generator.js
+ M dashboard/frontend/node_modules/postcss/lib/no-work-result.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/no-work-result.js
+ M dashboard/frontend/node_modules/postcss/lib/node.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/node.js
+ M dashboard/frontend/node_modules/postcss/lib/parse.js
+ M dashboard/frontend/node_modules/postcss/lib/parser.js
+ M dashboard/frontend/node_modules/postcss/lib/postcss.d.mts
+ M dashboard/frontend/node_modules/postcss/lib/postcss.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/postcss.js
+ M dashboard/frontend/node_modules/postcss/lib/previous-map.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/previous-map.js
+ M dashboard/frontend/node_modules/postcss/lib/processor.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/processor.js
+ M dashboard/frontend/node_modules/postcss/lib/result.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/result.js
+ M dashboard/frontend/node_modules/postcss/lib/root.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/root.js
+ M dashboard/frontend/node_modules/postcss/lib/rule.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/rule.js
+ M dashboard/frontend/node_modules/postcss/lib/stringifier.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/stringifier.js
+ M dashboard/frontend/node_modules/postcss/lib/terminal-highlight.js
+ M dashboard/frontend/node_modules/postcss/lib/tokenize.js
+ M dashboard/frontend/node_modules/postcss/lib/warning.d.ts
+ M dashboard/frontend/node_modules/postcss/lib/warning.js
+ M dashboard/frontend/node_modules/postcss/package.json
+ M dashboard/frontend/package-lock.json
+ M dashboard/frontend/postcss.config.cjs
+ M dashboard/frontend/src/App.tsx
+ M dashboard/frontend/src/components/ServicesTable.tsx
+ M dashboard/frontend/src/components/TopBar.test.tsx
+ M dashboard/frontend/src/components/TopBar.tsx
+ M dashboard/frontend/src/index.css
+ M dashboard/frontend/tailwind.config.cjs
+ M dashboard/frontend/vitest.config.ts
+?? .github/workflows/
+?? dashboard/frontend/README-E2E.md
+?? dashboard/frontend/dist/
+?? dashboard/frontend/e2e/
+?? dashboard/frontend/node_modules/.bin/autoprefixer
+?? dashboard/frontend/node_modules/.bin/autoprefixer.cmd
+?? dashboard/frontend/node_modules/.bin/autoprefixer.ps1
+?? dashboard/frontend/node_modules/.bin/cssesc
+?? dashboard/frontend/node_modules/.bin/cssesc.cmd
+?? dashboard/frontend/node_modules/.bin/cssesc.ps1
+?? dashboard/frontend/node_modules/.bin/glob
+?? dashboard/frontend/node_modules/.bin/glob.cmd
+?? dashboard/frontend/node_modules/.bin/glob.ps1
+?? dashboard/frontend/node_modules/.bin/jiti
+?? dashboard/frontend/node_modules/.bin/jiti.cmd
+?? dashboard/frontend/node_modules/.bin/jiti.ps1
+?? dashboard/frontend/node_modules/.bin/node-which
+?? dashboard/frontend/node_modules/.bin/node-which.cmd
+?? dashboard/frontend/node_modules/.bin/node-which.ps1
+?? dashboard/frontend/node_modules/.bin/playwright
+?? dashboard/frontend/node_modules/.bin/playwright-core
+?? dashboard/frontend/node_modules/.bin/playwright-core.cmd
+?? dashboard/frontend/node_modules/.bin/playwright-core.ps1
+?? dashboard/frontend/node_modules/.bin/playwright.cmd
+?? dashboard/frontend/node_modules/.bin/playwright.ps1
+?? dashboard/frontend/node_modules/.bin/resolve
+?? dashboard/frontend/node_modules/.bin/resolve.cmd
+?? dashboard/frontend/node_modules/.bin/resolve.ps1
+?? dashboard/frontend/node_modules/.bin/sucrase
+?? dashboard/frontend/node_modules/.bin/sucrase-node
+?? dashboard/frontend/node_modules/.bin/sucrase-node.cmd
+?? dashboard/frontend/node_modules/.bin/sucrase-node.ps1
+?? dashboard/frontend/node_modules/.bin/sucrase.cmd
+?? dashboard/frontend/node_modules/.bin/sucrase.ps1
+?? dashboard/frontend/node_modules/.bin/tailwind
+?? dashboard/frontend/node_modules/.bin/tailwind.cmd
+?? dashboard/frontend/node_modules/.bin/tailwind.ps1
+?? dashboard/frontend/node_modules/.bin/tailwindcss
+?? dashboard/frontend/node_modules/.bin/tailwindcss.cmd
+?? dashboard/frontend/node_modules/.bin/tailwindcss.ps1
+?? dashboard/frontend/node_modules/.bin/yaml
+?? dashboard/frontend/node_modules/.bin/yaml.cmd
+?? dashboard/frontend/node_modules/.bin/yaml.ps1
+?? dashboard/frontend/node_modules/@alloc/
+?? dashboard/frontend/node_modules/@isaacs/
+?? dashboard/frontend/node_modules/@nodelib/
+?? dashboard/frontend/node_modules/@pkgjs/
+?? dashboard/frontend/node_modules/@playwright/
+?? dashboard/frontend/node_modules/@types/prop-types/
+?? dashboard/frontend/node_modules/@types/react/
+?? dashboard/frontend/node_modules/any-promise/
+?? dashboard/frontend/node_modules/anymatch/
+?? dashboard/frontend/node_modules/arg/
+?? dashboard/frontend/node_modules/autoprefixer/
+?? dashboard/frontend/node_modules/balanced-match/
+?? dashboard/frontend/node_modules/binary-extensions/
+?? dashboard/frontend/node_modules/brace-expansion/
+?? dashboard/frontend/node_modules/braces/
+?? dashboard/frontend/node_modules/camelcase-css/
+?? dashboard/frontend/node_modules/chokidar/
+?? dashboard/frontend/node_modules/commander/
+?? dashboard/frontend/node_modules/cross-spawn/
+?? dashboard/frontend/node_modules/cssesc/
+?? dashboard/frontend/node_modules/csstype/
+?? dashboard/frontend/node_modules/didyoumean/
+?? dashboard/frontend/node_modules/dlv/
+?? dashboard/frontend/node_modules/eastasianwidth/
+?? dashboard/frontend/node_modules/emoji-regex/
+?? dashboard/frontend/node_modules/fast-glob/
+?? dashboard/frontend/node_modules/fastq/
+?? dashboard/frontend/node_modules/fill-range/
+?? dashboard/frontend/node_modules/foreground-child/
+?? dashboard/frontend/node_modules/fraction.js/
+?? dashboard/frontend/node_modules/glob-parent/
+?? dashboard/frontend/node_modules/glob/
+?? dashboard/frontend/node_modules/is-binary-path/
+?? dashboard/frontend/node_modules/is-core-module/
+?? dashboard/frontend/node_modules/is-extglob/
+?? dashboard/frontend/node_modules/is-fullwidth-code-point/
+?? dashboard/frontend/node_modules/is-glob/
+?? dashboard/frontend/node_modules/is-number/
+?? dashboard/frontend/node_modules/isexe/
+?? dashboard/frontend/node_modules/jackspeak/
+?? dashboard/frontend/node_modules/jiti/
+?? dashboard/frontend/node_modules/lilconfig/
+?? dashboard/frontend/node_modules/lines-and-columns/
+?? dashboard/frontend/node_modules/merge2/
+?? dashboard/frontend/node_modules/micromatch/
+?? dashboard/frontend/node_modules/minimatch/
+?? dashboard/frontend/node_modules/minimist/
+?? dashboard/frontend/node_modules/minipass/
+?? dashboard/frontend/node_modules/mz/
+?? dashboard/frontend/node_modules/normalize-path/
+?? dashboard/frontend/node_modules/normalize-range/
+?? dashboard/frontend/node_modules/object-assign/
+?? dashboard/frontend/node_modules/object-hash/
+?? dashboard/frontend/node_modules/package-json-from-dist/
+?? dashboard/frontend/node_modules/path-key/
+?? dashboard/frontend/node_modules/path-parse/
+?? dashboard/frontend/node_modules/path-scurry/
+?? dashboard/frontend/node_modules/picomatch/
+?? dashboard/frontend/node_modules/pify/
+?? dashboard/frontend/node_modules/pirates/
+?? dashboard/frontend/node_modules/playwright-core/
+?? dashboard/frontend/node_modules/playwright/
+?? dashboard/frontend/node_modules/postcss-import/
+?? dashboard/frontend/node_modules/postcss-js/
+?? dashboard/frontend/node_modules/postcss-load-config/
+?? dashboard/frontend/node_modules/postcss-nested/
+?? dashboard/frontend/node_modules/postcss-selector-parser/
+?? dashboard/frontend/node_modules/postcss-value-parser/
+?? dashboard/frontend/node_modules/queue-microtask/
+?? dashboard/frontend/node_modules/read-cache/
+?? dashboard/frontend/node_modules/readdirp/
+?? dashboard/frontend/node_modules/resolve/
+?? dashboard/frontend/node_modules/reusify/
+?? dashboard/frontend/node_modules/run-parallel/
+?? dashboard/frontend/node_modules/shebang-command/
+?? dashboard/frontend/node_modules/shebang-regex/
+?? dashboard/frontend/node_modules/signal-exit/
+?? dashboard/frontend/node_modules/string-width-cjs/
+?? dashboard/frontend/node_modules/string-width/
+?? dashboard/frontend/node_modules/strip-ansi-cjs/
+?? dashboard/frontend/node_modules/strip-ansi/
+?? dashboard/frontend/node_modules/sucrase/
+?? dashboard/frontend/node_modules/supports-preserve-symlinks-flag/
+?? dashboard/frontend/node_modules/tailwindcss/
+?? dashboard/frontend/node_modules/thenify-all/
+?? dashboard/frontend/node_modules/thenify/
+?? dashboard/frontend/node_modules/to-regex-range/
+?? dashboard/frontend/node_modules/ts-interface-checker/
+?? dashboard/frontend/node_modules/util-deprecate/
+?? dashboard/frontend/node_modules/vite/node_modules/
+?? dashboard/frontend/node_modules/which/
+?? dashboard/frontend/node_modules/wrap-ansi-cjs/
+?? dashboard/frontend/node_modules/wrap-ansi/
+?? dashboard/frontend/node_modules/yaml/
+?? dashboard/frontend/playwright.config.js
+?? dashboard/frontend/playwright.config.ts
+?? dashboard/frontend/playwright.temp.config.js
+?? dashboard/frontend/preview.log
+?? dashboard/frontend/scripts/serve-dist.js
+?? dashboard/frontend/src/api.test.ts
+?? dashboard/frontend/src/components/DetailsPanel.test.tsx
+?? dashboard/frontend/src/components/LogsPane.test.tsx
+?? dashboard/frontend/src/setup-tests.d.ts
+?? dashboard/frontend/test-results/
+?? dashboard/frontend/tests/
+?? node_modules_indexed.txt
+?? patches/
+?? status_before.txt

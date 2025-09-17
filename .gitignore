@@ -1,4 +1,32 @@
-# Ignore node modules for frontend to avoid committing huge vendor files
+# Локальные и служебные каталоги (не публикуем)
+.internal/
+__archive__/
+_dev/
+tests/**/logs/
+
+# Среды и секреты
+.env
+secrets/
+
+# Node/JS
+node_modules/
+*.log
+
+# SSH/keys/certs (безопасность)
+id_rsa
+id_rsa*
+id_ed25519
+id_ed25519*
+*.pem
+*.key
+*.ppk
+*.p12
+
+# ОС и IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/# Ignore node modules for frontend to avoid committing huge vendor files
 dashboard/frontend/node_modules/
 
 # Build output
@@ -14,3 +42,12 @@ stack/.env
 
 # OS files
 .DS_Store
+
+# Local-only docs and artifacts
+.internal/
+docs_local/
+*.local.md
+
+# Ignore local LightRAG copies and overrides
+LightRAG/
+LightRAG_conf/.env

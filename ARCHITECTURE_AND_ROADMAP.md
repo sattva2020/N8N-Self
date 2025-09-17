@@ -7,7 +7,6 @@
 - Edge / reverse proxy: Traefik — маршрутизация, SSL (Let's Encrypt), HTTP→HTTPS.
 
 - Бэкенд сервисы (Docker Compose):
-
   - PostgreSQL (+ pgvector) — основной хранилище данных и векторная база для LightRAG
 
   - Redis — очередь/кэш для n8n
@@ -21,7 +20,6 @@
 - Frontend: React 18 + Vite + TypeScript + Tailwind CSS — админ/панель мониторинга
 
 - Тесты и CI:
-
   - Unit/Integration: Vitest + @testing-library/react
 
   - E2E: Playwright (GitHub Actions runner)
@@ -57,19 +55,16 @@
 ### Высокий приоритет
 
 - TASK-001: Убедиться, что базовый стек запускается локально и в CI
-
   - Действия: проверить `stack/docker-compose.yml`, запустить `bash scripts/20_bootstrap_stack.sh` на тестовом хосте
 
   - Критерий: все контейнеры в статусе "healthy"; доступ к n8n и LightRAG
 
 - TASK-002: Настроить CI (GitHub Actions): build, unit tests, e2e smoke
-
   - Действия: workflow `ci.yml` с job-ами: install, build, test, e2e
 
   - Критерий: успешный run в PR
 
 - TASK-003: Надёжный static server для E2E в CI
-
   - Действия: добавить `scripts/simple-serve.js`, заменить `http-server` в package.json, настроить playwright webServer
 
   - Критерий: Playwright тесты проходят на runner
@@ -77,19 +72,16 @@
 ### Средний приоритет
 
 - TASK-004: Восстановление и унификация стилей frontend (Tailwind)
-
   - Действия: правки компонентов, правки `tailwind.config.cjs`
 
   - Критерий: корректный билд и визуально приемлемая панель
 
 - TASK-005: Покрытие unit/integration тестами основных UI-компонентов
-
   - Действия: добавить `LogsPane`, `DetailsPanel`, API mock tests
 
   - Критерий: >= 80% стабильных тестов локально и в CI
 
 - TASK-006: Исправить и централизовать тестовые декларации (setup-tests.d.ts)
-
   - Действия: добавить d.ts для глобов и настроить vitest.config.ts
 
   - Критерий: tsc без ошибок в тестах

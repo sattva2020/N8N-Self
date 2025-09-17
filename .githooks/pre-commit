@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# pre-commit hook: prevent committing local-only documents
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM)
+[ -z "$STAGED_FILES" ] && exit 0
+VIOLATIONS=0
+
+for f in $STAGED_FILES; do
+  # only check existing files
+  if [ -f "$f" ]; then
+    # 1) block files located under .internal/ or docs_local/
+    case "$f" in
+      .internal/*|docs_local/*)
+        echo "ERROR: $f is in a local-only directory (.internal/ or docs_local/) and must not be committed."
+        VIOLATIONS=1
+        ;;
+    esac
+
+    # 2) block files that contain a LOCAL-ONLY marker in the first 20 lines
+    if head -n 20 "$f" | grep -qE "^LOCAL-ONLY" 2>/dev/null; then
+      echo "ERROR: $f contains marker 'LOCAL-ONLY' in header and must not be committed."
+      VIOLATIONS=1
+    fi
+  fi
+done
+
+## 3) block large files (>5MB)
+for f in $STAGED_FILES; do
+  if [ -f "$f" ]; then
+    size=$(stat -c%s "$f" 2>/dev/null || stat -f%z "$f" 2>/dev/null || echo 0)
+    if [ "$size" -gt 5242880 ]; then
+      echo "ERROR: $f is larger than 5MB ($size bytes). Remove or move to .internal/ and try again."
+      VIOLATIONS=1
+    fi
+  fi
+done
+
+## 4) run lint-staged if available
+if command -v npx >/dev/null 2>&1 && git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  if [ -f "dashboard/frontend/package.json" ] && grep -q "\"lint-staged\"" dashboard/frontend/package.json; then
+    echo "Running lint-staged..."
+    npx --no-install lint-staged || VIOLATIONS=1
+  fi
+fi
+
+if [ "$VIOLATIONS" -ne 0 ]; then
+  echo
+  echo "Commit aborted by pre-commit hook."
+  echo "If these files should remain local, move them to '.internal/' (it's gitignored) or remove the 'LOCAL-ONLY' marker."
+  exit 1
+fi
+
+exit 0

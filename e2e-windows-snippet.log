@@ -1,0 +1,206 @@
+e2e-smoke (windows-latest, 18.x)	Run Playwright smoke tests	﻿2025-09-10T15:45:07.0283519Z ##[group]Run cd dashboard/frontend
+e2e-smoke (windows-latest, 18.x)	Run Playwright smoke tests	2025-09-10T15:45:07.0283977Z [36;1mcd dashboard/frontend[0m
+e2e-smoke (windows-latest, 18.x)	Run Playwright smoke tests	2025-09-10T15:45:07.0284329Z [36;1m# run playwright via npm script to ensure proper environment[0m
+e2e-smoke (windows-latest, 18.x)	Run Playwright smoke tests	2025-09-10T15:45:07.0284675Z [36;1mnpm run e2e --if-present[0m
+e2e-smoke (windows-latest, 18.x)	Run Playwright smoke tests	2025-09-10T15:45:07.0329743Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+e2e-smoke (windows-latest, 18.x)	Run Playwright smoke tests	2025-09-10T15:45:07.0330381Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	Run Playwright smoke tests	2025-09-10T15:45:07.0866059Z ##[error]Process completed with exit code -1073741502.
+e2e-smoke (windows-latest, 18.x)	Post Run actions/checkout@v4	﻿2025-09-10T15:45:07.1156688Z Post job cleanup.
+e2e-smoke (windows-latest, 18.x)	Complete job	﻿2025-09-10T15:45:07.3087608Z Cleaning up orphan processes
+Secret scan (detect-secrets)	Set up job	﻿2025-09-10T15:42:39.3717801Z Current runner version: '2.328.0'
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3753931Z ##[group]Runner Image Provisioner
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3755504Z Hosted Compute Agent
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3756395Z Version: 20250829.383
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3757506Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3758780Z Build Date: 2025-08-29T13:48:48Z
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3759786Z ##[endgroup]
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3760872Z ##[group]Operating System
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3761894Z Ubuntu
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3762774Z 24.04.3
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3763638Z LTS
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3764719Z ##[endgroup]
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3765488Z ##[group]Runner Image
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3766546Z Image: ubuntu-24.04
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3767419Z Version: 20250907.24.1
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3769228Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250907.24/images/ubuntu/Ubuntu2404-Readme.md
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3771797Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250907.24
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3773775Z ##[endgroup]
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3776138Z ##[group]GITHUB_TOKEN Permissions
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3779034Z Contents: read
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3779906Z Metadata: read
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3781078Z Packages: read
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3781989Z ##[endgroup]
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3785257Z Secret source: Actions
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.3787082Z Prepare workflow directory
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.4252544Z Prepare all required actions
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.4308347Z Getting action download info
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.7479749Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.8195731Z Download action repository 'actions/setup-python@v4' (SHA:7f4fc3e22c37d6ff65e88745f38bd3157c663f7c)
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:39.9535548Z Download action repository 'actions/github-script@v7' (SHA:f28e40c7f34bde8b3046d885e986cb6290c5673b)
+Secret scan (detect-secrets)	Set up job	2025-09-10T15:42:40.2610507Z Complete job name: Secret scan (detect-secrets)
+Secret scan (detect-secrets)	Checkout	﻿2025-09-10T15:42:40.3283469Z ##[group]Run actions/checkout@v4
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3284621Z with:
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3285103Z   repository: sattva2020/N8N-Self
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3285836Z   token: ***
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3286275Z   ssh-strict: true
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3286720Z   ssh-user: git
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3287173Z   persist-credentials: true
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3287674Z   clean: true
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3288126Z   sparse-checkout-cone-mode: true
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3288670Z   fetch-depth: 1
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3289108Z   fetch-tags: false
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3289570Z   show-progress: true
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3290027Z   lfs: false
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3290456Z   submodules: false
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3290912Z   set-safe-directory: true
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.3291628Z ##[endgroup]
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.4863158Z Syncing repository: sattva2020/N8N-Self
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.4866135Z ##[group]Getting Git version info
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.4867353Z Working directory is '/home/runner/work/N8N-Self/N8N-Self'
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.4869016Z [command]/usr/bin/git version
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.4927189Z git version 2.51.0
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.4956450Z ##[endgroup]
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5000847Z Temporarily overriding HOME='/home/runner/work/_temp/3bf54754-68cf-4a25-8e6a-3e8701e04317' before making global git config changes
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5003428Z Adding repository directory to the temporary git global config as a safe directory
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5005658Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5056224Z Deleting the contents of '/home/runner/work/N8N-Self/N8N-Self'
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5059485Z ##[group]Initializing the repository
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5064476Z [command]/usr/bin/git init /home/runner/work/N8N-Self/N8N-Self
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5149420Z hint: Using 'master' as the name for the initial branch. This default branch name
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5151334Z hint: is subject to change. To configure the initial branch name to use in all
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5153046Z hint: of your new repositories, which will suppress this warning, call:
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5154900Z hint:
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5156234Z hint: 	git config --global init.defaultBranch <name>
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5157280Z hint:
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5158238Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5160054Z hint: 'development'. The just-created branch can be renamed via this command:
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5161812Z hint:
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5162873Z hint: 	git branch -m <name>
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5166343Z hint:
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5167638Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5169450Z Initialized empty Git repository in /home/runner/work/N8N-Self/N8N-Self/.git/
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5174402Z [command]/usr/bin/git remote add origin https://github.com/sattva2020/N8N-Self
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5220730Z ##[endgroup]
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5222091Z ##[group]Disabling automatic garbage collection
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5223124Z [command]/usr/bin/git config --local gc.auto 0
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5259554Z ##[endgroup]
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5260889Z ##[group]Setting up auth
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5270628Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5322081Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5675501Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5710008Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5943176Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5991767Z ##[endgroup]
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.5994614Z ##[group]Fetching the repository
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:40.6002367Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3eac72332593287c4816960b16bdd9cd9249baca:refs/remotes/pull/4/merge
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:42.7950946Z From https://github.com/sattva2020/N8N-Self
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:42.7955299Z  * [new ref]         3eac72332593287c4816960b16bdd9cd9249baca -> pull/4/merge
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:42.7993189Z ##[endgroup]
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:42.7994977Z ##[group]Determining the checkout info
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:42.7996893Z ##[endgroup]
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:42.8001931Z [command]/usr/bin/git sparse-checkout disable
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:42.8045529Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:42.8079386Z ##[group]Checking out the ref
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:42.8083267Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4/merge
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8221050Z Note: switching to 'refs/remotes/pull/4/merge'.
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8223518Z 
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8245490Z You are in 'detached HEAD' state. You can look around, make experimental
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8246690Z changes and commit them, and you can discard any commits you make in this
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8247735Z state without impacting any branches by switching back to a branch.
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8248475Z 
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8249027Z If you want to create a new branch to retain commits you create, you may
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8250003Z do so (now or later) by using -c with the switch command. Example:
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8269487Z 
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8271486Z   git switch -c <new-branch-name>
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8273444Z 
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8275353Z Or undo this operation with:
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8276280Z 
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8276665Z   git switch -
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8276959Z 
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8277426Z Turn off this advice by setting config variable advice.detachedHead to false
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8278048Z 
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8278605Z HEAD is now at 3eac723 Merge 1e614499b283b341359b2588a73c081efff22a80 into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8281095Z ##[endgroup]
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8327515Z [command]/usr/bin/git log -1 --format=%H
+Secret scan (detect-secrets)	Checkout	2025-09-10T15:42:43.8352683Z 3eac72332593287c4816960b16bdd9cd9249baca
+Secret scan (detect-secrets)	Setup Python	﻿2025-09-10T15:42:43.8599566Z ##[group]Run actions/setup-python@v4
+Secret scan (detect-secrets)	Setup Python	2025-09-10T15:42:43.8599884Z with:
+Secret scan (detect-secrets)	Setup Python	2025-09-10T15:42:43.8600084Z   python-version: 3.x
+Secret scan (detect-secrets)	Setup Python	2025-09-10T15:42:43.8600303Z   check-latest: false
+Secret scan (detect-secrets)	Setup Python	2025-09-10T15:42:43.8600616Z   token: ***
+Secret scan (detect-secrets)	Setup Python	2025-09-10T15:42:43.8600818Z   update-environment: true
+Secret scan (detect-secrets)	Setup Python	2025-09-10T15:42:43.8601047Z   allow-prereleases: false
+Secret scan (detect-secrets)	Setup Python	2025-09-10T15:42:43.8601283Z ##[endgroup]
+Secret scan (detect-secrets)	Setup Python	2025-09-10T15:42:44.0347970Z ##[group]Installed versions
+Secret scan (detect-secrets)	Setup Python	2025-09-10T15:42:44.0866762Z Successfully set up CPython (3.13.7)
+Secret scan (detect-secrets)	Setup Python	2025-09-10T15:42:44.0868191Z ##[endgroup]
+Secret scan (detect-secrets)	Install detect-secrets	﻿2025-09-10T15:42:44.0998555Z ##[group]Run python -m pip install --upgrade pip
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.0999019Z [36;1mpython -m pip install --upgrade pip[0m
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.0999347Z [36;1mpip install --user detect-secrets[0m
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.0999703Z [36;1mecho "Add $HOME/.local/bin to PATH via GITHUB_PATH"[0m
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.1000029Z [36;1mecho "$HOME/.local/bin" >> $GITHUB_PATH[0m
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.1107537Z shell: /usr/bin/bash -e {0}
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.1107838Z env:
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.1108100Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.7/x64
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.1108547Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.7/x64/lib/pkgconfig
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.1108979Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.7/x64
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.1109346Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.7/x64
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.1109717Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.7/x64
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.1110082Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.7/x64/lib
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:44.1110449Z ##[endgroup]
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:46.6596672Z Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.13.7/x64/lib/python3.13/site-packages (25.2)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:47.8140429Z Collecting detect-secrets
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:47.8768403Z   Downloading detect_secrets-1.5.0-py3-none-any.whl.metadata (23 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:47.9234222Z Collecting pyyaml (from detect-secrets)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:47.9310824Z   Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.1 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:47.9635104Z Collecting requests (from detect-secrets)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:47.9709644Z   Downloading requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.0619242Z Collecting charset_normalizer<4,>=2 (from requests->detect-secrets)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.0699209Z   Downloading charset_normalizer-3.4.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (36 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.0954745Z Collecting idna<4,>=2.5 (from requests->detect-secrets)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.1029704Z   Downloading idna-3.10-py3-none-any.whl.metadata (10 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.1396803Z Collecting urllib3<3,>=1.21.1 (from requests->detect-secrets)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.1473759Z   Downloading urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.1741251Z Collecting certifi>=2017.4.17 (from requests->detect-secrets)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.1814691Z   Downloading certifi-2025.8.3-py3-none-any.whl.metadata (2.4 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.1942260Z Downloading detect_secrets-1.5.0-py3-none-any.whl (120 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.2101877Z Downloading PyYAML-6.0.2-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (759 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.2271206Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 759.5/759.5 kB 52.2 MB/s  0:00:00
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.2356690Z Downloading requests-2.32.5-py3-none-any.whl (64 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.2458372Z Downloading charset_normalizer-3.4.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (151 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.2563271Z Downloading idna-3.10-py3-none-any.whl (70 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.2658974Z Downloading urllib3-2.5.0-py3-none-any.whl (129 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.2759866Z Downloading certifi-2025.8.3-py3-none-any.whl (161 kB)
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.3325275Z Installing collected packages: urllib3, pyyaml, idna, charset_normalizer, certifi, requests, detect-secrets
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.7042240Z 
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.7057724Z Successfully installed certifi-2025.8.3 charset_normalizer-3.4.3 detect-secrets-1.5.0 idna-3.10 pyyaml-6.0.2 requests-2.32.5 urllib3-2.5.0
+Secret scan (detect-secrets)	Install detect-secrets	2025-09-10T15:42:48.7623671Z Add /home/runner/.local/bin to PATH via GITHUB_PATH
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	﻿2025-09-10T15:42:48.7659608Z ##[group]Run # run scan and capture output; exit code non-zero indicates new findings
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7660199Z [36;1m# run scan and capture output; exit code non-zero indicates new findings[0m
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7660569Z [36;1mset -o pipefail[0m
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7660981Z [36;1mdetect-secrets scan --baseline .secrets.baseline --all-files > detect_output.json || true[0m
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7661564Z [36;1mecho "::warning::detect-secrets completed; results written to detect_output.json"[0m
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7662073Z [36;1mcat detect_output.json | jq '.results | length' > detect_count.txt || true[0m
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7692951Z shell: /usr/bin/bash -e {0}
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7693181Z env:
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7693436Z   pythonLocation: /opt/hostedtoolcache/Python/3.13.7/x64
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7693846Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.13.7/x64/lib/pkgconfig
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7694494Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.7/x64
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7694854Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.7/x64
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7695242Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.13.7/x64
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7695598Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.13.7/x64/lib
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:42:48.7695885Z ##[endgroup]
+Secret scan (detect-secrets)	Run detect-secrets scan using baseline	2025-09-10T15:55:21.6463846Z ##[warning]detect-secrets completed; results written to detect_output.json
+Secret scan (detect-secrets)	Create issue when new secrets found	﻿2025-09-10T15:55:21.6566550Z ##[group]Run actions/github-script@v7
+Secret scan (detect-secrets)	Create issue when new secrets found	2025-09-10T15:55:21.6566814Z with:
+Secret scan (detect-secrets)	Create issue when new secrets found	2025-09-10T15:55:21.6567157Z   github-token: ***
+Secret scan (detect-secrets)	Create issue when new secrets found	2025-09-10T15:55:21.6570177Z   script: const fs = require('fs');
+Secret scan (detect-secrets)	Create issue when new secrets found	let out = {};
+Secret scan (detect-secrets)	Create issue when new secrets found	try {
+Secret scan (detect-secrets)	Create issue when new secrets found	  out = JSON.parse(fs.readFileSync('detect_output.json','utf8') || '{}');
+Secret scan (detect-secrets)	Create issue when new secrets found	} catch (e) {
+Secret scan (detect-secrets)	Create issue when new secrets found	  core.warning('Could not parse detect_output.json');
+Secret scan (detect-secrets)	Create issue when new secrets found	  out = {};
+Secret scan (detect-secrets)	Create issue when new secrets found	}
+Secret scan (detect-secrets)	Create issue when new secrets found	const findings = Object.keys((out.results) || {});
+Secret scan (detect-secrets)	Create issue when new secrets found	if (!findings || findings.length === 0) {

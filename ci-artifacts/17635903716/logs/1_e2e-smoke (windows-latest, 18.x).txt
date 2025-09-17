@@ -1,0 +1,364 @@
+﻿2025-09-11T06:22:12.1002187Z Current runner version: '2.328.0'
+2025-09-11T06:22:12.1034908Z ##[group]Runner Image Provisioner
+2025-09-11T06:22:12.1036023Z Hosted Compute Agent
+2025-09-11T06:22:12.1036816Z Version: 20250829.383
+2025-09-11T06:22:12.1037719Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+2025-09-11T06:22:12.1038775Z Build Date: 2025-08-29T13:48:48Z
+2025-09-11T06:22:12.1039687Z ##[endgroup]
+2025-09-11T06:22:12.1040419Z ##[group]Operating System
+2025-09-11T06:22:12.1041328Z Microsoft Windows Server 2022
+2025-09-11T06:22:12.1042132Z 10.0.20348
+2025-09-11T06:22:12.1042806Z Datacenter
+2025-09-11T06:22:12.1043431Z ##[endgroup]
+2025-09-11T06:22:12.1044100Z ##[group]Runner Image
+2025-09-11T06:22:12.1044894Z Image: windows-2022
+2025-09-11T06:22:12.1045597Z Version: 20250907.29.1
+2025-09-11T06:22:12.1047294Z Included Software: https://github.com/actions/runner-images/blob/win22/20250907.29/images/windows/Windows2022-Readme.md
+2025-09-11T06:22:12.1050306Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20250907.29
+2025-09-11T06:22:12.1051858Z ##[endgroup]
+2025-09-11T06:22:12.1053593Z ##[group]GITHUB_TOKEN Permissions
+2025-09-11T06:22:12.1055857Z Contents: read
+2025-09-11T06:22:12.1056611Z Metadata: read
+2025-09-11T06:22:12.1057281Z Packages: read
+2025-09-11T06:22:12.1057914Z ##[endgroup]
+2025-09-11T06:22:12.1060879Z Secret source: Actions
+2025-09-11T06:22:12.1061940Z Prepare workflow directory
+2025-09-11T06:22:12.1524137Z Prepare all required actions
+2025-09-11T06:22:12.1578684Z Getting action download info
+2025-09-11T06:22:12.4834827Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-09-11T06:22:12.6504272Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-09-11T06:22:12.8138965Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-09-11T06:22:13.1580515Z Complete job name: e2e-smoke (windows-latest, 18.x)
+2025-09-11T06:22:13.3546064Z ##[group]Run actions/checkout@v4
+2025-09-11T06:22:13.3547322Z with:
+2025-09-11T06:22:13.3547835Z   repository: sattva2020/N8N-Self
+2025-09-11T06:22:13.3548719Z   token: ***
+2025-09-11T06:22:13.3549178Z   ssh-strict: true
+2025-09-11T06:22:13.3549643Z   ssh-user: git
+2025-09-11T06:22:13.3550124Z   persist-credentials: true
+2025-09-11T06:22:13.3550667Z   clean: true
+2025-09-11T06:22:13.3551144Z   sparse-checkout-cone-mode: true
+2025-09-11T06:22:13.3551739Z   fetch-depth: 1
+2025-09-11T06:22:13.3552233Z   fetch-tags: false
+2025-09-11T06:22:13.3552717Z   show-progress: true
+2025-09-11T06:22:13.3553209Z   lfs: false
+2025-09-11T06:22:13.3553652Z   submodules: false
+2025-09-11T06:22:13.3554159Z   set-safe-directory: true
+2025-09-11T06:22:13.3554936Z ##[endgroup]
+2025-09-11T06:22:13.5856805Z Syncing repository: sattva2020/N8N-Self
+2025-09-11T06:22:13.5858798Z ##[group]Getting Git version info
+2025-09-11T06:22:13.5859426Z Working directory is 'D:\a\N8N-Self\N8N-Self'
+2025-09-11T06:22:13.7244643Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-09-11T06:22:14.2901878Z git version 2.51.0.windows.1
+2025-09-11T06:22:14.2905638Z ##[endgroup]
+2025-09-11T06:22:14.2912684Z Temporarily overriding HOME='D:\a\_temp\a3f2d590-5971-46c5-9d77-41da91594369' before making global git config changes
+2025-09-11T06:22:14.2915781Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-11T06:22:14.2918579Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\N8N-Self\N8N-Self
+2025-09-11T06:22:14.3911156Z Deleting the contents of 'D:\a\N8N-Self\N8N-Self'
+2025-09-11T06:22:14.3913831Z ##[group]Initializing the repository
+2025-09-11T06:22:14.3915823Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\N8N-Self\N8N-Self
+2025-09-11T06:22:14.5754276Z Initialized empty Git repository in D:/a/N8N-Self/N8N-Self/.git/
+2025-09-11T06:22:14.5760391Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/sattva2020/N8N-Self
+2025-09-11T06:22:14.5801660Z ##[endgroup]
+2025-09-11T06:22:14.5803695Z ##[group]Disabling automatic garbage collection
+2025-09-11T06:22:14.5844939Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-09-11T06:22:14.6159227Z ##[endgroup]
+2025-09-11T06:22:14.6161465Z ##[group]Setting up auth
+2025-09-11T06:22:14.6164212Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-09-11T06:22:15.3479431Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-09-11T06:22:16.7281949Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-11T06:22:16.7557674Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-09-11T06:22:17.2812281Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-09-11T06:22:17.3084314Z ##[endgroup]
+2025-09-11T06:22:17.3085150Z ##[group]Fetching the repository
+2025-09-11T06:22:17.3114029Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a86a43acea3db8d667e28aaf0da18f14a61a1dab:refs/remotes/pull/4/merge
+2025-09-11T06:22:20.2637548Z From https://github.com/sattva2020/N8N-Self
+2025-09-11T06:22:20.2660367Z  * [new ref]         a86a43acea3db8d667e28aaf0da18f14a61a1dab -> pull/4/merge
+2025-09-11T06:22:20.3021201Z ##[endgroup]
+2025-09-11T06:22:20.3031113Z ##[group]Determining the checkout info
+2025-09-11T06:22:20.8793045Z ##[endgroup]
+2025-09-11T06:22:20.8834596Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-09-11T06:22:20.8836465Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-09-11T06:22:20.8837990Z ##[group]Checking out the ref
+2025-09-11T06:22:20.8838706Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/4/merge
+2025-09-11T06:22:21.4316810Z Updating files:  49% (4445/8949)
+2025-09-11T06:22:21.4467365Z Updating files:  50% (4475/8949)
+2025-09-11T06:22:21.4593278Z Updating files:  51% (4564/8949)
+2025-09-11T06:22:21.4724273Z Updating files:  52% (4654/8949)
+2025-09-11T06:22:21.4848316Z Updating files:  53% (4743/8949)
+2025-09-11T06:22:21.4967060Z Updating files:  54% (4833/8949)
+2025-09-11T06:22:21.5104319Z Updating files:  55% (4922/8949)
+2025-09-11T06:22:21.5204045Z Updating files:  56% (5012/8949)
+2025-09-11T06:22:21.5301947Z Updating files:  57% (5101/8949)
+2025-09-11T06:22:21.5426398Z Updating files:  58% (5191/8949)
+2025-09-11T06:22:21.5542858Z Updating files:  59% (5280/8949)
+2025-09-11T06:22:21.5698575Z Updating files:  60% (5370/8949)
+2025-09-11T06:22:21.5845541Z Updating files:  61% (5459/8949)
+2025-09-11T06:22:21.5973102Z Updating files:  62% (5549/8949)
+2025-09-11T06:22:21.6098300Z Updating files:  63% (5638/8949)
+2025-09-11T06:22:21.6286002Z Updating files:  64% (5728/8949)
+2025-09-11T06:22:21.6419094Z Updating files:  65% (5817/8949)
+2025-09-11T06:22:21.6666265Z Updating files:  66% (5907/8949)
+2025-09-11T06:22:21.6809589Z Updating files:  67% (5996/8949)
+2025-09-11T06:22:21.6939987Z Updating files:  68% (6086/8949)
+2025-09-11T06:22:21.7078048Z Updating files:  69% (6175/8949)
+2025-09-11T06:22:21.7223077Z Updating files:  70% (6265/8949)
+2025-09-11T06:22:21.7377847Z Updating files:  71% (6354/8949)
+2025-09-11T06:22:21.7501163Z Updating files:  72% (6444/8949)
+2025-09-11T06:22:21.7647999Z Updating files:  73% (6533/8949)
+2025-09-11T06:22:21.7907170Z Updating files:  74% (6623/8949)
+2025-09-11T06:22:21.8122695Z Updating files:  75% (6712/8949)
+2025-09-11T06:22:21.8295279Z Updating files:  76% (6802/8949)
+2025-09-11T06:22:21.8538894Z Updating files:  77% (6891/8949)
+2025-09-11T06:22:21.8731050Z Updating files:  78% (6981/8949)
+2025-09-11T06:22:21.8882331Z Updating files:  79% (7070/8949)
+2025-09-11T06:22:21.9062090Z Updating files:  80% (7160/8949)
+2025-09-11T06:22:21.9219141Z Updating files:  81% (7249/8949)
+2025-09-11T06:22:21.9355044Z Updating files:  82% (7339/8949)
+2025-09-11T06:22:21.9519279Z Updating files:  83% (7428/8949)
+2025-09-11T06:22:21.9760842Z Updating files:  84% (7518/8949)
+2025-09-11T06:22:21.9922226Z Updating files:  85% (7607/8949)
+2025-09-11T06:22:22.0101968Z Updating files:  86% (7697/8949)
+2025-09-11T06:22:22.0270408Z Updating files:  87% (7786/8949)
+2025-09-11T06:22:22.0421733Z Updating files:  88% (7876/8949)
+2025-09-11T06:22:22.0798080Z Updating files:  89% (7965/8949)
+2025-09-11T06:22:22.1126163Z Updating files:  90% (8055/8949)
+2025-09-11T06:22:22.1255818Z Updating files:  91% (8144/8949)
+2025-09-11T06:22:22.1843928Z Updating files:  92% (8234/8949)
+2025-09-11T06:22:22.2078258Z Updating files:  93% (8323/8949)
+2025-09-11T06:22:22.2902044Z Updating files:  94% (8413/8949)
+2025-09-11T06:22:22.3046541Z Updating files:  95% (8502/8949)
+2025-09-11T06:22:22.3186014Z Updating files:  96% (8592/8949)
+2025-09-11T06:22:22.3328596Z Updating files:  97% (8681/8949)
+2025-09-11T06:22:22.3478645Z Updating files:  98% (8771/8949)
+2025-09-11T06:22:22.7953169Z Updating files:  99% (8860/8949)
+2025-09-11T06:22:22.8088955Z Updating files:  99% (8901/8949)
+2025-09-11T06:22:22.8092281Z Updating files: 100% (8949/8949)
+2025-09-11T06:22:22.8092892Z Updating files: 100% (8949/8949), done.
+2025-09-11T06:22:22.8582682Z Note: switching to 'refs/remotes/pull/4/merge'.
+2025-09-11T06:22:22.8583460Z 
+2025-09-11T06:22:22.8599592Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-09-11T06:22:22.8600555Z changes and commit them, and you can discard any commits you make in this
+2025-09-11T06:22:22.8602800Z state without impacting any branches by switching back to a branch.
+2025-09-11T06:22:22.8603479Z 
+2025-09-11T06:22:22.8603874Z If you want to create a new branch to retain commits you create, you may
+2025-09-11T06:22:22.8605971Z do so (now or later) by using -c with the switch command. Example:
+2025-09-11T06:22:22.8606506Z 
+2025-09-11T06:22:22.8606802Z   git switch -c <new-branch-name>
+2025-09-11T06:22:22.8607180Z 
+2025-09-11T06:22:22.8607394Z Or undo this operation with:
+2025-09-11T06:22:22.8607699Z 
+2025-09-11T06:22:22.8607880Z   git switch -
+2025-09-11T06:22:22.8608153Z 
+2025-09-11T06:22:22.8608575Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-09-11T06:22:22.8609146Z 
+2025-09-11T06:22:22.8609799Z HEAD is now at a86a43a Merge bfd9e5fbca8111592139ab0542afc5b13bcb13db into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+2025-09-11T06:22:22.8676922Z ##[endgroup]
+2025-09-11T06:22:22.9125945Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-09-11T06:22:22.9351775Z a86a43acea3db8d667e28aaf0da18f14a61a1dab
+2025-09-11T06:22:22.9759730Z ##[group]Run actions/setup-node@v4
+2025-09-11T06:22:22.9760025Z with:
+2025-09-11T06:22:22.9760192Z   node-version: 18.x
+2025-09-11T06:22:22.9760363Z   always-auth: false
+2025-09-11T06:22:22.9760530Z   check-latest: false
+2025-09-11T06:22:22.9760893Z   token: ***
+2025-09-11T06:22:22.9761056Z ##[endgroup]
+2025-09-11T06:22:23.3199362Z Found in cache @ C:\hostedtoolcache\windows\node\18.20.8\x64
+2025-09-11T06:22:23.3219312Z ##[group]Environment details
+2025-09-11T06:22:29.6048412Z node: v18.20.8
+2025-09-11T06:22:29.6049249Z npm: 10.8.2
+2025-09-11T06:22:29.6049730Z yarn: 1.22.22
+2025-09-11T06:22:29.6050840Z ##[endgroup]
+2025-09-11T06:22:29.6304561Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:22:29.6304968Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:22:29.6305206Z [36;1mnpm ci --prefer-offline[0m
+2025-09-11T06:22:29.6954378Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-09-11T06:22:29.6955062Z ##[endgroup]
+2025-09-11T06:22:53.5453013Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-09-11T06:22:53.6042064Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-09-11T06:22:53.6860040Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-09-11T06:22:53.9885943Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-11T06:22:54.0326938Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2025-09-11T06:22:54.1980387Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-09-11T06:22:54.4736026Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2025-09-11T06:22:59.9337951Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-09-11T06:23:02.0292602Z 
+2025-09-11T06:23:02.0293649Z added 589 packages, and audited 590 packages in 22s
+2025-09-11T06:23:02.0294411Z 
+2025-09-11T06:23:02.0294962Z 180 packages are looking for funding
+2025-09-11T06:23:02.0300677Z   run `npm fund` for details
+2025-09-11T06:23:02.0419294Z 
+2025-09-11T06:23:02.0420202Z 3 moderate severity vulnerabilities
+2025-09-11T06:23:02.0420823Z 
+2025-09-11T06:23:02.0421555Z To address all issues (including breaking changes), run:
+2025-09-11T06:23:02.0429226Z   npm audit fix --force
+2025-09-11T06:23:02.0429703Z 
+2025-09-11T06:23:02.0430104Z Run `npm audit` for details.
+2025-09-11T06:23:02.6587978Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:23:02.6588434Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:23:02.6588707Z [36;1mnpx playwright install --with-deps[0m
+2025-09-11T06:23:02.6625124Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-09-11T06:23:02.6625463Z ##[endgroup]
+2025-09-11T06:23:59.7135652Z 
+2025-09-11T06:23:59.7137892Z Success Restart Needed Exit Code      Feature Result                               
+2025-09-11T06:23:59.7144127Z ------- -------------- ---------      --------------                               
+2025-09-11T06:23:59.7145225Z True    No             Success        {Media Foundation}                           
+2025-09-11T06:23:59.7148137Z 
+2025-09-11T06:23:59.7148153Z 
+2025-09-11T06:23:59.7153688Z Downloading Chromium 140.0.7339.16 (playwright build v1187)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1187/chromium-win64.zip[22m
+2025-09-11T06:23:59.7159972Z |                                                                                |   0% of 148.9 MiB
+2025-09-11T06:23:59.7162336Z |■■■■■■■■                                                                        |  10% of 148.9 MiB
+2025-09-11T06:24:02.7356272Z |■■■■■■■■■■■■■■■■                                                                |  20% of 148.9 MiB
+2025-09-11T06:24:02.7358544Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 148.9 MiB
+2025-09-11T06:24:02.7360523Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 148.9 MiB
+2025-09-11T06:24:02.7362945Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 148.9 MiB
+2025-09-11T06:24:02.7365036Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 148.9 MiB
+2025-09-11T06:24:02.7367431Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 148.9 MiB
+2025-09-11T06:24:02.7370353Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 148.9 MiB
+2025-09-11T06:24:02.7372077Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 148.9 MiB
+2025-09-11T06:24:02.7375100Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 148.9 MiB
+2025-09-11T06:24:06.5804731Z Chromium 140.0.7339.16 (playwright build v1187) downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\chromium-1187
+2025-09-11T06:24:06.5811164Z Downloading Chromium Headless Shell 140.0.7339.16 (playwright build v1187)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1187/chromium-headless-shell-win64.zip[22m
+2025-09-11T06:24:06.8323531Z |                                                                                |   0% of 91.3 MiB
+2025-09-11T06:24:07.0063662Z |■■■■■■■■                                                                        |  10% of 91.3 MiB
+2025-09-11T06:24:07.1296396Z |■■■■■■■■■■■■■■■■                                                                |  20% of 91.3 MiB
+2025-09-11T06:24:07.2538531Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 91.3 MiB
+2025-09-11T06:24:07.3686688Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 91.3 MiB
+2025-09-11T06:24:07.4860612Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 91.3 MiB
+2025-09-11T06:24:07.5882726Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 91.3 MiB
+2025-09-11T06:24:07.6787555Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 91.3 MiB
+2025-09-11T06:24:07.7744796Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 91.3 MiB
+2025-09-11T06:24:07.8688446Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 91.3 MiB
+2025-09-11T06:24:07.9615516Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 91.3 MiB
+2025-09-11T06:24:10.8575748Z Chromium Headless Shell 140.0.7339.16 (playwright build v1187) downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\chromium_headless_shell-1187
+2025-09-11T06:24:10.8583192Z Downloading Firefox 141.0 (playwright build v1490)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/firefox/1490/firefox-win64.zip[22m
+2025-09-11T06:24:11.1011235Z |                                                                                |   0% of 104.4 MiB
+2025-09-11T06:24:11.2804803Z |■■■■■■■■                                                                        |  10% of 104.4 MiB
+2025-09-11T06:24:11.4297637Z |■■■■■■■■■■■■■■■■                                                                |  20% of 104.4 MiB
+2025-09-11T06:24:11.5697663Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.4 MiB
+2025-09-11T06:24:11.7258780Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.4 MiB
+2025-09-11T06:24:11.8519091Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.4 MiB
+2025-09-11T06:24:11.9562476Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.4 MiB
+2025-09-11T06:24:12.0646100Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.4 MiB
+2025-09-11T06:24:12.1699868Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.4 MiB
+2025-09-11T06:24:12.2741191Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.4 MiB
+2025-09-11T06:24:12.3764553Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.4 MiB
+2025-09-11T06:24:16.3202723Z Firefox 141.0 (playwright build v1490) downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\firefox-1490
+2025-09-11T06:24:16.3206206Z Downloading Webkit 26.0 (playwright build v2203)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/webkit/2203/webkit-win64.zip[22m
+2025-09-11T06:24:16.5665839Z |                                                                                |   0% of 57 MiB
+2025-09-11T06:24:16.6767742Z |■■■■■■■■                                                                        |  10% of 57 MiB
+2025-09-11T06:24:16.7572352Z |■■■■■■■■■■■■■■■■                                                                |  20% of 57 MiB
+2025-09-11T06:24:16.8347131Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 57 MiB
+2025-09-11T06:24:16.9082726Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 57 MiB
+2025-09-11T06:24:16.9829770Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 57 MiB
+2025-09-11T06:24:17.0518777Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 57 MiB
+2025-09-11T06:24:17.1175360Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 57 MiB
+2025-09-11T06:24:17.1937250Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 57 MiB
+2025-09-11T06:24:17.2576895Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 57 MiB
+2025-09-11T06:24:17.3152554Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 57 MiB
+2025-09-11T06:24:21.9785617Z Webkit 26.0 (playwright build v2203) downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\webkit-2203
+2025-09-11T06:24:21.9790344Z Downloading FFMPEG playwright build v1011[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-win64.zip[22m
+2025-09-11T06:24:22.2192811Z |                                                                                |   0% of 1.3 MiB
+2025-09-11T06:24:22.2315285Z |■■■■■■■■                                                                        |  10% of 1.3 MiB
+2025-09-11T06:24:22.2336994Z |■■■■■■■■■■■■■■■■                                                                |  20% of 1.3 MiB
+2025-09-11T06:24:22.2360586Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 1.3 MiB
+2025-09-11T06:24:22.2387592Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 1.3 MiB
+2025-09-11T06:24:22.2404075Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  51% of 1.3 MiB
+2025-09-11T06:24:22.2423088Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 1.3 MiB
+2025-09-11T06:24:22.2441486Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 1.3 MiB
+2025-09-11T06:24:22.2463139Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 1.3 MiB
+2025-09-11T06:24:22.2486863Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 1.3 MiB
+2025-09-11T06:24:22.2504870Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 1.3 MiB
+2025-09-11T06:24:22.3383606Z FFMPEG playwright build v1011 downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\ffmpeg-1011
+2025-09-11T06:24:22.3388619Z Downloading Winldd playwright build v1007[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/winldd/1007/winldd-win64.zip[22m
+2025-09-11T06:24:22.5650236Z |                                                                                |   1% of 0.1 MiB
+2025-09-11T06:24:22.5668555Z |■■■■■■■■                                                                        |  10% of 0.1 MiB
+2025-09-11T06:24:22.5710310Z |■■■■■■■■■■■■■■■■                                                                |  20% of 0.1 MiB
+2025-09-11T06:24:22.5720391Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 0.1 MiB
+2025-09-11T06:24:22.5733686Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 0.1 MiB
+2025-09-11T06:24:22.5736746Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  62% of 0.1 MiB
+2025-09-11T06:24:22.5739695Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  75% of 0.1 MiB
+2025-09-11T06:24:22.5742692Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  87% of 0.1 MiB
+2025-09-11T06:24:22.5744071Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 0.1 MiB
+2025-09-11T06:24:22.7620371Z Winldd playwright build v1007 downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\winldd-1007
+2025-09-11T06:24:26.1513638Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:24:26.1514266Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:24:26.1514714Z [36;1mnpm run build --if-present[0m
+2025-09-11T06:24:26.1554992Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-09-11T06:24:26.1555375Z ##[endgroup]
+2025-09-11T06:24:26.9391094Z 
+2025-09-11T06:24:26.9391934Z > dashboard-frontend@0.1.0 build
+2025-09-11T06:24:26.9392665Z > vite build
+2025-09-11T06:24:26.9393003Z 
+2025-09-11T06:24:27.2887833Z [36mvite v4.5.14 [32mbuilding for production...[36m[39m
+2025-09-11T06:24:27.3462978Z transforming...
+2025-09-11T06:24:29.8771685Z [32m✓[39m 86 modules transformed.
+2025-09-11T06:24:30.0333662Z rendering chunks...
+2025-09-11T06:24:30.0406511Z computing gzip size...
+2025-09-11T06:24:30.0487496Z [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.40 kB[22m[1m[22m[2m │ gzip:  0.26 kB[22m
+2025-09-11T06:24:30.0489336Z [2mdist/[22m[35massets/index-4404f2c3.css  [39m[1m[2m  9.05 kB[22m[1m[22m[2m │ gzip:  2.32 kB[22m
+2025-09-11T06:24:30.0491113Z [2mdist/[22m[36massets/index-26727ed1.js   [39m[1m[2m183.82 kB[22m[1m[22m[2m │ gzip: 61.53 kB[22m
+2025-09-11T06:24:30.0496671Z [32m✓ built in 2.76s[39m
+2025-09-11T06:24:30.1545183Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:24:30.1545766Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:24:30.1546418Z [36;1m# start serve-dist with PORT env so server and Playwright agree[0m
+2025-09-11T06:24:30.1547617Z [36;1mStart-Process -NoNewWindow -FilePath npm -ArgumentList 'run','serve-dist' -Environment @{ PORT = $env:PORT; STRICT_PORT = $env:STRICT_PORT }[0m
+2025-09-11T06:24:30.1548675Z [36;1mStart-Sleep -Seconds 2[0m
+2025-09-11T06:24:30.1602348Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-09-11T06:24:30.1602917Z env:
+2025-09-11T06:24:30.1603192Z   PORT: 5177
+2025-09-11T06:24:30.1603508Z   STRICT_PORT: 1
+2025-09-11T06:24:30.1603801Z ##[endgroup]
+2025-09-11T06:24:30.9670058Z 
+2025-09-11T06:24:30.9670943Z > dashboard-frontend@0.1.0 serve-dist
+2025-09-11T06:24:30.9671910Z > node ./scripts/simple-serve.js
+2025-09-11T06:24:30.9672450Z 
+2025-09-11T06:24:31.0520551Z simple-serve: serving D:\a\N8N-Self\N8N-Self\dashboard\frontend\dist at http://0.0.0.0:5177/
+2025-09-11T06:24:37.9629689Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:24:37.9630054Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:24:37.9630413Z [36;1m# the simple server writes actual port to tmp/served-port when it starts[0m
+2025-09-11T06:24:37.9630828Z [36;1mif [ -f tmp/served-port ]; then[0m
+2025-09-11T06:24:37.9631069Z [36;1m  served=$(cat tmp/served-port)[0m
+2025-09-11T06:24:37.9631304Z [36;1m  echo "served-port=$served"[0m
+2025-09-11T06:24:37.9631550Z [36;1m  if [ "$served" != "$PORT" ]; then[0m
+2025-09-11T06:24:37.9631875Z [36;1m    echo "ERROR: served port ($served) != expected PORT ($PORT)" >&2[0m
+2025-09-11T06:24:37.9632200Z [36;1m    cat serve.log || true[0m
+2025-09-11T06:24:37.9632400Z [36;1m    exit 2[0m
+2025-09-11T06:24:37.9632566Z [36;1m  fi[0m
+2025-09-11T06:24:37.9632704Z [36;1melse[0m
+2025-09-11T06:24:37.9632966Z [36;1m  echo "WARNING: tmp/served-port not found; falling back to nc check"[0m
+2025-09-11T06:24:37.9633361Z [36;1m  if ! nc -z localhost $PORT; then[0m
+2025-09-11T06:24:37.9633644Z [36;1m    echo "ERROR: no server listening on $PORT" >&2[0m
+2025-09-11T06:24:37.9634105Z [36;1m    cat serve.log || true[0m
+2025-09-11T06:24:37.9634299Z [36;1m    exit 2[0m
+2025-09-11T06:24:37.9634458Z [36;1m  fi[0m
+2025-09-11T06:24:37.9634594Z [36;1mfi[0m
+2025-09-11T06:24:37.9727173Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-09-11T06:24:37.9727629Z ##[endgroup]
+2025-09-11T06:24:38.2558236Z served-port=5177
+2025-09-11T06:24:38.2559184Z ERROR: served port (5177) != expected PORT ()
+2025-09-11T06:24:38.2708858Z cat: serve.log: No such file or directory
+2025-09-11T06:24:38.2760513Z ##[error]Process completed with exit code 2.
+2025-09-11T06:24:38.2943734Z ##[group]Run actions/upload-artifact@v4
+2025-09-11T06:24:38.2944050Z with:
+2025-09-11T06:24:38.2944258Z   name: playwright-report-windows-latest
+2025-09-11T06:24:38.2944547Z   path: dashboard/frontend/playwright-report
+2025-09-11T06:24:38.2944795Z   if-no-files-found: warn
+2025-09-11T06:24:38.2944991Z   compression-level: 6
+2025-09-11T06:24:38.2945183Z   overwrite: false
+2025-09-11T06:24:38.2945355Z   include-hidden-files: false
+2025-09-11T06:24:38.2945550Z ##[endgroup]
+2025-09-11T06:24:38.5942653Z ##[warning]No files were found with the provided path: dashboard/frontend/playwright-report. No artifacts will be uploaded.
+2025-09-11T06:24:38.6182950Z Post job cleanup.
+2025-09-11T06:24:38.8710183Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-09-11T06:24:38.8943586Z git version 2.51.0.windows.1
+2025-09-11T06:24:38.9016643Z Temporarily overriding HOME='D:\a\_temp\bbc536ac-4040-46a0-aeff-5094b026a97e' before making global git config changes
+2025-09-11T06:24:38.9018194Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-11T06:24:38.9029420Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\N8N-Self\N8N-Self
+2025-09-11T06:24:38.9287099Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-09-11T06:24:38.9623924Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-09-11T06:24:39.5928103Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-11T06:24:39.6160747Z http.https://github.com/.extraheader
+2025-09-11T06:24:39.6203218Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2025-09-11T06:24:39.6460457Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-09-11T06:24:40.2184981Z Cleaning up orphan processes

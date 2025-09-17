@@ -1,0 +1,9 @@
+sequenceDiagram
+  actor User
+  participant App as Mobile App
+  participant API as FLCS API
+
+  User->>App: Фото этикетки (OCR офлайн)
+  App->>API: POST /v1/parse-ingredients {text, locale}
+  API-->>App: {ingredients[], score, summary}
+  App-->>User: Результат + сравнение с базой

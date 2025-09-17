@@ -1,0 +1,154 @@
+{
+  "name": "Miro Sync - n8n",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "miro-sync"
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 250]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Split incoming array into separate items\nconst payload = items[0].json;\nconst services = payload.services || [];\nreturn services.map(s => ({ json: { service: s } }));"
+      },
+      "name": "MapToItems",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [450, 250]
+    },
+    {
+      "parameters": {
+        "batchSize": 10
+      },
+      "name": "SplitInBatches",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [650, 250]
+    },
+    {
+      "parameters": {
+  "functionCode": "const s = items[0].json.service;\nconst formula = \"({ServiceId}='\" + s.id.replace(/'/g, \\\"\\\\'\\\") + \"')\";\nconst body = { type: 'sticky_note', text: 'Service: ' + s.name + \"\\nOwner: \" + (s.owner||'') + \"\\nURL: \" + (s.url||'') + \"\\n--\\n\" + (s.description||''), x: 0, y: 0, style: { fillColor: '#FFFFFF', textAlign: 'left' } };\nreturn [{ json: { service: s, airtableFilter: formula, miroBody: body } }];"
+      },
+      "name": "Prepare",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [900, 250]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, widget_id FROM miro_mapping WHERE service_id = '{{ $json.service.id }}' LIMIT 1;"
+      },
+      "name": "PostgresFind",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [1150, 200]
+    },
+    {
+      "parameters": {
+        "conditions":{"number":[],"string":[],"boolean":[],"not":[]}
+      },
+      "name": "IfExists",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1400, 250]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.miro.com/v2/boards/{{ $env.MIRO_BOARD_ID }}/widgets/{{ $json.miroWidgetId }}",
+        "options": {},
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "headerParametersJson": "{\n  \"Authorization\": \"Bearer {{ $env.MIRO_TOKEN }}\",\n  \"Content-Type\": \"application/json\"\n}",
+        "bodyParametersJson": "=JSON.stringify($json.miroBody)"
+      },
+      "name": "UpdateMiro",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1650, 200]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.miro.com/v2/boards/{{ $env.MIRO_BOARD_ID }}/widgets",
+        "options": {},
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "headerParametersJson": "{\n  \"Authorization\": \"Bearer {{ $env.MIRO_TOKEN }}\",\n  \"Content-Type\": \"application/json\"\n}",
+        "bodyParametersJson": "=JSON.stringify($json.miroBody)"
+      },
+      "name": "CreateMiro",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [1650, 320]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Parse Postgres result and prepare flags\nconst input = items[0].json || {};\n// If the Postgres node returned rows, they may appear as input.rows or as items[].json depending on config.\nconst rows = input.rows || (items.length>0 && items[0].json && items[0].json.id ? [items[0].json] : []);\nif(rows && rows.length>0){\n  const row = rows[0];\n  return [{ json: { found: true, widgetId: row.widget_id, dbRecordId: row.id, service: input.service || items[0].json.service } }];\n}\nreturn [{ json: { found: false, service: input.service || items[0].json.service } }];"
+      },
+      "name": "ParseDB",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1600, 60]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO miro_mapping (service_id, widget_id) VALUES ($1, $2) ON CONFLICT (service_id) DO UPDATE SET widget_id = EXCLUDED.widget_id;",
+        "parameters": {
+          "values": "={{ [$json.service.id, $json.widgetId] }}"
+        }
+      },
+      "name": "PostgresUpsert",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [1900, 260]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Extract widget id from CreateMiro response and attach to json\nconst res = items[0].json || {};\nconst widgetId = res.id || res.data && res.data.id;\nreturn [{ json: { widgetId, service: items[0].json.service } }];"
+      },
+      "name": "ExtractWidget",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1800, 320]
+    },
+    {
+      "parameters": {
+        "waitTime": 500
+      },
+      "name": "Delay",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [2100, 250]
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [ [ { "node": "MapToItems", "type": "main", "index": 0 } ] ] },
+    "MapToItems": { "main": [ [ { "node": "SplitInBatches", "type": "main", "index": 0 } ] ] },
+    "SplitInBatches": { "main": [ [ { "node": "Prepare", "type": "main", "index": 0 } ] ] },
+    "Prepare": { "main": [ [ { "node": "PostgresFind", "type": "main", "index": 0 } ] ] },
+    "PostgresFind": { "main": [ [ { "node": "ParseDB", "type": "main", "index": 0 } ] ] },
+    "ParseDB": {
+      "main": [
+        [
+          { "node": "IfExists", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "IfExists": {
+      "main": [
+        [ { "node": "UpdateMiro", "type": "main", "index": 0 } ],
+        [ { "node": "CreateMiro", "type": "main", "index": 0 } ]
+      ]
+    },
+    "UpdateMiro": { "main": [ [ { "node": "PostgresUpsert", "type": "main", "index": 0 } ] ] },
+    "CreateMiro": { "main": [ [ { "node": "ExtractWidget", "type": "main", "index": 0 } ] ] },
+    "ExtractWidget": { "main": [ [ { "node": "PostgresUpsert", "type": "main", "index": 0 } ] ] },
+    "PostgresUpsert": { "main": [ [ { "node": "Delay", "type": "main", "index": 0 } ] ] }
+  }
+}

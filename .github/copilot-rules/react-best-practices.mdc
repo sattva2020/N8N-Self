@@ -1,0 +1,10 @@
+---
+name: react-best-practices.mdc
+description: Best practices for React applications
+globs: **/*.{ts,tsx,js,jsx}
+---
+
+- Use functional components and hooks for state management
+- Keep components small and focused on a single responsibility
+- Use PropTypes or TypeScript for type checking
+- Optimize performance with React.memo and useCallback

@@ -1,0 +1,88 @@
+﻿2025-09-11T06:22:13.0529866Z ##[group]Run actions/checkout@v4
+2025-09-11T06:22:13.0531014Z with:
+2025-09-11T06:22:13.0531636Z   repository: sattva2020/N8N-Self
+2025-09-11T06:22:13.0532522Z   token: ***
+2025-09-11T06:22:13.0533127Z   ssh-strict: true
+2025-09-11T06:22:13.0533739Z   ssh-user: git
+2025-09-11T06:22:13.0534356Z   persist-credentials: true
+2025-09-11T06:22:13.0535031Z   clean: true
+2025-09-11T06:22:13.0535650Z   sparse-checkout-cone-mode: true
+2025-09-11T06:22:13.0536358Z   fetch-depth: 1
+2025-09-11T06:22:13.0536968Z   fetch-tags: false
+2025-09-11T06:22:13.0537595Z   show-progress: true
+2025-09-11T06:22:13.0538217Z   lfs: false
+2025-09-11T06:22:13.0539172Z   submodules: false
+2025-09-11T06:22:13.0539813Z   set-safe-directory: true
+2025-09-11T06:22:13.0540789Z ##[endgroup]
+2025-09-11T06:22:13.1815219Z Syncing repository: sattva2020/N8N-Self
+2025-09-11T06:22:13.1818402Z ##[group]Getting Git version info
+2025-09-11T06:22:13.1820146Z Working directory is '/home/runner/work/N8N-Self/N8N-Self'
+2025-09-11T06:22:13.1822352Z [command]/usr/bin/git version
+2025-09-11T06:22:13.2839398Z git version 2.51.0
+2025-09-11T06:22:13.2848916Z ##[endgroup]
+2025-09-11T06:22:13.2858430Z Temporarily overriding HOME='/home/runner/work/_temp/88029dc2-e42a-4417-9894-434cb855a0ec' before making global git config changes
+2025-09-11T06:22:13.2861552Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-11T06:22:13.2863756Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/N8N-Self/N8N-Self
+2025-09-11T06:22:13.2867005Z Deleting the contents of '/home/runner/work/N8N-Self/N8N-Self'
+2025-09-11T06:22:13.2885021Z ##[group]Initializing the repository
+2025-09-11T06:22:13.2886555Z [command]/usr/bin/git init /home/runner/work/N8N-Self/N8N-Self
+2025-09-11T06:22:13.2888369Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-09-11T06:22:13.2890708Z hint: is subject to change. To configure the initial branch name to use in all
+2025-09-11T06:22:13.2892591Z hint: of your new repositories, which will suppress this warning, call:
+2025-09-11T06:22:13.2894518Z hint:
+2025-09-11T06:22:13.2895624Z hint: 	git config --global init.defaultBranch <name>
+2025-09-11T06:22:13.2897055Z hint:
+2025-09-11T06:22:13.2898321Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-09-11T06:22:13.2900377Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-09-11T06:22:13.2901942Z hint:
+2025-09-11T06:22:13.2902946Z hint: 	git branch -m <name>
+2025-09-11T06:22:13.2904038Z hint:
+2025-09-11T06:22:13.2905379Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2025-09-11T06:22:13.2907464Z Initialized empty Git repository in /home/runner/work/N8N-Self/N8N-Self/.git/
+2025-09-11T06:22:13.2911154Z [command]/usr/bin/git remote add origin https://github.com/sattva2020/N8N-Self
+2025-09-11T06:22:13.2914549Z ##[endgroup]
+2025-09-11T06:22:13.2916221Z ##[group]Disabling automatic garbage collection
+2025-09-11T06:22:13.2917712Z [command]/usr/bin/git config --local gc.auto 0
+2025-09-11T06:22:13.2931452Z ##[endgroup]
+2025-09-11T06:22:13.2933068Z ##[group]Setting up auth
+2025-09-11T06:22:13.2934520Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-09-11T06:22:13.2939166Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-09-11T06:22:13.2943731Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-11T06:22:13.2948759Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-09-11T06:22:13.3118198Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-09-11T06:22:13.3261812Z ##[endgroup]
+2025-09-11T06:22:13.3264200Z ##[group]Fetching the repository
+2025-09-11T06:22:13.3266528Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a86a43acea3db8d667e28aaf0da18f14a61a1dab:refs/remotes/pull/4/merge
+2025-09-11T06:22:15.5183440Z From https://github.com/sattva2020/N8N-Self
+2025-09-11T06:22:15.5189958Z  * [new ref]         a86a43acea3db8d667e28aaf0da18f14a61a1dab -> pull/4/merge
+2025-09-11T06:22:15.5250307Z ##[endgroup]
+2025-09-11T06:22:15.5254112Z ##[group]Determining the checkout info
+2025-09-11T06:22:15.5259790Z ##[endgroup]
+2025-09-11T06:22:15.5264250Z [command]/usr/bin/git sparse-checkout disable
+2025-09-11T06:22:15.5316458Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-09-11T06:22:15.5347769Z ##[group]Checking out the ref
+2025-09-11T06:22:15.5357175Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/4/merge
+2025-09-11T06:22:16.5527071Z Updating files:  99% (8902/8949)
+2025-09-11T06:22:16.5529718Z Updating files: 100% (8949/8949)
+2025-09-11T06:22:16.5540986Z Updating files: 100% (8949/8949), done.
+2025-09-11T06:22:16.5630068Z Note: switching to 'refs/remotes/pull/4/merge'.
+2025-09-11T06:22:16.5631409Z 
+2025-09-11T06:22:16.5634996Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-09-11T06:22:16.5636152Z changes and commit them, and you can discard any commits you make in this
+2025-09-11T06:22:16.5637133Z state without impacting any branches by switching back to a branch.
+2025-09-11T06:22:16.5637778Z 
+2025-09-11T06:22:16.5638283Z If you want to create a new branch to retain commits you create, you may
+2025-09-11T06:22:16.5639495Z do so (now or later) by using -c with the switch command. Example:
+2025-09-11T06:22:16.5640009Z 
+2025-09-11T06:22:16.5640281Z   git switch -c <new-branch-name>
+2025-09-11T06:22:16.5640662Z 
+2025-09-11T06:22:16.5641140Z Or undo this operation with:
+2025-09-11T06:22:16.5641586Z 
+2025-09-11T06:22:16.5641943Z   git switch -
+2025-09-11T06:22:16.5642335Z 
+2025-09-11T06:22:16.5642855Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-09-11T06:22:16.5643982Z 
+2025-09-11T06:22:16.5649806Z HEAD is now at a86a43a Merge bfd9e5fbca8111592139ab0542afc5b13bcb13db into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+2025-09-11T06:22:16.5672922Z ##[endgroup]
+2025-09-11T06:22:16.5717489Z [command]/usr/bin/git log -1 --format=%H
+2025-09-11T06:22:16.5742616Z a86a43acea3db8d667e28aaf0da18f14a61a1dab

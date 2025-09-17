@@ -1,0 +1,140 @@
+openapi: 3.1.0
+info:
+  title: Dashboard Backend API
+  version: 0.1.0
+  description: Minimal OpenAPI for Fastify backend (health, info, docker services, logs, actions, SSE events)
+servers:
+  - url: http://localhost:3000
+paths:
+  /api/health:
+    get:
+      summary: Health probe
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok:
+                    type: boolean
+  /api/info:
+    get:
+      summary: Service info
+      responses:
+        '200':
+          description: Info
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  service:
+                    type: string
+                  version:
+                    type: string
+                  env:
+                    type: string
+  /api/services:
+    get:
+      summary: List docker containers
+      responses:
+        '200':
+          description: List of containers
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    names:
+                      type: array
+                      items:
+                        type: string
+                    image:
+                      type: string
+                    status:
+                      type: string
+                    labels:
+                      type: object
+  /api/services/{id}/action:
+    post:
+      summary: Control a container (start/stop/restart)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [start, stop, restart]
+      responses:
+        '200':
+          description: Accepted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+        '400':
+          description: Invalid action
+        '500':
+          description: Error
+  /api/services/{id}/logs:
+    get:
+      summary: Get container logs tail
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tail
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 200
+      responses:
+        '200':
+          description: Logs
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Error
+  /api/events:
+    get:
+      summary: Server-Sent Events of container list (periodic)
+      responses:
+        '200':
+          description: Event stream
+          content:
+            text/event-stream:
+              schema:
+                type: string
+  /metrics:
+    get:
+      summary: Prometheus metrics
+      responses:
+        '200':
+          description: Prometheus text exposition
+          content:
+            text/plain; version=0.0.4:
+              schema:
+                type: string

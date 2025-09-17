@@ -1,0 +1,18 @@
+﻿2025-09-11T06:24:26.1513613Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:24:26.1514260Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:24:26.1514710Z [36;1mnpm run build --if-present[0m
+2025-09-11T06:24:26.1554983Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-09-11T06:24:26.1555372Z ##[endgroup]
+2025-09-11T06:24:26.9391035Z 
+2025-09-11T06:24:26.9391920Z > dashboard-frontend@0.1.0 build
+2025-09-11T06:24:26.9392658Z > vite build
+2025-09-11T06:24:26.9392996Z 
+2025-09-11T06:24:27.2887773Z [36mvite v4.5.14 [32mbuilding for production...[36m[39m
+2025-09-11T06:24:27.3462925Z transforming...
+2025-09-11T06:24:29.8771636Z [32m✓[39m 86 modules transformed.
+2025-09-11T06:24:30.0333609Z rendering chunks...
+2025-09-11T06:24:30.0406473Z computing gzip size...
+2025-09-11T06:24:30.0487449Z [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.40 kB[22m[1m[22m[2m │ gzip:  0.26 kB[22m
+2025-09-11T06:24:30.0489147Z [2mdist/[22m[35massets/index-4404f2c3.css  [39m[1m[2m  9.05 kB[22m[1m[22m[2m │ gzip:  2.32 kB[22m
+2025-09-11T06:24:30.0491099Z [2mdist/[22m[36massets/index-26727ed1.js   [39m[1m[2m183.82 kB[22m[1m[22m[2m │ gzip: 61.53 kB[22m
+2025-09-11T06:24:30.0496656Z [32m✓ built in 2.76s[39m

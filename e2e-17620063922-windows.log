@@ -1,0 +1,349 @@
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	﻿2025-09-10T16:19:57.0407443Z Current runner version: '2.328.0'
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0435817Z ##[group]Runner Image Provisioner
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0436956Z Hosted Compute Agent
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0437767Z Version: 20250829.383
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0438675Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0439736Z Build Date: 2025-08-29T13:48:48Z
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0440614Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0441335Z ##[group]Operating System
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0442204Z Microsoft Windows Server 2022
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0442952Z 10.0.20348
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0443612Z Datacenter
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0444198Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0444850Z ##[group]Runner Image
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0445592Z Image: windows-2022
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0446257Z Version: 20250907.29.1
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0447943Z Included Software: https://github.com/actions/runner-images/blob/win22/20250907.29/images/windows/Windows2022-Readme.md
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0450791Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20250907.29
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0452328Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0454037Z ##[group]GITHUB_TOKEN Permissions
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0456449Z Contents: read
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0457216Z Metadata: read
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0457868Z Packages: read
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0458623Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0461100Z Secret source: Actions
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0462079Z Prepare workflow directory
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0911331Z Prepare all required actions
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.0968388Z Getting action download info
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.4354449Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.5888280Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:57.7460516Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.1311002Z Complete job name: e2e-smoke (windows-latest, 18.x)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3220237Z ##[group]Run actions/checkout@v4
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3221479Z with:
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3221933Z   repository: sattva2020/N8N-Self
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3222674Z   token: ***
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3223080Z   ssh-strict: true
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3223532Z   ssh-user: git
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3223973Z   persist-credentials: true
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3224472Z   clean: true
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3224907Z   sparse-checkout-cone-mode: true
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3225381Z   fetch-depth: 1
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3225716Z   fetch-tags: false
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3226071Z   show-progress: true
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3226425Z   lfs: false
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3226738Z   submodules: false
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3227094Z   set-safe-directory: true
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:58.3228099Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3164145Z Syncing repository: sattva2020/N8N-Self
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3166677Z ##[group]Getting Git version info
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3167325Z Working directory is 'D:\a\N8N-Self\N8N-Self'
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3169329Z [command]"C:\Program Files\Git\bin\git.exe" version
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3170472Z git version 2.51.0.windows.1
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3173993Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3179075Z Temporarily overriding HOME='D:\a\_temp\88c9d441-f786-4f22-b80a-6941153ba6b0' before making global git config changes
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3181314Z Adding repository directory to the temporary git global config as a safe directory
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3183928Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\N8N-Self\N8N-Self
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3187665Z Deleting the contents of 'D:\a\N8N-Self\N8N-Self'
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3189954Z ##[group]Initializing the repository
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3191394Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\N8N-Self\N8N-Self
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3198224Z Initialized empty Git repository in D:/a/N8N-Self/N8N-Self/.git/
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:19:59.3238996Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/sattva2020/N8N-Self
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:00.3106155Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:00.3107638Z ##[group]Disabling automatic garbage collection
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:00.3109774Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:00.3113394Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:00.3114412Z ##[group]Setting up auth
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:00.3115693Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:00.3119606Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:01.4281567Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:01.4601906Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:02.0430749Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:02.0728401Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:02.0742036Z ##[group]Fetching the repository
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:02.0751125Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +24d0949ae2d67e7b19673bb0a85321d215aec389:refs/remotes/pull/4/merge
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:05.5224906Z From https://github.com/sattva2020/N8N-Self
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:05.5226129Z  * [new ref]         24d0949ae2d67e7b19673bb0a85321d215aec389 -> pull/4/merge
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:05.5594502Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:05.5596792Z ##[group]Determining the checkout info
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:05.5609057Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:05.5612429Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:05.6071250Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:05.6292017Z ##[group]Checking out the ref
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:05.6301226Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/4/merge
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.6837971Z Updating files:  50% (4483/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.6957925Z Updating files:  51% (4550/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.7083578Z Updating files:  52% (4639/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.7207553Z Updating files:  53% (4728/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.7324999Z Updating files:  54% (4817/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.7439847Z Updating files:  55% (4906/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.7543129Z Updating files:  56% (4996/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.7637436Z Updating files:  57% (5085/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.7743307Z Updating files:  58% (5174/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.8352303Z Updating files:  59% (5263/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.9082857Z Updating files:  60% (5352/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:06.9272096Z Updating files:  61% (5442/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.0156895Z Updating files:  62% (5531/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.0604962Z Updating files:  63% (5620/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.0793612Z Updating files:  64% (5709/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1082906Z Updating files:  65% (5798/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1147475Z Updating files:  66% (5888/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1189072Z Updating files:  67% (5977/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1213990Z Updating files:  68% (6066/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1214690Z Updating files:  69% (6155/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1215163Z Updating files:  70% (6244/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1215622Z Updating files:  71% (6334/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1311710Z Updating files:  72% (6423/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1508198Z Updating files:  73% (6512/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1714860Z Updating files:  74% (6601/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.1956037Z Updating files:  75% (6690/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.2298633Z Updating files:  76% (6780/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.2474395Z Updating files:  77% (6869/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.2626837Z Updating files:  78% (6958/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.2792835Z Updating files:  79% (7047/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.2954710Z Updating files:  80% (7136/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.3198967Z Updating files:  81% (7226/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.3330828Z Updating files:  82% (7315/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.3587690Z Updating files:  83% (7404/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.3697450Z Updating files:  84% (7493/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.4091368Z Updating files:  85% (7582/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.4262252Z Updating files:  86% (7672/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.4583657Z Updating files:  87% (7761/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.4691288Z Updating files:  88% (7850/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.4982615Z Updating files:  89% (7939/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.5590160Z Updating files:  90% (8028/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.5738668Z Updating files:  91% (8118/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.5891512Z Updating files:  92% (8207/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.6533467Z Updating files:  93% (8296/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.7306853Z Updating files:  94% (8385/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.7350237Z Updating files:  94% (8421/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.7512179Z Updating files:  95% (8474/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.7691285Z Updating files:  96% (8564/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.7824620Z Updating files:  97% (8653/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:07.7992867Z Updating files:  98% (8742/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.3375916Z Updating files:  99% (8831/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.3379026Z Updating files: 100% (8920/8920)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.3380239Z Updating files: 100% (8920/8920), done.
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8712214Z Note: switching to 'refs/remotes/pull/4/merge'.
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8713552Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8715022Z You are in 'detached HEAD' state. You can look around, make experimental
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8715879Z changes and commit them, and you can discard any commits you make in this
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8717778Z state without impacting any branches by switching back to a branch.
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8718387Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8718740Z If you want to create a new branch to retain commits you create, you may
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8719434Z do so (now or later) by using -c with the switch command. Example:
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8719898Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8720152Z   git switch -c <new-branch-name>
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8720498Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8720706Z Or undo this operation with:
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8720990Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8721180Z   git switch -
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8721435Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8721828Z Turn off this advice by setting config variable advice.detachedHead to false
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8722372Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8722995Z HEAD is now at 24d0949 Merge 574f9e7cfb0e62139584313329d460fc2fa69f02 into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:08.8787650Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.0206283Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.0520898Z 24d0949ae2d67e7b19673bb0a85321d215aec389
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.0888460Z ##[group]Run actions/setup-node@v4
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.0888738Z with:
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.0888917Z   node-version: 18.x
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.0889100Z   always-auth: false
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.0889266Z   check-latest: false
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.0889565Z   token: ***
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.0889729Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.5929073Z Found in cache @ C:\hostedtoolcache\windows\node\18.20.8\x64
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:09.5939089Z ##[group]Environment details
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:18.9542047Z node: v18.20.8
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:18.9542604Z npm: 10.8.2
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:18.9542953Z yarn: 1.22.22
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:18.9543830Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:18.9763876Z ##[group]Run cd dashboard/frontend
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:18.9764254Z [36;1mcd dashboard/frontend[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:18.9764486Z [36;1mnpm ci --prefer-offline[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:19.0386917Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:19.0387448Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:42.9124430Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:43.2267401Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:43.4360424Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:43.6965674Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:43.8260344Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:43.8645812Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:44.1671078Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:50.5297468Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5545877Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5547333Z added 589 packages, and audited 590 packages in 23s
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5565090Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5568284Z 180 packages are looking for funding
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5569839Z   run `npm fund` for details
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5700003Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5700630Z 3 moderate severity vulnerabilities
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5701097Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5701584Z To address all issues (including breaking changes), run:
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5702316Z   npm audit fix --force
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5702700Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:52.5703002Z Run `npm audit` for details.
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:53.2226997Z ##[group]Run cd dashboard/frontend
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:53.2227342Z [36;1mcd dashboard/frontend[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:53.2227589Z [36;1mnpx playwright install --with-deps[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:53.2273169Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:20:53.2273487Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:50.3961708Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:50.3965653Z Success Restart Needed Exit Code      Feature Result                               
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:50.3969015Z ------- -------------- ---------      --------------                               
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:50.3978492Z True    No             Success        {Media Foundation}                           
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:50.3981604Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:50.3982349Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:50.4736931Z Downloading Chromium 140.0.7339.16 (playwright build v1187)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1187/chromium-win64.zip[22m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:50.9215451Z |                                                                                |   0% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:51.2106738Z |■■■■■■■■                                                                        |  10% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:51.4452000Z |■■■■■■■■■■■■■■■■                                                                |  20% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:51.6689363Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:51.8538110Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:52.0287561Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:52.2150380Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:52.4489984Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:52.6200658Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:52.8276348Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:52.9985944Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 148.9 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:59.7909657Z Chromium 140.0.7339.16 (playwright build v1187) downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\chromium-1187
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:21:59.7913187Z Downloading Chromium Headless Shell 140.0.7339.16 (playwright build v1187)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1187/chromium-headless-shell-win64.zip[22m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1065992Z |                                                                                |   0% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1068987Z |■■■■■■■■                                                                        |  10% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1071236Z |■■■■■■■■■■■■■■■■                                                                |  20% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1074054Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1077114Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1080648Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1083977Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1087199Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1089753Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1101077Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.1109862Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 91.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.4081801Z Chromium Headless Shell 140.0.7339.16 (playwright build v1187) downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\chromium_headless_shell-1187
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.4085897Z Downloading Firefox 141.0 (playwright build v1490)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/firefox/1490/firefox-win64.zip[22m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.7310300Z |                                                                                |   0% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:04.9675192Z |■■■■■■■■                                                                        |  10% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:05.1122955Z |■■■■■■■■■■■■■■■■                                                                |  20% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:05.2861504Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:05.4479878Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:05.5715096Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:05.6928531Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:05.8106772Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:05.9545788Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:06.0752962Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:06.1915681Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.4 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:10.7881687Z Firefox 141.0 (playwright build v1490) downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\firefox-1490
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:10.7884296Z Downloading Webkit 26.0 (playwright build v2203)[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/webkit/2203/webkit-win64.zip[22m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.0516372Z |                                                                                |   0% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.1693318Z |■■■■■■■■                                                                        |  10% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.2397293Z |■■■■■■■■■■■■■■■■                                                                |  20% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.3245408Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.4089766Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.4733812Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.5518374Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.6169889Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.6923338Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.7638953Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:11.8249399Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 57 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.2424651Z Webkit 26.0 (playwright build v2203) downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\webkit-2203
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.2429509Z Downloading FFMPEG playwright build v1011[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-win64.zip[22m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.4812488Z |                                                                                |   0% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.4968602Z |■■■■■■■■                                                                        |  10% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.4991531Z |■■■■■■■■■■■■■■■■                                                                |  20% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.5011447Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.5037513Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.5059270Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  51% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.5077979Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.5098937Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.5120784Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  81% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.5139345Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.5156583Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 1.3 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.6922149Z FFMPEG playwright build v1011 downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\ffmpeg-1011
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:18.6925276Z Downloading Winldd playwright build v1007[2m from https://cdn.playwright.dev/dbazure/download/playwright/builds/winldd/1007/winldd-win64.zip[22m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:19.4120628Z |                                                                                |   1% of 0.1 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:19.4125038Z |■■■■■■■■                                                                        |  10% of 0.1 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:19.4128746Z |■■■■■■■■■■■■■■■■                                                                |  20% of 0.1 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:19.4132138Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 0.1 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:19.4133982Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 0.1 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:19.4135213Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  62% of 0.1 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:19.4136958Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  75% of 0.1 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:19.4138210Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  87% of 0.1 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:19.4139447Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 0.1 MiB
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:19.4372753Z Winldd playwright build v1007 downloaded to C:\Users\runneradmin\AppData\Local\ms-playwright\winldd-1007
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:22.8892746Z ##[group]Run cd dashboard/frontend
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:22.8893187Z [36;1mcd dashboard/frontend[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:22.8893479Z [36;1mnpm run build --if-present[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:22.8925795Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:22.8926173Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:23.6473939Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:23.6474732Z > dashboard-frontend@0.1.0 build
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:23.6483316Z > vite build
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:23.6483626Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:24.5175665Z [36mvite v4.5.14 [32mbuilding for production...[36m[39m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:24.5817117Z transforming...
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:26.9599639Z [32m✓[39m 86 modules transformed.
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.1053810Z rendering chunks...
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.1126997Z computing gzip size...
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.1208506Z [2mdist/[22m[32mindex.html                 [39m[1m[2m  0.40 kB[22m[1m[22m[2m │ gzip:  0.26 kB[22m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.1210370Z [2mdist/[22m[35massets/index-4404f2c3.css  [39m[1m[2m  9.05 kB[22m[1m[22m[2m │ gzip:  2.32 kB[22m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.1212740Z [2mdist/[22m[36massets/index-26727ed1.js   [39m[1m[2m183.82 kB[22m[1m[22m[2m │ gzip: 61.53 kB[22m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.1217111Z [32m✓ built in 2.61s[39m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.2302740Z ##[group]Run cd dashboard/frontend
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.2303101Z [36;1mcd dashboard/frontend[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.2303523Z [36;1mStart-Process -NoNewWindow -FilePath npm -ArgumentList 'run','serve-dist'[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.2303961Z [36;1mStart-Sleep -Seconds 2[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.2340870Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:27.2341241Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:28.0764398Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:28.0765262Z > dashboard-frontend@0.1.0 serve-dist
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:28.0766173Z > node ./scripts/simple-serve.js
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:28.0767204Z 
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:28.1683169Z simple-serve: serving D:\a\N8N-Self\N8N-Self\dashboard\frontend\dist at http://0.0.0.0:5175/
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:35.1608099Z ##[group]Run cd dashboard/frontend
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:35.1608438Z [36;1mcd dashboard/frontend[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:35.1608897Z [36;1m# run playwright with trace enabled, single worker and chromium project to capture detailed traces on crash[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:35.1609519Z [36;1mnpx playwright test --project=chromium --workers=1 --trace=on --reporter=list || true[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:35.1610068Z [36;1m# ensure playwright-report exists (Playwright writes traces into playwright-report)[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:35.1610813Z [36;1mif [ -d playwright-report ] || (Test-Path playwright-report); then echo "playwright-report ready"; else echo "no playwright-report found"; fi[0m
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:35.1685713Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:35.1686061Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.8537535Z Error: Project(s) "chromium" not found. Available projects: ""
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.8538890Z     at filterProjects (D:\a\N8N-Self\N8N-Self\dashboard\frontend\node_modules\playwright\lib\runner\projectUtils.js:79:11)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.8544205Z     at runTests (D:\a\N8N-Self\N8N-Self\dashboard\frontend\node_modules\playwright\lib\program.js:154:42)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.8545627Z     at i.<anonymous> (D:\a\N8N-Self\N8N-Self\dashboard\frontend\node_modules\playwright\lib\program.js:64:7)
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9043509Z D:\a\_temp\514ff2b4-a5e6-405b-83a0-a10772ba9e5c.sh: line 5: Test-Path: command not found
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9048944Z no playwright-report found
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9227010Z ##[group]Run actions/upload-artifact@v4
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9227324Z with:
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9227881Z   name: playwright-report
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9228257Z   path: dashboard/frontend/playwright-report
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9228676Z   if-no-files-found: warn
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9228986Z   compression-level: 6
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9229269Z   overwrite: false
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9229564Z   include-hidden-files: false
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:37.9230131Z ##[endgroup]
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:38.2834796Z ##[warning]No files were found with the provided path: dashboard/frontend/playwright-report. No artifacts will be uploaded.
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:38.3056961Z Post job cleanup.
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:38.5532885Z Post job cleanup.
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:38.8624100Z [command]"C:\Program Files\Git\bin\git.exe" version
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:38.8875332Z git version 2.51.0.windows.1
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:38.8952531Z Temporarily overriding HOME='D:\a\_temp\54f9e513-53d5-43d6-b932-332928a8b67d' before making global git config changes
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:38.8954064Z Adding repository directory to the temporary git global config as a safe directory
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:38.8965021Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\N8N-Self\N8N-Self
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:38.9230599Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:38.9479846Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:39.4464614Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:39.4697805Z http.https://github.com/.extraheader
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:39.4742079Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:39.4992783Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+e2e-smoke (windows-latest, 18.x)	UNKNOWN STEP	2025-09-10T16:22:39.9851259Z Cleaning up orphan processes

@@ -1,0 +1,5 @@
+2025-09-11T07:48:56.2400000Z Job is about to start running on the hosted runner: GitHub Actions 1000000795
+2025-09-11T07:48:56.2390000Z Job is waiting for a hosted runner to come online.
+2025-09-11T07:48:56.2320000Z Requested labels: windows-latest
+2025-09-11T07:48:56.2320000Z Job defined at: sattva2020/N8N-Self/.github/workflows/ci.yml@refs/pull/4/merge
+2025-09-11T07:48:56.2320000Z Waiting for a runner to pick up this job...

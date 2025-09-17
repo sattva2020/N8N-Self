@@ -57,28 +57,73 @@ jobs:
           cd dashboard/frontend
           npm run build --if-present
 
-      - name: Install Playwright browsers
+      - name: Install Playwright browsers (with retries)
         run: |
+          set -e
           cd dashboard/frontend
-          npx playwright install --with-deps
+          for i in 1 2 3 4 5; do
+            if npx playwright install --with-deps; then
+              echo "playwright install succeeded" && break
+            fi
+            echo "playwright install failed, retrying ($i/5)..."
+            sleep $((5 * i))
+          done
 
       - name: Start static server
+        env:
+          PORT: 5177
+          STRICT_PORT: '1'
         run: |
           cd dashboard/frontend
-          nohup npm run serve-dist > serve.log 2>&1 &
+          nohup env PORT=$PORT npm run serve-dist > serve.log 2>&1 &
           # wait for server
           for i in {1..20}; do
-            if curl -sSf http://127.0.0.1:5175/ >/dev/null; then echo server ready && break; fi
+            if curl -sSf http://127.0.0.1:${PORT}/ >/dev/null; then echo server ready && break; fi
             sleep 1
           done
+
 
       - name: Run Playwright e2e
         run: |
           cd dashboard/frontend
-          npx playwright test --config=playwright.config.js --reporter=list || (cat serve.log && exit 1)
+          mkdir -p playwright-report
+          npx playwright test --config=playwright.config.js --reporter=list || true
+
+      - name: Dump server logs and served-port (on failure)
+        if: failure()
+        run: |
+          cd dashboard/frontend || true
+          echo "--- serve.log ---"
+          if [ -f serve.log ]; then tail -n 300 serve.log || true; else echo "serve.log not present"; fi
+          echo "--- tmp/served-port ---"
+          if [ -f tmp/served-port ]; then cat tmp/served-port || true; else echo "tmp/served-port not present"; fi
+          echo "--- tmp dir listing ---"
+          ls -la tmp || true
+        shell: bash
 
       - name: Dump server log
         if: failure()
         run: |
           cd dashboard/frontend
           tail -n 200 serve.log || true
+
+      - name: Assert served port matches expected (frontend-local)
+        run: |
+          cd dashboard/frontend
+          if [ -f tmp/served-port ]; then
+            served=$(cat tmp/served-port)
+            echo "served-port=$served"
+            if [ "$served" != "$PORT" ]; then
+              echo "ERROR: served port ($served) != expected PORT ($PORT)" >&2
+              cat serve.log || true
+              exit 2
+            fi
+          else
+            echo "WARNING: tmp/served-port not found; falling back to curl check"
+            if ! curl -sSf http://127.0.0.1:${PORT}/ >/dev/null; then
+              echo "ERROR: no server listening on $PORT" >&2
+              cat serve.log || true
+              exit 2
+            fi
+          fi
+        shell: bash

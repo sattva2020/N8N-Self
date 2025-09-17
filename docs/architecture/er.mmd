@@ -1,0 +1,65 @@
+erDiagram
+  USERS ||--o{ ENTRIES : makes
+  FOODS ||--o{ ENTRIES : used_in
+  FOODS ||--o{ FOOD_INGREDIENTS : has
+  INGREDIENTS ||--o{ FOOD_INGREDIENTS : part_of
+erDiagram
+  USERS_PROFILE ||--o{ ENTRIES : makes
+  FOODS ||--o{ ENTRIES : used_in
+  FOODS ||--o{ FOOD_SOURCES : sourced_from
+  INGREDIENTS ||--o{ FOOD_INGREDIENTS : part_of
+  FOODS ||--o{ FOOD_INGREDIENTS : has
+  USERS_PROFILE ||--o{ RECIPES : owns
+  RECIPES ||--o{ RECIPE_ITEMS : contains
+
+  USERS_PROFILE {
+    uuid user_id PK
+    int age
+    decimal weight_kg
+    decimal height_cm
+    text goal
+    int target_kcal
+  }
+  FOODS {
+    uuid id PK
+    text name
+    text brand
+    text barcode
+    int kcal_100
+    decimal p_100
+    decimal f_100
+    decimal c_100
+    text image_url
+  }
+  FOOD_SOURCES {
+    uuid id PK
+    uuid food_id FK
+    text source     // OFF, OCR, FDC
+    text source_id
+    timestamptz last_checked_at
+  }
+  INGREDIENTS {
+    uuid id PK
+    text name
+    text e_code
+    bool is_allergen
+  }
+  FOOD_INGREDIENTS {
+    uuid food_id FK
+    uuid ingredient_id FK
+    decimal grams_per_100g
+  }
+  ENTRIES {
+    uuid id PK
+    uuid user_id FK
+    date dt
+    text meal_slot   // breakfast/lunch/dinner/snack
+    uuid food_id FK
+    decimal portion_g
+    int kcal
+    decimal p
+    decimal f
+    decimal c
+  }
+  RECIPES { uuid id PK, uuid user_id FK, text name }
+  RECIPE_ITEMS { uuid id PK, uuid recipe_id FK, uuid food_id FK, decimal grams }

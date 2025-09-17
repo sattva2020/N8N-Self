@@ -1,0 +1,15 @@
+﻿2025-09-11T06:24:30.1545154Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:24:30.1545760Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:24:30.1546414Z [36;1m# start serve-dist with PORT env so server and Playwright agree[0m
+2025-09-11T06:24:30.1547612Z [36;1mStart-Process -NoNewWindow -FilePath npm -ArgumentList 'run','serve-dist' -Environment @{ PORT = $env:PORT; STRICT_PORT = $env:STRICT_PORT }[0m
+2025-09-11T06:24:30.1548671Z [36;1mStart-Sleep -Seconds 2[0m
+2025-09-11T06:24:30.1602338Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-09-11T06:24:30.1602882Z env:
+2025-09-11T06:24:30.1603188Z   PORT: 5177
+2025-09-11T06:24:30.1603505Z   STRICT_PORT: 1
+2025-09-11T06:24:30.1603799Z ##[endgroup]
+2025-09-11T06:24:30.9669998Z 
+2025-09-11T06:24:30.9670926Z > dashboard-frontend@0.1.0 serve-dist
+2025-09-11T06:24:30.9671900Z > node ./scripts/simple-serve.js
+2025-09-11T06:24:30.9672443Z 
+2025-09-11T06:24:31.0520355Z simple-serve: serving D:\a\N8N-Self\N8N-Self\dashboard\frontend\dist at http://0.0.0.0:5177/

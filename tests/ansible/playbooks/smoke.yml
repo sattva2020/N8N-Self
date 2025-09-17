@@ -1,0 +1,99 @@
+---
+- name: N8N stack deploy & smoke test
+  hosts: n8n
+  become: true
+  vars_files:
+    - ../group_vars/all.yml
+  tasks:
+    - name: Ensure apt prerequisites
+      apt:
+        name:
+          - ca-certificates
+          - curl
+          - gnupg
+        state: present
+        update_cache: yes
+
+    - name: Ensure Docker installed (convenience script)
+      shell: |
+        if ! command -v docker >/dev/null 2>&1; then
+          curl -fsSL https://get.docker.com | sh
+        fi
+      args:
+        executable: /bin/bash
+
+    - name: Ensure docker-compose-plugin installed
+      apt:
+        name: docker-compose-plugin
+        state: present
+      register: compose_pkg
+      failed_when: false
+
+    - name: Create project directory
+      file:
+        path: /opt/n8n
+        state: directory
+        mode: '0755'
+
+    - name: Sync stack directory
+      synchronize:
+        src: "{{ stack_dir }}/"
+        dest: /opt/n8n/stack/
+        rsync_opts:
+          - "--delete"
+      delegate_to: localhost
+
+    - name: Sync secrets directory (if exists)
+      synchronize:
+        src: "{{ secrets_dir }}/"
+        dest: /opt/n8n/secrets/
+        rsync_opts:
+          - "--delete"
+      delegate_to: localhost
+      ignore_errors: yes
+
+    - name: Render .env from template vars
+      copy:
+        dest: /opt/n8n/stack/.env
+        content: |
+          DOMAIN_NAME={{ DOMAIN_NAME }}
+          ACME_EMAIL={{ ACME_EMAIL }}
+          TZ={{ TZ }}
+          SUBDOMAIN={{ SUBDOMAIN }}
+          GENERIC_TIMEZONE={{ GENERIC_TIMEZONE }}
+        mode: '0644'
+
+    - name: Pull & start stack
+      community.docker.docker_compose_v2:
+        project_src: /opt/n8n/stack
+        files: "{{ compose_files }}"
+        state: present
+        pull: always
+
+    - name: Wait for Traefik to be ready
+      uri:
+        url: "{{ traefik_url }}"
+        method: GET
+        validate_certs: yes
+        status_code: 200,401,403
+      register: traefik_resp
+      retries: 20
+      delay: 6
+      until: traefik_resp.status in [200,401,403]
+
+    - name: Wait for n8n to respond
+      uri:
+        url: "{{ n8n_url }}"
+        method: GET
+        validate_certs: yes
+        status_code: 200,302,401
+      register: n8n_resp
+      retries: 30
+      delay: 6
+      until: n8n_resp.status in [200,302,401]
+
+    - name: Show endpoints
+      debug:
+        msg:
+          - "Traefik: {{ traefik_url }} (status {{ traefik_resp.status }})"
+          - "n8n: {{ n8n_url }} (status {{ n8n_resp.status }})"

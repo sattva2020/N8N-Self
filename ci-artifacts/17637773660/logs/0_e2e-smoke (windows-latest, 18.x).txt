@@ -1,0 +1,244 @@
+﻿2025-09-11T07:48:59.5654767Z Current runner version: '2.328.0'
+2025-09-11T07:48:59.5688658Z ##[group]Runner Image Provisioner
+2025-09-11T07:48:59.5689816Z Hosted Compute Agent
+2025-09-11T07:48:59.5690585Z Version: 20250829.383
+2025-09-11T07:48:59.5691508Z Commit: 27cb235aab5b0e52e153a26cd86b4742e89dac5d
+2025-09-11T07:48:59.5692523Z Build Date: 2025-08-29T13:48:48Z
+2025-09-11T07:48:59.5693429Z ##[endgroup]
+2025-09-11T07:48:59.5694161Z ##[group]Operating System
+2025-09-11T07:48:59.5695038Z Microsoft Windows Server 2022
+2025-09-11T07:48:59.5695861Z 10.0.20348
+2025-09-11T07:48:59.5696586Z Datacenter
+2025-09-11T07:48:59.5697238Z ##[endgroup]
+2025-09-11T07:48:59.5697868Z ##[group]Runner Image
+2025-09-11T07:48:59.5698651Z Image: windows-2022
+2025-09-11T07:48:59.5699321Z Version: 20250907.29.1
+2025-09-11T07:48:59.5700930Z Included Software: https://github.com/actions/runner-images/blob/win22/20250907.29/images/windows/Windows2022-Readme.md
+2025-09-11T07:48:59.5703664Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20250907.29
+2025-09-11T07:48:59.5705258Z ##[endgroup]
+2025-09-11T07:48:59.5706863Z ##[group]GITHUB_TOKEN Permissions
+2025-09-11T07:48:59.5709253Z Contents: read
+2025-09-11T07:48:59.5710038Z Metadata: read
+2025-09-11T07:48:59.5710695Z Packages: read
+2025-09-11T07:48:59.5711355Z ##[endgroup]
+2025-09-11T07:48:59.5714099Z Secret source: Actions
+2025-09-11T07:48:59.5715054Z Prepare workflow directory
+2025-09-11T07:48:59.6170918Z Prepare all required actions
+2025-09-11T07:48:59.6223372Z Getting action download info
+2025-09-11T07:49:00.0560728Z Download action repository 'actions/checkout@v4' (SHA:08eba0b27e820071cde6df949e0beb9ba4906955)
+2025-09-11T07:49:00.1850854Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2025-09-11T07:49:00.3401206Z Download action repository 'actions/cache@v4' (SHA:0400d5f644dc74513175e3cd8d07132dd4860809)
+2025-09-11T07:49:00.4747810Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2025-09-11T07:49:00.8319399Z Complete job name: e2e-smoke (windows-latest, 18.x)
+2025-09-11T07:49:01.0163783Z ##[group]Run actions/checkout@v4
+2025-09-11T07:49:01.0165088Z with:
+2025-09-11T07:49:01.0165875Z   repository: sattva2020/N8N-Self
+2025-09-11T07:49:01.0167181Z   token: ***
+2025-09-11T07:49:01.0167959Z   ssh-strict: true
+2025-09-11T07:49:01.0168767Z   ssh-user: git
+2025-09-11T07:49:01.0169593Z   persist-credentials: true
+2025-09-11T07:49:01.0170540Z   clean: true
+2025-09-11T07:49:01.0171372Z   sparse-checkout-cone-mode: true
+2025-09-11T07:49:01.0172383Z   fetch-depth: 1
+2025-09-11T07:49:01.0173197Z   fetch-tags: false
+2025-09-11T07:49:01.0174003Z   show-progress: true
+2025-09-11T07:49:01.0174838Z   lfs: false
+2025-09-11T07:49:01.0175515Z   submodules: false
+2025-09-11T07:49:01.0176189Z   set-safe-directory: true
+2025-09-11T07:49:01.0177222Z ##[endgroup]
+2025-09-11T07:49:01.2340619Z Syncing repository: sattva2020/N8N-Self
+2025-09-11T07:49:01.2343014Z ##[group]Getting Git version info
+2025-09-11T07:49:01.2344055Z Working directory is 'D:\a\N8N-Self\N8N-Self'
+2025-09-11T07:49:01.3609057Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-09-11T07:49:01.8361858Z git version 2.51.0.windows.1
+2025-09-11T07:49:01.8483695Z ##[endgroup]
+2025-09-11T07:49:01.8489378Z Temporarily overriding HOME='D:\a\_temp\cd5dad38-2295-4505-ae53-e0d2a4743650' before making global git config changes
+2025-09-11T07:49:01.8491066Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-11T07:49:01.8492605Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\N8N-Self\N8N-Self
+2025-09-11T07:49:01.9835829Z Deleting the contents of 'D:\a\N8N-Self\N8N-Self'
+2025-09-11T07:49:01.9837747Z ##[group]Initializing the repository
+2025-09-11T07:49:01.9838464Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\N8N-Self\N8N-Self
+2025-09-11T07:49:02.0396808Z Initialized empty Git repository in D:/a/N8N-Self/N8N-Self/.git/
+2025-09-11T07:49:02.0446649Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/sattva2020/N8N-Self
+2025-09-11T07:49:02.8112468Z ##[endgroup]
+2025-09-11T07:49:02.8112940Z ##[group]Disabling automatic garbage collection
+2025-09-11T07:49:02.8113732Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2025-09-11T07:49:02.8115607Z ##[endgroup]
+2025-09-11T07:49:02.8116316Z ##[group]Setting up auth
+2025-09-11T07:49:02.8117114Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-09-11T07:49:02.8119311Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-09-11T07:49:03.9970107Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-11T07:49:04.0254204Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-09-11T07:49:04.5104565Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2025-09-11T07:49:04.5375096Z ##[endgroup]
+2025-09-11T07:49:04.5397449Z ##[group]Fetching the repository
+2025-09-11T07:49:04.5404816Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +a4e5c88403e2468312523e1ff628f265d57025a3:refs/remotes/pull/4/merge
+2025-09-11T07:49:08.3347820Z From https://github.com/sattva2020/N8N-Self
+2025-09-11T07:49:08.3348656Z  * [new ref]         a4e5c88403e2468312523e1ff628f265d57025a3 -> pull/4/merge
+2025-09-11T07:49:08.3350460Z ##[endgroup]
+2025-09-11T07:49:08.3351017Z ##[group]Determining the checkout info
+2025-09-11T07:49:08.3351729Z ##[endgroup]
+2025-09-11T07:49:08.3378325Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2025-09-11T07:49:08.3379820Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2025-09-11T07:49:08.3381122Z ##[group]Checking out the ref
+2025-09-11T07:49:08.3381765Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force refs/remotes/pull/4/merge
+2025-09-11T07:49:08.7582535Z Updating files:  45% (4028/8949)
+2025-09-11T07:49:08.7871430Z Updating files:  46% (4117/8949)
+2025-09-11T07:49:08.8062463Z Updating files:  47% (4207/8949)
+2025-09-11T07:49:08.8241735Z Updating files:  48% (4296/8949)
+2025-09-11T07:49:08.8424398Z Updating files:  49% (4386/8949)
+2025-09-11T07:49:08.8621791Z Updating files:  50% (4475/8949)
+2025-09-11T07:49:08.8764254Z Updating files:  51% (4564/8949)
+2025-09-11T07:49:08.8898605Z Updating files:  52% (4654/8949)
+2025-09-11T07:49:08.9070481Z Updating files:  53% (4743/8949)
+2025-09-11T07:49:08.9473467Z Updating files:  54% (4833/8949)
+2025-09-11T07:49:08.9602806Z Updating files:  55% (4922/8949)
+2025-09-11T07:49:08.9716319Z Updating files:  56% (5012/8949)
+2025-09-11T07:49:08.9870962Z Updating files:  57% (5101/8949)
+2025-09-11T07:49:09.0015875Z Updating files:  58% (5191/8949)
+2025-09-11T07:49:09.0156520Z Updating files:  59% (5280/8949)
+2025-09-11T07:49:09.0336503Z Updating files:  60% (5370/8949)
+2025-09-11T07:49:09.0550564Z Updating files:  61% (5459/8949)
+2025-09-11T07:49:09.0726711Z Updating files:  62% (5549/8949)
+2025-09-11T07:49:09.0879978Z Updating files:  63% (5638/8949)
+2025-09-11T07:49:09.1076919Z Updating files:  64% (5728/8949)
+2025-09-11T07:49:09.1262425Z Updating files:  65% (5817/8949)
+2025-09-11T07:49:09.1411128Z Updating files:  66% (5907/8949)
+2025-09-11T07:49:09.1589172Z Updating files:  67% (5996/8949)
+2025-09-11T07:49:09.1817036Z Updating files:  68% (6086/8949)
+2025-09-11T07:49:09.2005934Z Updating files:  69% (6175/8949)
+2025-09-11T07:49:09.2226096Z Updating files:  70% (6265/8949)
+2025-09-11T07:49:09.2595982Z Updating files:  71% (6354/8949)
+2025-09-11T07:49:09.2757671Z Updating files:  72% (6444/8949)
+2025-09-11T07:49:09.3150101Z Updating files:  73% (6533/8949)
+2025-09-11T07:49:09.3315722Z Updating files:  74% (6623/8949)
+2025-09-11T07:49:09.3501480Z Updating files:  75% (6712/8949)
+2025-09-11T07:49:09.3663522Z Updating files:  76% (6802/8949)
+2025-09-11T07:49:09.3891987Z Updating files:  77% (6891/8949)
+2025-09-11T07:49:09.4096817Z Updating files:  78% (6981/8949)
+2025-09-11T07:49:09.4285138Z Updating files:  79% (7070/8949)
+2025-09-11T07:49:09.4555067Z Updating files:  80% (7160/8949)
+2025-09-11T07:49:09.4746968Z Updating files:  81% (7249/8949)
+2025-09-11T07:49:09.4905190Z Updating files:  82% (7339/8949)
+2025-09-11T07:49:09.5094008Z Updating files:  83% (7428/8949)
+2025-09-11T07:49:09.5343801Z Updating files:  84% (7518/8949)
+2025-09-11T07:49:09.5537299Z Updating files:  85% (7607/8949)
+2025-09-11T07:49:09.5707221Z Updating files:  86% (7697/8949)
+2025-09-11T07:49:09.5915995Z Updating files:  87% (7786/8949)
+2025-09-11T07:49:09.6074509Z Updating files:  88% (7876/8949)
+2025-09-11T07:49:09.6514440Z Updating files:  89% (7965/8949)
+2025-09-11T07:49:09.6808284Z Updating files:  90% (8055/8949)
+2025-09-11T07:49:09.6943103Z Updating files:  91% (8144/8949)
+2025-09-11T07:49:09.7507013Z Updating files:  92% (8234/8949)
+2025-09-11T07:49:09.7596401Z Updating files:  93% (8323/8949)
+2025-09-11T07:49:09.7733629Z Updating files:  93% (8326/8949)
+2025-09-11T07:49:09.8438017Z Updating files:  94% (8413/8949)
+2025-09-11T07:49:09.8577887Z Updating files:  95% (8502/8949)
+2025-09-11T07:49:09.8718865Z Updating files:  96% (8592/8949)
+2025-09-11T07:49:09.8849184Z Updating files:  97% (8681/8949)
+2025-09-11T07:49:09.9000888Z Updating files:  98% (8771/8949)
+2025-09-11T07:49:10.3773155Z Updating files:  99% (8860/8949)
+2025-09-11T07:49:10.3777172Z Updating files: 100% (8949/8949)
+2025-09-11T07:49:10.3777922Z Updating files: 100% (8949/8949), done.
+2025-09-11T07:49:10.3989520Z Note: switching to 'refs/remotes/pull/4/merge'.
+2025-09-11T07:49:10.3992993Z 
+2025-09-11T07:49:10.3993798Z You are in 'detached HEAD' state. You can look around, make experimental
+2025-09-11T07:49:10.3994653Z changes and commit them, and you can discard any commits you make in this
+2025-09-11T07:49:10.3995443Z state without impacting any branches by switching back to a branch.
+2025-09-11T07:49:10.3995976Z 
+2025-09-11T07:49:10.3996413Z If you want to create a new branch to retain commits you create, you may
+2025-09-11T07:49:10.3997129Z do so (now or later) by using -c with the switch command. Example:
+2025-09-11T07:49:10.3997556Z 
+2025-09-11T07:49:10.3997801Z   git switch -c <new-branch-name>
+2025-09-11T07:49:10.3998171Z 
+2025-09-11T07:49:10.3998402Z Or undo this operation with:
+2025-09-11T07:49:10.3998730Z 
+2025-09-11T07:49:10.3998931Z   git switch -
+2025-09-11T07:49:10.3999199Z 
+2025-09-11T07:49:10.3999559Z Turn off this advice by setting config variable advice.detachedHead to false
+2025-09-11T07:49:10.4000076Z 
+2025-09-11T07:49:10.4000706Z HEAD is now at a4e5c88 Merge 4d7538491204619ee077593d9b41ecda9841635d into 032e0c286f1161b571d7313b759da5e74c4c9fb4
+2025-09-11T07:49:10.4105805Z ##[endgroup]
+2025-09-11T07:49:10.4349588Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2025-09-11T07:49:10.4556524Z a4e5c88403e2468312523e1ff628f265d57025a3
+2025-09-11T07:49:10.4985733Z ##[group]Run actions/setup-node@v4
+2025-09-11T07:49:10.4986034Z with:
+2025-09-11T07:49:10.4986219Z   node-version: 18.x
+2025-09-11T07:49:10.4986409Z   always-auth: false
+2025-09-11T07:49:10.4986599Z   check-latest: false
+2025-09-11T07:49:10.4986932Z   token: ***
+2025-09-11T07:49:10.4987102Z ##[endgroup]
+2025-09-11T07:49:10.8527461Z Found in cache @ C:\hostedtoolcache\windows\node\18.20.8\x64
+2025-09-11T07:49:10.8538226Z ##[group]Environment details
+2025-09-11T07:49:16.2320041Z node: v18.20.8
+2025-09-11T07:49:16.2320702Z npm: 10.8.2
+2025-09-11T07:49:16.2321494Z yarn: 1.22.22
+2025-09-11T07:49:16.2323090Z ##[endgroup]
+2025-09-11T07:49:16.2555815Z ##[group]Run cd dashboard/frontend
+2025-09-11T07:49:16.2556197Z [36;1mcd dashboard/frontend[0m
+2025-09-11T07:49:16.2556942Z [36;1mnpm ci --prefer-offline[0m
+2025-09-11T07:49:16.3133261Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-09-11T07:49:16.3133691Z ##[endgroup]
+2025-09-11T07:49:34.9542323Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-09-11T07:49:35.1284907Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-09-11T07:49:35.7372264Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-09-11T07:49:36.0436755Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2025-09-11T07:49:36.0717458Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-11T07:49:36.2299929Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-09-11T07:49:36.4889663Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2025-09-11T07:49:41.5472397Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-09-11T07:49:43.5479938Z 
+2025-09-11T07:49:43.5483436Z added 589 packages, and audited 590 packages in 19s
+2025-09-11T07:49:43.5492631Z 
+2025-09-11T07:49:43.5495735Z 180 packages are looking for funding
+2025-09-11T07:49:43.5496825Z   run `npm fund` for details
+2025-09-11T07:49:43.5654016Z 
+2025-09-11T07:49:43.5654571Z 3 moderate severity vulnerabilities
+2025-09-11T07:49:43.5655066Z 
+2025-09-11T07:49:43.5659851Z To address all issues (including breaking changes), run:
+2025-09-11T07:49:43.5663482Z   npm audit fix --force
+2025-09-11T07:49:43.5664308Z 
+2025-09-11T07:49:43.5664767Z Run `npm audit` for details.
+2025-09-11T07:49:43.9704602Z ##[group]Run cd dashboard/frontend
+2025-09-11T07:49:43.9705114Z [36;1mcd dashboard/frontend[0m
+2025-09-11T07:49:43.9705469Z [36;1mfor i in 1 2 3; do[0m
+2025-09-11T07:49:43.9705932Z [36;1m  npx playwright install --with-deps && break || true[0m
+2025-09-11T07:49:43.9706417Z [36;1m  echo "playwright install failed, retrying ($i/3)..."[0m
+2025-09-11T07:49:43.9706711Z [36;1m  sleep 5[0m
+2025-09-11T07:49:43.9706892Z [36;1mdone[0m
+2025-09-11T07:49:43.9753924Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-09-11T07:49:43.9754565Z ##[endgroup]
+2025-09-11T07:49:44.8805823Z [31;1mParserError: [0mD:\a\_temp\69ceb53e-b399-4a5f-b62b-0acadec31c0b.ps1:3[0m
+2025-09-11T07:49:44.8808101Z [31;1m[0m[36;1mLine |[0m
+2025-09-11T07:49:44.8809564Z [31;1m[0m[36;1m[36;1m   3 | [0m for[36;1m [0mi in 1 2 3; do[0m
+2025-09-11T07:49:44.8810825Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m     | [31;1m    ~[0m
+2025-09-11T07:49:44.8812055Z [31;1m[0m[36;1m[36;1m[0m[36;1m[0m[36;1m[31;1m[31;1m[36;1m     | [31;1mMissing opening '(' after keyword 'for'.[0m
+2025-09-11T07:49:44.9379049Z ##[error]Process completed with exit code 1.
+2025-09-11T07:49:44.9597619Z ##[group]Run cd dashboard/frontend
+2025-09-11T07:49:44.9597955Z [36;1mcd dashboard/frontend[0m
+2025-09-11T07:49:44.9598227Z [36;1mmkdir -p playwright-report || true[0m
+2025-09-11T07:49:44.9676745Z shell: C:\Program Files\Git\bin\bash.EXE --noprofile --norc -e -o pipefail {0}
+2025-09-11T07:49:44.9677129Z ##[endgroup]
+2025-09-11T07:49:45.3115471Z ##[group]Run actions/upload-artifact@v4
+2025-09-11T07:49:45.3115936Z with:
+2025-09-11T07:49:45.3116272Z   name: playwright-report-windows-latest
+2025-09-11T07:49:45.3116770Z   path: dashboard/frontend/playwright-report
+2025-09-11T07:49:45.3117213Z   if-no-files-found: warn
+2025-09-11T07:49:45.3117606Z   compression-level: 6
+2025-09-11T07:49:45.3118173Z   overwrite: false
+2025-09-11T07:49:45.3118452Z   include-hidden-files: false
+2025-09-11T07:49:45.3119173Z ##[endgroup]
+2025-09-11T07:49:45.7070867Z ##[warning]No files were found with the provided path: dashboard/frontend/playwright-report. No artifacts will be uploaded.
+2025-09-11T07:49:45.7276338Z Post job cleanup.
+2025-09-11T07:49:46.0015337Z [command]"C:\Program Files\Git\bin\git.exe" version
+2025-09-11T07:49:46.0356259Z git version 2.51.0.windows.1
+2025-09-11T07:49:46.0515586Z Temporarily overriding HOME='D:\a\_temp\704e11ec-b04c-4f3f-8ad9-1fe3d1151bc0' before making global git config changes
+2025-09-11T07:49:46.0530314Z Adding repository directory to the temporary git global config as a safe directory
+2025-09-11T07:49:46.0536387Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\N8N-Self\N8N-Self
+2025-09-11T07:49:46.0916064Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2025-09-11T07:49:46.1285231Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2025-09-11T07:49:46.6682280Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-09-11T07:49:46.6900593Z http.https://github.com/.extraheader
+2025-09-11T07:49:46.6939465Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2025-09-11T07:49:46.7198359Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2025-09-11T07:49:47.2728054Z Cleaning up orphan processes

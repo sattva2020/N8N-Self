@@ -1,0 +1,25 @@
+﻿2025-09-11T06:22:29.6304538Z ##[group]Run cd dashboard/frontend
+2025-09-11T06:22:29.6304964Z [36;1mcd dashboard/frontend[0m
+2025-09-11T06:22:29.6305204Z [36;1mnpm ci --prefer-offline[0m
+2025-09-11T06:22:29.6954353Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2025-09-11T06:22:29.6955058Z ##[endgroup]
+2025-09-11T06:22:53.5452957Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2025-09-11T06:22:53.6040418Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2025-09-11T06:22:53.6859976Z npm warn deprecated @humanwhocodes/config-array@0.13.0: Use @eslint/config-array instead
+2025-09-11T06:22:53.9885880Z npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+2025-09-11T06:22:54.0326755Z npm warn deprecated abab@2.0.6: Use your platform's native atob() and btoa() methods instead
+2025-09-11T06:22:54.1980325Z npm warn deprecated @humanwhocodes/object-schema@2.0.3: Use @eslint/object-schema instead
+2025-09-11T06:22:54.4735966Z npm warn deprecated domexception@4.0.0: Use your platform's native DOMException instead
+2025-09-11T06:22:59.9337903Z npm warn deprecated eslint@8.57.1: This version is no longer supported. Please see https://eslint.org/version-support for other options.
+2025-09-11T06:23:02.0292544Z 
+2025-09-11T06:23:02.0293632Z added 589 packages, and audited 590 packages in 22s
+2025-09-11T06:23:02.0294398Z 
+2025-09-11T06:23:02.0294952Z 180 packages are looking for funding
+2025-09-11T06:23:02.0300661Z   run `npm fund` for details
+2025-09-11T06:23:02.0419231Z 
+2025-09-11T06:23:02.0420189Z 3 moderate severity vulnerabilities
+2025-09-11T06:23:02.0420815Z 
+2025-09-11T06:23:02.0421547Z To address all issues (including breaking changes), run:
+2025-09-11T06:23:02.0429208Z   npm audit fix --force
+2025-09-11T06:23:02.0429663Z 
+2025-09-11T06:23:02.0430097Z Run `npm audit` for details.
