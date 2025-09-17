@@ -1,0 +1,5 @@
+http:
+  middlewares:
+    traefik-auth:
+      basicAuth:
+        usersFile: /run/secrets/traefik_basicauth

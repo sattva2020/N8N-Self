@@ -7,6 +7,14 @@ compose_files:
   - "{{ stack_dir }}/docker-compose.yml"
 # prod режим: override не подключаем (он отключает ACME)
 
+# Управление деплоем LightRAG в smoke (по умолчанию выключено)
+DEPLOY_LIGHTRAG: false
+
+# Пути для LightRAG
+lightrag_dir: "/opt/n8n/LightRAG"
+lightrag_remote_conf_dir: "/opt/n8n/LightRAG_conf"
+lightrag_local_conf_dir: "{{ repo_root }}/LightRAG_conf"
+
 DOMAIN_NAME: sattva-ai.top
 SUBDOMAIN: n8n
 ACME_EMAIL: ruslan.griban@gmail.com

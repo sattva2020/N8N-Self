@@ -4,7 +4,6 @@ services:
     container_name: n8n-traefik
     restart: always
     command:
-      - "--api.insecure=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
@@ -14,18 +13,9 @@ services:
       - "--certificatesresolvers.mytlschallenge.acme.tlschallenge=true"
       - "--certificatesresolvers.mytlschallenge.acme.email=${ACME_EMAIL}"
       - "--certificatesresolvers.mytlschallenge.acme.storage=/letsencrypt/acme.json"
+      - "--providers.file.filename=/dynamic/traefik_dynamic.yml"
+      - "--providers.file.watch=true"
 
-  #    - --providers.docker=true
-  #    - --providers.docker.exposedbydefault=false
-  #    - --entrypoints.web.address=:80
-  #    - --entrypoints.web.http.redirections.entryPoint.to=websecure
-  #    - --entrypoints.web.http.redirections.entrypoint.scheme=https
-  #    - --entrypoints.websecure.address=:443
-  #    - --certificatesresolvers.mytlschallenge.acme.tlschallenge=true
-  #    - --certificatesresolvers.le.acme.email=${ACME_EMAIL}
-  #    - --certificatesresolvers.le.acme.storage=/letsencrypt/acme.json
-  #   - --certificatesresolvers.le.acme.tlschallenge=true
-  #    - --api.dashboard=true
     ports:
       - "80:80"
       - "443:443"
@@ -34,15 +24,18 @@ services:
       - traefik_letsencrypt:/letsencrypt
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ../secrets:/run/secrets:ro
+      - ./traefik_dynamic.yml:/dynamic/traefik_dynamic.yml:ro
     environment:
       - TZ=${TZ}
     labels:
-      traefik.enable: "true"
-      traefik.docker.network: "proxy"
-      traefik.http.routers.traefik.rule: "Host(`traefik.${DOMAIN_NAME}`)"
-      traefik.http.routers.traefik.entrypoints: "websecure"
-      traefik.http.routers.traefik.tls.certresolver: "mytlschallenge"
-      traefik.http.services.traefik.loadbalancer.server.port: "8080"
+      - traefik.enable=true
+      - traefik.docker.network=proxy
+      - traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN_NAME}`)
+      - traefik.http.routers.traefik.entrypoints=websecure
+      - traefik.http.routers.traefik.tls.certresolver=mytlschallenge
+      - traefik.http.services.traefik.loadbalancer.server.port=8080
+      # Require basic auth for the Traefik dashboard using middleware loaded from file provider
+      - traefik.http.routers.traefik.middlewares=traefik-auth@file
     networks:
       - proxy
 
@@ -59,9 +52,9 @@ services:
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U n8n -d n8n -h localhost || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      interval: 20s
+      timeout: 10s
+      retries: 8
     networks:
       - backend
 
@@ -113,12 +106,13 @@ services:
       - n8n_data:/home/node/.n8n
       - ../secrets:/run/secrets:ro
       - ./local-files:/files
+      - ./healthchecks/check-n8n.sh:/usr/local/bin/check-n8n.sh:ro
 #    restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:5678/ || exit 1"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      test: ["CMD-SHELL", "/usr/local/bin/check-n8n.sh"]
+      interval: 20s
+      timeout: 10s
+      retries: 10
     depends_on:
       - n8n-postgres
     networks:

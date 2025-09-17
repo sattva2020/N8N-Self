@@ -11,6 +11,7 @@
           - ca-certificates
           - curl
           - gnupg
+          - apache2-utils
         state: present
         update_cache: yes
 
@@ -41,7 +42,17 @@
         dest: /opt/n8n/stack/
         rsync_opts:
           - "--delete"
+        private_key: /home/sattva/.ssh/id_rsa_n8n
+        use_ssh_args: true
+        _ssh_args: '-i /home/sattva/.ssh/id_rsa_n8n -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
       delegate_to: localhost
+      become: false
+
+    - name: Ensure remote secrets dir exists
+      file:
+        path: /opt/n8n/secrets
+        state: directory
+        mode: '0755'
 
     - name: Sync secrets directory (if exists)
       synchronize:
@@ -49,8 +60,163 @@
         dest: /opt/n8n/secrets/
         rsync_opts:
           - "--delete"
+        private_key: /home/sattva/.ssh/id_rsa_n8n
+        use_ssh_args: true
+        _ssh_args: '-i /home/sattva/.ssh/id_rsa_n8n -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
       delegate_to: localhost
+      become: false
       ignore_errors: yes
+
+    - name: Generate n8n DB password if missing
+      no_log: true
+      shell: |
+        set -euo pipefail
+        f="/opt/n8n/secrets/n8n_db_password"
+        if [ ! -f "$f" ]; then
+          umask 077
+          openssl rand -base64 32 | tr -d '\n' > "$f"
+          chmod 600 "$f"
+        fi
+      args:
+        executable: /bin/bash
+
+    - name: Generate n8n encryption key if missing
+      no_log: true
+      shell: |
+        set -euo pipefail
+        f="/opt/n8n/secrets/n8n_encryption_key"
+        if [ ! -f "$f" ]; then
+          umask 077
+          openssl rand -hex 32 | tr -d '\n' > "$f"
+          chmod 600 "$f"
+        fi
+      args:
+        executable: /bin/bash
+
+    - name: Generate pgvector password if missing
+      no_log: true
+      shell: |
+        set -euo pipefail
+        f="/opt/n8n/secrets/pgvector_password"
+        if [ ! -f "$f" ]; then
+          umask 077
+          openssl rand -base64 24 | tr -d '\n' > "$f"
+          chmod 600 "$f"
+        fi
+      args:
+        executable: /bin/bash
+
+    - name: Ensure LightRAG dirs exist (when DEPLOY_LIGHTRAG)
+      when: DEPLOY_LIGHTRAG | bool
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: '0755'
+      loop:
+        - "{{ lightrag_dir }}"
+        - "{{ lightrag_remote_conf_dir }}"
+
+    - name: Copy LightRAG_conf override to remote (when DEPLOY_LIGHTRAG)
+      when: DEPLOY_LIGHTRAG | bool
+      synchronize:
+        src: "{{ lightrag_local_conf_dir }}/"
+        dest: "{{ lightrag_remote_conf_dir }}/"
+        rsync_opts:
+          - "--delete"
+        private_key: /home/sattva/.ssh/id_rsa_n8n
+        use_ssh_args: true
+        _ssh_args: '-i /home/sattva/.ssh/id_rsa_n8n -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+      delegate_to: localhost
+      become: false
+
+    - name: Ensure traefik_basicauth exists (generate if missing)
+      when: DEPLOY_LIGHTRAG | bool
+      no_log: true
+      shell: |
+        set -euo pipefail
+        f="/opt/n8n/secrets/traefik_basicauth"
+        if [ ! -f "$f" ]; then
+          umask 077
+          user="{{ RAG_BASIC_USER | default('ragadmin') }}"
+          pass="{{ RAG_BASIC_PASS | default('') }}"
+          if [ -z "$pass" ]; then
+            pass="$(openssl rand -base64 18 | tr -d '\n')"
+            echo "username=$user" > /opt/n8n/secrets/.generated_rag_credentials
+            echo "password=$pass" >> /opt/n8n/secrets/.generated_rag_credentials
+            chmod 600 /opt/n8n/secrets/.generated_rag_credentials
+          fi
+          htpasswd -nbB "$user" "$pass" > "$f"
+          chmod 600 "$f"
+        fi
+      args:
+        executable: /bin/bash
+
+    - name: Deploy LightRAG (clone and up) when enabled
+      when: DEPLOY_LIGHTRAG | bool
+      shell: |
+        set -euo pipefail
+        cd "{{ lightrag_dir }}" || mkdir -p "{{ lightrag_dir }}" && cd "{{ lightrag_dir }}"
+        if [ ! -d .git ]; then
+          git clone https://github.com/HKUDS/LightRAG.git .
+        else
+          git pull --ff-only
+        fi
+        # Build .env for LightRAG
+        PG_PASS="$(tr -d '\n' < /opt/n8n/secrets/pgvector_password)"
+        API_KEY_FILE="/opt/n8n/secrets/lightrag_api_key"
+        LR_API_KEY="$(cat "$API_KEY_FILE" 2>/dev/null || true)"
+        cat > .env <<'EOF'
+        DOMAIN_NAME={{ DOMAIN_NAME }}
+        HOST=0.0.0.0
+        PORT=9621
+        WEBUI_TITLE=My Graph KB
+        WEBUI_DESCRIPTION=Simple and Fast Graph Based RAG System
+
+        LIGHTRAG_API_KEY=__LR_API_KEY__
+
+        LLM_BINDING=ollama
+        LLM_MODEL=llama3.1:8b-instruct-q8_0
+        LLM_BINDING_HOST=http://ollama:11434
+        OLLAMA_LLM_NUM_CTX=32768
+
+        EMBEDDING_BINDING=ollama
+        EMBEDDING_MODEL=nomic-embed-text
+        EMBEDDING_DIM=768
+        EMBEDDING_BINDING_HOST=http://ollama:11434
+        OLLAMA_EMBEDDING_NUM_CTX=8192
+
+        LIGHTRAG_KV_STORAGE=PGKVStorage
+        LIGHTRAG_DOC_STATUS_STORAGE=PGDocStatusStorage
+        LIGHTRAG_VECTOR_STORAGE=PGVectorStorage
+        LIGHTRAG_GRAPH_STORAGE=NetworkXStorage
+
+        POSTGRES_HOST=pgvector
+        POSTGRES_PORT=5432
+        POSTGRES_USER=lightrag
+        POSTGRES_PASSWORD=__PG_PASS__
+        POSTGRES_DATABASE=lightrag
+        POSTGRES_MAX_CONNECTIONS=12
+        POSTGRES_VECTOR_INDEX_TYPE=HNSW
+        POSTGRES_HNSW_M=16
+        POSTGRES_HNSW_EF=200
+        POSTGRES_IVFFLAT_LISTS=100
+        EOF
+        # Cleanup: remove possible leading indentation introduced by YAML block scalars
+        # (strip up to 8 leading spaces if present)
+        sed -i 's/^ \{1,8\}//' .env || true
+        sed -i "s|__PG_PASS__|${PG_PASS}|g" .env
+        sed -i "s|__LR_API_KEY__|${LR_API_KEY}|g" .env
+
+        # Install override and secrets
+        cp "{{ lightrag_remote_conf_dir }}/docker-compose.override.yml" ./docker-compose.override.yml
+        mkdir -p secrets
+        if [ -f /opt/n8n/secrets/traefik_basicauth ]; then
+          cp /opt/n8n/secrets/traefik_basicauth secrets/traefik_basicauth
+        fi
+        # Start LightRAG
+        docker compose up -d
+      args:
+        executable: /bin/bash
 
     - name: Render .env from template vars
       copy:
@@ -63,10 +229,14 @@
           GENERIC_TIMEZONE={{ GENERIC_TIMEZONE }}
         mode: '0644'
 
+    - name: Compute compose filenames relative to remote project_src
+      set_fact:
+        compose_remote_files: "{{ compose_files | map('basename') | list }}"
+
     - name: Pull & start stack
       community.docker.docker_compose_v2:
         project_src: /opt/n8n/stack
-        files: "{{ compose_files }}"
+        files: "{{ compose_remote_files }}"
         state: present
         pull: always
 
@@ -92,8 +262,183 @@
       delay: 6
       until: n8n_resp.status in [200,302,401]
 
+    - name: Wait for ACME certificates in traefik volume
+      # Use a short busybox container to inspect the named docker volume used by Traefik
+      # Waits until acme.json contains entries for traefik.<DOMAIN_NAME> and <SUBDOMAIN>.<DOMAIN_NAME>
+      shell: >
+        docker run --rm -v traefik_letsencrypt:/data:ro busybox \
+          sh -c 'grep -q "traefik.{{ DOMAIN_NAME }}" /data/acme.json && grep -q "{{ SUBDOMAIN }}.{{ DOMAIN_NAME }}" /data/acme.json'
+      register: acme_check
+      retries: 30
+      delay: 10
+      until: acme_check.rc == 0
+      changed_when: false
+
+    - name: Ensure stack logs directory exists on remote
+      file:
+        path: /opt/n8n/stack/logs
+        state: directory
+        mode: '0755'
+
+    - name: Pause briefly to allow Traefik to flush acme.json
+      pause:
+        seconds: 15
+
+    - name: Save head of acme.json into stack/logs on remote
+      shell: >
+        docker run --rm -v traefik_letsencrypt:/data:ro busybox \
+          sh -c 'head -c 32768 /data/acme.json > /opt/n8n/stack/logs/acme_head.json || true'
+      args:
+        executable: /bin/sh
+      changed_when: false
+
+    - name: Check remote acme_head.json size
+      stat:
+        path: /opt/n8n/stack/logs/acme_head.json
+      register: acme_head_stat
+
+    - name: If acme_head.json is empty, extract from traefik container
+      when: acme_head_stat.stat.size|default(0) == 0
+      shell: >
+        docker exec n8n-traefik sh -c 'head -c 32768 /letsencrypt/acme.json > /tmp/acme_head.json || true' && mv /tmp/acme_head.json /opt/n8n/stack/logs/acme_head.json || true
+      args:
+        executable: /bin/sh
+      changed_when: false
+
+    - name: Wait until remote acme_head.json is non-empty (timeout 120s)
+      shell: |
+        count=0
+        while [ $count -lt 12 ]; do
+          if [ -s /opt/n8n/stack/logs/acme_head.json ]; then exit 0; fi
+          count=$((count+1))
+          sleep 10
+        done
+        exit 2
+      args:
+        executable: /bin/sh
+      register: wait_acme
+      failed_when: false
+
+    - name: Fetch acme_head.json to controller tests/logs/
+      fetch:
+        src: /opt/n8n/stack/logs/acme_head.json
+        dest: tests/logs/
+        flat: yes
+      ignore_errors: yes
+
+    - name: Fallback - docker cp acme.json from traefik container to host
+      shell: |
+        docker cp n8n-traefik:/letsencrypt/acme.json /opt/n8n/stack/logs/acme_full.json 2>/dev/null || true
+      args:
+        executable: /bin/sh
+      changed_when: false
+
+    - name: Create head from acme_full.json if present
+      shell: |
+        if [ -f /opt/n8n/stack/logs/acme_full.json ]; then
+          head -c 32768 /opt/n8n/stack/logs/acme_full.json > /opt/n8n/stack/logs/acme_head.json || true
+        fi
+      args:
+        executable: /bin/sh
+      changed_when: false
+
+    - name: Ensure acme_full.json is world-readable for fetch
+      file:
+        path: /opt/n8n/stack/logs/acme_full.json
+        mode: '0644'
+      ignore_errors: yes
+
+    - name: Fetch acme_head.json (fallback) to controller tests/logs/
+      fetch:
+        src: /opt/n8n/stack/logs/acme_head.json
+        dest: tests/logs/
+        flat: yes
+      ignore_errors: yes
+
+    - name: "Deterministic: ensure full acme.json copied to host and fetch it"
+      block:
+        - name: "Copy acme.json from Traefik container to host (docker cp / exec / volume)"
+          shell: |
+            set -euo pipefail
+            mkdir -p /opt/n8n/stack/logs
+
+            # Prefer docker cp if container exists
+            if [ "$(docker ps --filter name=n8n-traefik -q | wc -l)" -gt 0 ]; then
+              # Try docker cp first; fallback to docker exec cat if docker cp fails
+              if ! docker cp n8n-traefik:/letsencrypt/acme.json /opt/n8n/stack/logs/acme_full.json 2>/dev/null; then
+                docker exec n8n-traefik sh -c 'cat /letsencrypt/acme.json' > /opt/n8n/stack/logs/acme_full.json || true
+              fi
+            else
+              # If no container, try reading named volume directly
+              docker run --rm -v traefik_letsencrypt:/data:ro busybox sh -c 'cat /data/acme.json' > /opt/n8n/stack/logs/acme_full.json || true
+            fi
+
+            # Ensure file exists (may be empty) and set permissive perms for fetch
+            if [ -f /opt/n8n/stack/logs/acme_full.json ]; then
+              chmod 0644 /opt/n8n/stack/logs/acme_full.json || true
+            fi
+          args:
+            executable: /bin/sh
+          become: true
+
+        - name: "Create head from acme_full.json if present"
+          shell: |
+            if [ -f /opt/n8n/stack/logs/acme_full.json ]; then
+              head -c 32768 /opt/n8n/stack/logs/acme_full.json > /opt/n8n/stack/logs/acme_head.json || true
+            fi
+          args:
+            executable: /bin/sh
+          changed_when: false
+
+        - name: "Wait until acme_full.json is non-empty (timeout 60s)"
+          shell: |
+            count=0
+            while [ $count -lt 6 ]; do
+              if [ -s /opt/n8n/stack/logs/acme_full.json ]; then exit 0; fi
+              count=$((count+1))
+              sleep 10
+            done
+            exit 2
+          args:
+            executable: /bin/sh
+          register: wait_acme_full
+          failed_when: false
+
+        - name: "Fetch acme_full.json to controller tests/logs/ (if present)"
+          fetch:
+            src: /opt/n8n/stack/logs/acme_full.json
+            dest: tests/logs/
+            flat: yes
+          ignore_errors: yes
+      rescue:
+        - name: "Deterministic fetch failed - debug"
+          debug:
+            msg: "Deterministic acme fetch failed; earlier fallback(s) remain in place"
+
+    - name: Define LightRAG docs URL
+      set_fact:
+        rag_docs_url: "https://rag.{{ DOMAIN_NAME }}/docs"
+
+    - name: Check LightRAG /docs with Basic Auth (optional)
+      when:
+        - (RAG_BASIC_USER | default('')) | length > 0
+        - (RAG_BASIC_PASS | default('')) | length > 0
+      uri:
+        url: "{{ rag_docs_url }}"
+        method: GET
+        validate_certs: yes
+        url_username: "{{ RAG_BASIC_USER }}"
+        url_password: "{{ RAG_BASIC_PASS }}"
+        force_basic_auth: yes
+        status_code: 200
+      register: rag_docs_resp
+      retries: 20
+      delay: 6
+      until: rag_docs_resp.status == 200
+
     - name: Show endpoints
       debug:
         msg:
           - "Traefik: {{ traefik_url }} (status {{ traefik_resp.status }})"
           - "n8n: {{ n8n_url }} (status {{ n8n_resp.status }})"
+          - "LightRAG /docs: {{ rag_docs_url | default('skipped') }} (status {{ (rag_docs_resp.status | default('n/a')) }})"

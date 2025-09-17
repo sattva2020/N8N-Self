@@ -35,6 +35,11 @@ on:
         required: true
         default: 'Europe/Kyiv'
         type: string
+      deploy_lightrag:
+        description: 'Also deploy LightRAG (clone + up)'
+        required: true
+        default: false
+        type: boolean
 
 concurrency:
   group: ansible-smoke-${{ github.ref }}-${{ inputs.host }}
@@ -48,6 +53,8 @@ jobs:
     name: Deploy & Smoke Test (Ansible)
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    environment:
+      name: smoke
     env:
       ANSIBLE_HOST_KEY_CHECKING: 'False'
     steps:
@@ -85,13 +92,19 @@ jobs:
           EOF
 
       - name: Run smoke playbook
+        env:
+          RAG_BASIC_USER: ${{ secrets.RAG_BASIC_USER }}
+          RAG_BASIC_PASS: ${{ secrets.RAG_BASIC_PASS }}
         run: |
           ansible-playbook -i tests/ansible/inventory.ci.ini tests/ansible/playbooks/smoke.yml \
             -e "DOMAIN_NAME=${{ inputs.domain_name }}" \
             -e "ACME_EMAIL=${{ inputs.acme_email }}" \
             -e "SUBDOMAIN=${{ inputs.subdomain }}" \
             -e "TZ=${{ inputs.tz }}" \
-            -e "GENERIC_TIMEZONE=${{ inputs.generic_timezone }}"
+            -e "GENERIC_TIMEZONE=${{ inputs.generic_timezone }}" \
+            -e "DEPLOY_LIGHTRAG=${{ inputs.deploy_lightrag }}" \
+            -e "RAG_BASIC_USER=${RAG_BASIC_USER}" \
+            -e "RAG_BASIC_PASS=${RAG_BASIC_PASS}"
 
       - name: Collect remote docker logs (on failure)
         if: failure()
@@ -109,10 +122,39 @@ jobs:
 
       - name: Collect endpoint headers (always)
         if: always()
+        env:
+          RAG_BASIC_USER: ${{ secrets.RAG_BASIC_USER }}
+          RAG_BASIC_PASS: ${{ secrets.RAG_BASIC_PASS }}
         run: |
           mkdir -p ansible-logs
           curl -sk -I https://traefik.${{ inputs.domain_name }} > ansible-logs/traefik-head.txt || true
           curl -sk -I https://${{ inputs.subdomain }}.${{ inputs.domain_name }} > ansible-logs/n8n-head.txt || true
+          if [ -n "${RAG_BASIC_USER}" ] && [ -n "${RAG_BASIC_PASS}" ]; then
+            curl -sk -I -u "${RAG_BASIC_USER}:${RAG_BASIC_PASS}" https://rag.${{ inputs.domain_name }}/docs > ansible-logs/rag-docs-head.txt || true
+          else
+            echo "RAG creds not provided; skipping rag.${{ inputs.domain_name }}/docs" > ansible-logs/rag-docs-head.txt
+          fi
+
+      - name: Fetch generated LightRAG credentials (secure)
+        if: always()
+        run: |
+          set -e
+          mkdir -p ansible-logs/secret
+          # Проверяем наличие файла на удалённом хосте без вывода содержимого
+          if ansible -i tests/ansible/inventory.ci.ini n8n -m shell -a "test -f /opt/n8n/secrets/.generated_rag_credentials" >/dev/null 2>&1; then
+            # Получаем файл локально без печати содержимого
+            ansible -i tests/ansible/inventory.ci.ini n8n -m fetch -a "src=/opt/n8n/secrets/.generated_rag_credentials dest=ansible-logs/secret/.generated_rag_credentials flat=yes" >/dev/null 2>&1 || true
+            chmod 600 ansible-logs/secret/.generated_rag_credentials || true
+          fi
+
+      - name: Upload sensitive LightRAG credentials
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sensitive-rag-credentials
+          path: ansible-logs/secret/.generated_rag_credentials
+          if-no-files-found: ignore
+          retention-days: 1
 
       - name: Upload smoke artifacts
         if: always()
