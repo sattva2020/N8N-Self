@@ -44,22 +44,46 @@ jobs:
         uses: docker/setup-qemu-action@v2
 
       - name: Ensure build context is present
-        # Some hosted runners perform sparse checkouts; ensure the infra directory is available
+        # Force a non-shallow fetch of the exact commit and disable sparse checkout
         run: |
           echo "Checking for infra/postgres-pgvector..."
-          if [ ! -d infra/postgres-pgvector ]; then
-            echo "infra/postgres-pgvector not found — fetching full tree"
-            git fetch --no-tags --prune --depth=1 origin $GITHUB_REF || true
-            git checkout --force $GITHUB_SHA || true
-          else
-            echo "Build context found"
+          if [ -d infra/postgres-pgvector ]; then
+            echo "Build context already present"
+            ls -la infra/postgres-pgvector || true
+            exit 0
           fi
+          echo "infra/postgres-pgvector not found — performing full fetch of commit $GITHUB_SHA"
+          # Fetch the exact commit (no --depth) so files are available
+          git -c protocol.version=2 fetch --no-tags --prune origin $GITHUB_SHA || true
+          # Disable sparse checkout if enabled
+          git sparse-checkout disable || true
+          # Ensure working tree matches the commit we intend to build
+          git checkout --force $GITHUB_SHA || true
+          echo "After checkout:"; ls -la infra || true
         shell: bash
 
       - name: Debug: list infra directory
         run: |
           echo "Listing infra:"; ls -la infra || true
           echo "Listing infra/postgres-pgvector:"; ls -la infra/postgres-pgvector || true
+        shell: bash
+
+      - name: Full clone and copy build context (fallback)
+        run: |
+          echo "Performing authenticated shallow clone into /tmp/fullrepo to ensure build context is available"
+          rm -rf /tmp/fullrepo || true
+          git clone "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}" /tmp/fullrepo --depth=1 || true
+          if [ -d /tmp/fullrepo/infra/postgres-pgvector ]; then
+            mkdir -p infra
+            rm -rf infra/postgres-pgvector || true
+            cp -a /tmp/fullrepo/infra/postgres-pgvector ./infra/
+            echo "Copied infra/postgres-pgvector from full clone"
+            ls -la infra/postgres-pgvector || true
+          else
+            echo "Fallback clone did not contain infra/postgres-pgvector"
+            ls -la /tmp/fullrepo/infra || true
+            exit 1
+          fi
         shell: bash
 
       - name: Set up Docker Buildx
